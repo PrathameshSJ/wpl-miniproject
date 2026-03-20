@@ -4,7 +4,7 @@
 > Web Programming Lab — Mini Project | Team of 3 | March 2026
 
 [![SDG 8](https://img.shields.io/badge/SDG-8%20Decent%20Work%20%26%20Economic%20Growth-orange)](https://sdgs.un.org/goals/goal8)
-[![Stack](https://img.shields.io/badge/Stack-React%20%2B%20Vite%20%2B%20Node.js%20%2B%20MySQL-blue)](#)
+[![Stack](https://img.shields.io/badge/Stack-HTML%2FCSS%2FJS%20%2B%20Node.js%20%2B%20MySQL-blue)](#)
 [![Payments](https://img.shields.io/badge/Payments-Razorpay%20UPI%20%2B%20COD-green)](#)
 
 ---
@@ -41,13 +41,15 @@ It supports two user types — **Customers** who browse and order, and **Admins*
 ## 🛠️ Tech Stack
 
 ```
-Frontend   →  React 18 · Vite 5 · TailwindCSS · Zustand · React Router
-Backend    →  Node.js · Express.js · mysql2
-Database   →  MySQL 8
-Auth       →  JWT + bcrypt
-Payments   →  Razorpay (UPI · COD)
-Storage    →  Cloudinary (product images)
+Frontend   →  HTML5 · CSS3 · Vanilla JavaScript (ES6+) · fetch() API
+Backend    →  Node.js 20 LTS · Express.js 4 · mysql2
+Database   →  MySQL 8 (via XAMPP / phpMyAdmin)
+Auth       →  JWT + bcrypt · localStorage
+Payments   →  Razorpay (UPI · COD) via CDN script
+Storage    →  Cloudinary (product image uploads)
 ```
+
+No frontend frameworks. No build tools. Just files you open in a browser.
 
 ---
 
@@ -58,14 +60,15 @@ Storage    →  Cloudinary (product images)
 git clone https://github.com/your-org/bakeease.git
 cd bakeease
 
-# Frontend
-cd client && npm install && npm run dev
-
 # Backend
-cd ../server && npm install && npm run dev
+cd server && npm install && cp .env.example .env && node server.js
+
+# Frontend
+# Open client/index.html with VS Code Live Server (right-click → Open with Live Server)
 ```
 
-> Copy `.env.example` to `.env` in both `client/` and `server/` and fill in your credentials. See [TECH_STACK.md](./TECH_STACK.md) for all required env variables.
+> Fill in `server/.env` with your DB credentials, JWT secret, and Razorpay test keys.
+> See [TECH_STACK.md](./TECH_STACK.md) for all required env variables and full setup steps.
 
 ---
 
