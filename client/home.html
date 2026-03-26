@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BakeEase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="stylesheet" href="./styles/home.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">BakeEase</div>
+        <nav class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Custom Cake</a>
+            <a href="#">Game</a>
+            <a href="#">About</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="cart-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#914617" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <span class="badge">2</span>
+            </button>
+            <button class="login-btn">Login</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text-wrapper">
+                    <h1>Fresh Baked, Just<br>for You</h1>
+                    <p>Order custom cakes & pastries, crafted with love and delivered fresh across Mumbai.</p>
+                    <div class="hero-buttons">
+                        <button class="primary-btn">ORDER NOW</button>
+                        <button class="secondary-btn">BUILD YOUR CAKE</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container cat-flex">
+                <button class="cat-btn active">Cakes</button>
+                <button class="cat-btn">Cupcakes</button>
+                <button class="cat-btn">Pastries</button>
+                <button class="cat-btn">Bread</button>
+                <button class="cat-btn">Custom</button>
+            </div>
+        </section>
+        
+        <section class="favorites container section-padding">
+            <div class="section-header">
+                <div class="title-group">
+                    <span class="subtitle">OUR FAVORITES</span>
+                    <h2>Featured Delights</h2>
+                </div>
+                <a href="#" class="view-all">View All Menu &rarr;</a>
+            </div>
+            <div class="grid-4">
+                <div class="product-card">
+                    <div class="card-image" style="background-image: url('./images/Berry Vanilla Cake.png')">
+                        <span class="category-tag">CAKES</span>
+                        <div class="veg-badge veg"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="rating">
+                            <span class="star">★</span> 4.5
+                        </div>
+                        <h3>Berry Vanilla Cloud</h3>
+                        <p>Light sponge with organic Madagascar vanilla and fresh...</p>
+                        <div class="card-footer">
+                            <span class="price">₹1,250</span>
+                            <button class="add-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#914617" stroke-width="2"><path d="M12 5v14m-7-7h14"/></svg></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- additional cards omitted for exact brevity in log analysis, using full block from memory -->
+                <div class="product-card">
+                    <div class="card-image" style="background-image: url('./images/Chocolate Glazed Donut.png')">
+                        <span class="category-tag">PASTRIES</span>
+                        <div class="veg-badge veg"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="rating">
+                            <span class="star">★</span> 4.8
+                        </div>
+                        <h3>Dark Truffle Donut</h3>
+                        <p>70% dark Belgian chocolate glaze over a light, yeast-raised dough.</p>
+                        <div class="card-footer">
+                            <span class="price">₹180</span>
+                            <button class="add-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#914617" stroke-width="2"><path d="M12 5v14m-7-7h14"/></svg></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image" style="background-image: url('./images/Artisan Sourdough.png')">
+                        <span class="category-tag">BREAD</span>
+                        <div class="veg-badge veg"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="rating">
+                            <span class="star">★</span> 4.9
+                        </div>
+                        <h3>Rustic Sourdough</h3>
+                        <p>48-hour fermented loaf with a thick, caramelized crust and soft...</p>
+                        <div class="card-footer">
+                            <span class="price">₹350</span>
+                            <button class="add-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#914617" stroke-width="2"><path d="M12 5v14m-7-7h14"/></svg></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image" style="background-image: url('./images/Assorted Cupcakes.png')">
+                        <span class="category-tag">CUPCAKES</span>
+                        <div class="veg-badge non-veg"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="rating">
+                            <span class="star">★</span> 4.6
+                        </div>
+                        <h3>Pastel Dream Box</h3>
+                        <p>A curated selection of 6 artisanal cupcakes with velvet buttercream.</p>
+                        <div class="card-footer">
+                            <span class="price">₹850</span>
+                            <button class="add-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#914617" stroke-width="2"><path d="M12 5v14m-7-7h14"/></svg></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="promo-banner">
+            <div class="container promo-content">
+                <span class="promo-text">🎉 20% off this week — Use code BAKE20</span>
+                <button class="promo-btn">SHOP NOW</button>
+            </div>
+        </section>
+
+        <section class="bestsellers container section-padding">
+            <div class="section-center">
+                <h2>Our Best Sellers</h2>
+                <p>The treats that keep Mumbai coming back for more. Hand-crafted daily<br>using premium ingredients.</p>
+            </div>
+            <div class="grid-4">
+                <div class="bestseller-card">
+                    <div class="bs-card-image" style="background-image: url('./images/Macarons.png'); height: 256px; background-size: cover; background-position: center;">
+                        <span class="bestseller-badge">BESTSELLER</span>
+                    </div>
+                    <div class="bs-content">
+                        <h3>Parisian Macarons</h3>
+                        <p><span class="price">₹950</span> <span class="unit">/ Box of 12</span></p>
+                    </div>
+                </div>
+                <div class="bestseller-card">
+                    <div class="bs-card-image" style="background-image: url('./images/Croissants.png'); height: 256px; background-size: cover; background-position: center;">
+                        <span class="bestseller-badge">BESTSELLER</span>
+                    </div>
+                    <div class="bs-content">
+                        <h3>Buttery Croissants</h3>
+                        <p><span class="price">₹120</span> <span class="unit">/ Piece</span></p>
+                    </div>
+                </div>
+                <div class="bestseller-card">
+                    <div class="bs-card-image" style="background-image: url('./images/Cheesecake.png'); height: 256px; background-size: cover; background-position: center;">
+                        <span class="bestseller-badge">BESTSELLER</span>
+                    </div>
+                    <div class="bs-content">
+                        <h3>NY Cheesecake</h3>
+                        <p><span class="price">₹250</span> <span class="unit">/ Slice</span></p>
+                    </div>
+                </div>
+                <div class="bestseller-card">
+                    <div class="bs-card-image" style="background-image: url('./images/Chocolate Eclairs.png'); height: 256px; background-size: cover; background-position: center;">
+                        <span class="bestseller-badge">BESTSELLER</span>
+                    </div>
+                    <div class="bs-content">
+                        <h3>Classic Eclairs</h3>
+                        <p><span class="price">₹150</span> <span class="unit">/ Piece</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="testimonials container section-padding">
+            <h2 class="text-center testimonial-heading">Stories from Our Table</h2>
+            <div class="grid-3">
+                <div class="testimonial-card">
+                    <span class="quote-icon">"</span>
+                    <p>"The custom cake we ordered for our anniversary was more than just a dessert; it was a work of art. The attention to detail in the sugar flowers was breathtaking."</p>
+                    <div class="author">
+                        <img src="./images/Priya S..png" alt="Priya">
+                        <div>
+                            <h4>Priya Sharma</h4>
+                            <span>Bandra, Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="quote-icon">"</span>
+                    <p>"Best sourdough in the city, hands down. It has that perfect tangy flavor and incredible crust. Their delivery is always on time too!"</p>
+                    <div class="author">
+                        <img src="./images/Rahul K..png" alt="Rahul">
+                        <div>
+                            <h4>Rahul Kapoor</h4>
+                            <span>Juhu, Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="quote-icon">"</span>
+                    <p>"BakeEase is my go-to for office celebrations. Their assorted cupcake boxes are always a hit. Fresh, beautifully packed, and delicious."</p>
+                    <div class="author">
+                        <img src="./images/Ananya M..png" alt="Ananya">
+                        <div>
+                            <h4>Ananya Mehra</h4>
+                            <span>Powai, Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2>BakeEase</h2>
+                <p>Mumbai's premier artisan bakery.<br>Delivering sweetness and handcrafted joy<br>to your doorstep every day.</p>
+                <div class="socials">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="#">Menu</a>
+                <a href="#">Custom Cake</a>
+                <a href="#">BakeMaster Game</a>
+                <a href="#">Gift Cards</a>
+            </div>
+            <div class="footer-links">
+                <h3>Support</h3>
+                <a href="#">Shipping Info</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <p>123 Artisan Way, Bandra West,</p>
+                <p>Mumbai, Maharashtra 400050</p>
+                <p class="phone">+91 98765 43210</p>
+                <p>hello@bakeease.in</p>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>© 2024 BakeEase Artisan Bakery. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
