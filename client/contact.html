@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="./js/tailwind-config.js"></script>
+
+<link href="./styles/contact.css" rel="stylesheet"/></head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.html'">BakeEase
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="home.html">Home</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="catalog.html">Menu</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Custom Cake</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Game</a>
+<a class="text-orange-700 dark:text-orange-400 font-bold border-b-2 border-orange-700 dark:border-orange-400 pb-1 font-body" href="contact.html">About</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="relative text-stone-600 dark:text-stone-400 hover:bg-stone-100/50 p-2 rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" onclick="window.location.href='login.html'">Login</button>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-28 pb-20 px-6 max-w-7xl mx-auto w-full">
+<!-- Hero Section Title -->
+<div class="mb-16 text-center">
+<h1 class="font-headline text-5xl md:text-6xl text-on-surface font-bold tracking-tight mb-4">Connect With Us
+            </h1>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto font-body italic">"The secret ingredient is
+                always love, but we'd love to hear your thoughts too."</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Contact Card -->
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-surface-container-lowest p-8 md:p-10 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="mb-8">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="bakery_dining">bakery_dining</span>
+<h2 class="font-headline text-3xl font-bold mb-6">Our Flagship Boutique</h2>
+</div>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+<div>
+<h3 class="font-semibold text-on-surface mb-1">Visit Us</h3>
+<p class="text-on-surface-variant leading-relaxed font-body">12, Art Deco Arcade, Marine
+                                    Drive<br/>Mumbai, MH 400020, India</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="call">call</span>
+<div>
+<h3 class="font-semibold text-on-surface mb-1">Call Us</h3>
+<a class="text-primary font-semibold hover:underline" href="tel:+912212345678">+91 22
+                                    1234 5678</a>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="mail">mail</span>
+<div>
+<h3 class="font-semibold text-on-surface mb-1">Email Us</h3>
+<a class="text-primary font-semibold hover:underline" href="mailto:hello@bakeease.com">hello@bakeease.com</a>
+</div>
+</div>
+</div>
+<div class="mt-10 pt-10 border-t border-outline-variant/20">
+<h3 class="font-headline text-xl font-bold mb-4">Operating Hours</h3>
+<table class="w-full text-sm font-body">
+<tbody>
+<tr class="border-b border-outline-variant/10">
+<td class="py-2 text-on-surface-variant">Mon – Fri</td>
+<td class="py-2 text-right font-medium">8:00 AM – 9:00 PM</td>
+</tr>
+<tr class="border-b border-outline-variant/10">
+<td class="py-2 text-on-surface-variant">Saturday</td>
+<td class="py-2 text-right font-medium">9:00 AM – 10:00 PM</td>
+</tr>
+<tr>
+<td class="py-2 text-on-surface-variant">Sunday</td>
+<td class="py-2 text-right font-medium">9:00 AM – 6:00 PM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-10 rounded-lg overflow-hidden relative group h-48">
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" data-alt="stylized map view of Mumbai coastal area with soft warm filter and a pinpoint for the bakery location" data-location="Mumbai" src="./images/image.png"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/20">
+<a class="bg-surface px-6 py-2 rounded-full font-label font-semibold text-xs text-primary shadow-lg hover:bg-primary hover:text-on-primary transition-colors" href="#">VIEW ON GOOGLE MAPS</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Feedback Form -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container-low p-8 md:p-12 rounded-xl">
+<h2 class="font-headline text-3xl font-bold mb-2">We'd Love to Hear From You</h2>
+<p class="text-on-surface-variant font-body mb-10">Whether it's praise for our sourdough or feedback
+                        on your delivery, every word helps us rise higher.</p>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant ml-1">Full
+                                    Name</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary-container font-body transition-all placeholder:text-outline/50" placeholder="Jane Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant ml-1">Email
+                                    Address</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary-container font-body transition-all placeholder:text-outline/50" placeholder="jane@example.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant ml-1">Phone
+                                    Number</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary-container font-body transition-all placeholder:text-outline/50" placeholder="+91 00000 00000" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant ml-1">Subject</label>
+<select class="w-full px-4 py-3 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary-container font-body transition-all text-on-surface-variant">
+<option>Feedback &amp; Suggestions</option>
+<option>Custom Cake Inquiry</option>
+<option>Order Issue</option>
+<option>Corporate Gifting</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant ml-1">Overall
+                                Rating</label>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-primary cursor-pointer filled-icon" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary cursor-pointer filled-icon" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary cursor-pointer filled-icon" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary cursor-pointer filled-icon" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="star">star</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant ml-1">Your
+                                Message</label>
+<textarea class="w-full px-4 py-3 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary-container font-body transition-all placeholder:text-outline/50" placeholder="Share your experience with us..." rows="5"></textarea>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant ml-1">Attachments
+                                (Optional)</label>
+<div class="border-2 border-dashed border-outline-variant/40 rounded-xl p-8 flex flex-col items-center justify-center bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors mb-2 text-3xl" data-icon="upload_file">upload_file</span>
+<p class="text-sm text-on-surface-variant font-medium">Attach a photo (optional)</p>
+<p class="text-xs text-outline mt-1 italic">Drag and drop or click to browse</p>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary py-4 rounded-lg font-label font-bold tracking-widest uppercase transition-all shadow-md active:scale-[0.98]" type="button">
+                            Submit Feedback
+                        </button>
+</form>
+<!-- Hidden Success State (For demonstration) -->
+<div class="hidden flex flex-col items-center justify-center text-center py-20 animate-fade-in">
+<div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-green-600 text-4xl" data-icon="check_circle">check_circle</span>
+</div>
+<h3 class="font-headline text-3xl font-bold mb-2">Thank you!</h3>
+<p class="text-on-surface-variant font-body">Your message has been received. We'll reply within
+                            24 hours.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ Section -->
+<section class="mt-32 max-w-4xl mx-auto">
+<h2 class="font-headline text-4xl font-bold text-center mb-12">Commonly Asked</h2>
+<div class="space-y-4">
+<!-- Item 1 (Open) -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors group">
+<span class="font-headline text-xl font-bold">Do you offer gluten-free bread?</span>
+<span class="material-symbols-outlined text-primary rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</button>
+<div class="px-6 pb-6 animate-fade-in">
+<p class="text-on-surface-variant font-body leading-relaxed">While we are a traditional
+                            flour-based bakery, we offer a selection of specialty gluten-friendly sourdough loaves and
+                            pastries every Tuesday and Thursday. Please note our kitchen handles wheat regularly, so
+                            cross-contamination is possible.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors group">
+<span class="font-headline text-xl font-bold">How far in advance should I order custom
+                            cakes?</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors group">
+<span class="font-headline text-xl font-bold">What are your delivery areas in Mumbai?</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors group">
+<span class="font-headline text-xl font-bold">Can I host a small gathering at your
+                            boutique?</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<!-- Item 5 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors group">
+<span class="font-headline text-xl font-bold">Are your ingredients organic?</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="bg-stone-900 dark:bg-black w-full mt-auto border-t border-stone-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto text-center md:text-left">
+<div>
+<span class="text-xl font-bold text-stone-50 mb-4 block font-serif">BakeEase</span>
+<p class="text-stone-400 text-sm font-light font-body leading-relaxed">Crafting artisanal moments since
+                    2012. Our ovens never sleep so your mornings are always fresh.</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Explore</h4>
+<ul class="space-y-2">
+<li><a class="text-stone-400 hover:text-stone-200 transition-colors font-body text-sm" href="#">Our
+                            Menu</a></li>
+<li><a class="text-stone-400 hover:text-stone-200 transition-colors font-body text-sm" href="404.html">Workshops</a></li>
+<li><a class="text-stone-400 hover:text-stone-200 transition-colors font-body text-sm" href="404.html">Gifting</a></li>
+<li><a class="text-stone-400 hover:text-stone-200 transition-colors font-body text-sm" href="404.html">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Help</h4>
+<ul class="space-y-2">
+<li><a class="text-stone-400 hover:text-stone-200 transition-colors font-body text-sm" href="404.html">Shipping Info</a></li>
+<li><a class="text-orange-400 underline font-body text-sm" href="contact.html">Contact Us</a></li>
+<li><a class="text-orange-400 underline font-body text-sm" href="404.html">Privacy Policy</a></li>
+<li><a class="text-orange-400 underline font-body text-sm" href="404.html">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Stay Sweet</h4>
+<div class="flex gap-4 justify-center md:justify-start">
+<a class="w-10 h-10 rounded-full border border-stone-800 flex items-center justify-center text-orange-400 hover:bg-stone-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-stone-800 flex items-center justify-center text-orange-400 hover:bg-stone-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="local_cafe">local_cafe</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-stone-800 py-6 text-center">
+<p class="text-stone-500 text-xs font-light font-body">© 2024 BakeEase Artisan Bakery. All rights reserved.
+            </p>
+</div>
+</footer>
+</body>
+</html>

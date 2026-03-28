@@ -1,17 +1,22 @@
-<header class="navbar">
-        <div class="logo">BakeEase</div>
-        <nav class="nav-links">
-            <a href="#" class="active">Home</a>
-            <a href="#">Menu</a>
-            <a href="#">Custom Cake</a>
-            <a href="#">Game</a>
-            <a href="#">About</a>
-        </nav>
-        <div class="nav-actions">
-            <button class="cart-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#914617" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                <span class="badge">2</span>
-            </button>
-            <button class="login-btn">Login</button>
-        </div>
-    </header>
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.html'">BakeEase
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="home.html">Home</a>
+<a class="text-orange-700 dark:text-orange-400 font-bold border-b-2 border-orange-700 dark:border-orange-400 pb-1" href="catalog.html">Menu</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="404.html">Custom
+                    Cake</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="404.html">Game</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="contact.html">About</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 hover:bg-stone-100/50 dark:hover:bg-stone-800/50 rounded-lg transition-all active:scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined text-orange-800 dark:text-orange-400">shopping_cart</span>
+</button>
+<button class="px-6 py-2 bg-primary text-on-primary font-semibold rounded-lg hover:opacity-90 transition-all active:scale-95 duration-150 ease-in-out" onclick="window.location.href='login.html'">
+                    Login
+                </button>
+</div>
+</nav>
+</header>
