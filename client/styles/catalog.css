@@ -1,0 +1,26 @@
+.material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Noto Serif', serif;
+        }
+
+        .veg-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #2e7d32;
+            border: 1px solid #1b5e20;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
