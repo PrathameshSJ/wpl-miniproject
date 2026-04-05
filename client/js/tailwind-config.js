@@ -1,62 +1,41 @@
 tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "surface-dim": "#e0d9d0",
-                        "surface-container-highest": "#e8e2d8",
-                        "on-primary-fixed-variant": "#773302",
-                        "surface-variant": "#e8e2d8",
-                        "surface-tint": "#954919",
-                        "inverse-primary": "#ffb68f",
-                        "background": "#fff8f0",
-                        "inverse-on-surface": "#f7f0e6",
-                        "on-primary-fixed": "#331100",
-                        "surface-container-lowest": "#ffffff",
-                        "primary-fixed-dim": "#ffb68f",
-                        "on-tertiary-fixed-variant": "#6e381c",
-                        "inverse-surface": "#33302a",
-                        "primary": "#914617",
-                        "secondary": "#8e4e14",
-                        "on-background": "#1e1b16",
-                        "on-tertiary-container": "#fffbfa",
-                        "outline-variant": "#dac1b6",
-                        "on-secondary-fixed": "#2f1400",
-                        "surface": "#fff8f0",
-                        "surface-container": "#f4ede3",
-                        "primary-container": "#b05e2d",
-                        "on-secondary-container": "#783d01",
-                        "outline": "#877369",
-                        "on-error-container": "#93000a",
-                        "primary-fixed": "#ffdbca",
-                        "on-primary-container": "#fffbfa",
-                        "on-tertiary-fixed": "#351000",
-                        "surface-container-low": "#faf3e9",
-                        "error": "#ba1a1a",
-                        "surface-bright": "#fff8f0",
-                        "secondary-container": "#ffab69",
-                        "tertiary-fixed-dim": "#ffb693",
-                        "error-container": "#ffdad6",
-                        "surface-container-high": "#eee7dd",
-                        "on-surface": "#1e1b16",
-                        "on-secondary-fixed-variant": "#6f3800",
-                        "on-primary": "#ffffff",
-                        "tertiary-container": "#a46444",
-                        "tertiary": "#874c2e",
-                        "on-error": "#ffffff",
-                        "secondary-fixed-dim": "#ffb780",
-                        "on-secondary": "#ffffff",
-                        "on-surface-variant": "#54433a",
-                        "secondary-fixed": "#ffdcc4",
-                        "on-tertiary": "#ffffff",
-                        "tertiary-fixed": "#ffdbcc"
-                    },
-                    fontFamily: {
-                        "headline": ["Noto Serif"],
-                        "body": ["Inter"],
-                        "label": ["Inter"]
-                    },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
-                },
-            },
-        }
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        // Main Brand Colors
+        primary: {
+          DEFAULT: "#914617", // Artisan Brown
+          container: "#b05e2d",
+          content: "#ffffff",
+        },
+        secondary: {
+          DEFAULT: "#8e4e14", // Warm Caramel
+          container: "#ffab69",
+        },
+        // Neutral Surface Colors (The "Paper" and "Crumb" tones)
+        surface: {
+          DEFAULT: "#fff8f0", // Background
+          bright: "#fff8f0",
+          low: "#faf3e9",
+          variant: "#e8e2d8",
+          outline: "#877369",
+        },
+        // Action/Status Colors
+        error: "#ba1a1a",
+        "on-surface": "#1e1b16",
+        "on-surface-variant": "#54433a",
+      },
+      fontFamily: {
+        headline: ["Noto Serif", "serif"],
+        body: ["Inter", "sans-serif"],
+      },
+      borderRadius: {
+        DEFAULT: "4px",
+        lg: "8px",
+        xl: "12px",
+        full: "9999px",
+      },
+    },
+  },
+};
