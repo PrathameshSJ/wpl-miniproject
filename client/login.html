@@ -9,9 +9,9 @@
     <script src="./js/tailwind-config.js"></script>
     <link href="./styles/login.css" rel="stylesheet"/>
 </head>
-<body class="min-h-screen bg-surface">
-    <div class="flex flex-col lg:flex-row min-h-screen">
-        <aside class="relative hidden lg:block lg:w-1/2">
+<body class="min-h-screen bg-surface overflow-hidden">
+    <div class="relative min-h-screen">
+        <aside class="absolute top-0 left-0 w-1/2 h-screen hidden lg:block">
             <img alt="Artisan pastries" class="absolute inset-0 w-full h-full object-cover" src="./images/artisan-pastries.png"/>
             <div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -21,7 +21,7 @@
             </div>
         </aside>
 
-        <main class="flex-1 flex flex-col items-center justify-center p-6 lg:p-16">
+        <main class="ml-[50%] flex flex-col items-center justify-center p-6 lg:p-16 h-screen overflow-y-auto">
             <div class="w-full max-w-[420px] space-y-8">
                 <header class="text-center lg:text-left">
                     <h1 class="text-4xl font-bold text-primary font-serif cursor-pointer" onclick="window.location.href='home.html'">BakeEase</h1>
@@ -37,7 +37,7 @@
                     <form class="space-y-4">
                         <div class="space-y-1">
                             <label class="text-xs font-bold uppercase text-on-surface-variant ml-1">Email</label>
-                            <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm focus:border-primary outline-none" type="email" placeholder="jane@example.com"/>
+                            <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm focus:border-primary outline-none" type="email" placeholder="bakeease@example.com"/>
                         </div>
                         <div class="space-y-1">
                             <div class="flex justify-between items-center px-1">
@@ -48,16 +48,32 @@
                         </div>
                         <button class="w-full artisan-gradient text-white font-bold py-3 rounded-lg shadow hover:opacity-90 transition-all uppercase tracking-widest text-xs" type="submit">Login to Kitchen</button>
                     </form>
+
+                    <footer class="text-center">
+                        <a class="text-xs font-bold text-on-surface-variant hover:text-primary transition-colors" href="home.html">Browse as Guest</a>
+                    </footer>
                 </section>
 
                 <section id="register-section" class="space-y-4 hidden">
                     <form class="space-y-4">
                         <div class="grid grid-cols-2 gap-4">
-                            <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm" placeholder="Full Name" type="text"/>
-                            <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm" placeholder="Phone" type="tel"/>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold uppercase text-on-surface-variant ml-1">Full Name</label>
+                                <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm" placeholder="Strawberry Milkshake" type="text"/>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold uppercase text-on-surface-variant ml-1">Phone</label>
+                                <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm" placeholder="+91 9876543210" type="tel"/>
+                            </div>
                         </div>
-                        <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm" placeholder="Email Address" type="email"/>
-                        <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm" placeholder="Password" type="password"/>
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold uppercase text-on-surface-variant ml-1">Email Address</label>
+                            <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm" placeholder="bakeease@example.com" type="email"/>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold uppercase text-on-surface-variant ml-1">Password</label>
+                            <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm" placeholder="••••••••" type="password"/>
+                        </div>
                         <button class="w-full artisan-gradient text-white font-bold py-3 rounded-lg shadow hover:opacity-90 transition-all uppercase tracking-widest text-xs" type="submit">Create Account</button>
                     </form>
                 </section>
@@ -72,27 +88,9 @@
                     <img src="./images/google.png" class="w-5 h-5" alt="Google">
                     Google Account
                 </button>
-
-                <footer class="text-center">
-                    <a class="text-xs font-bold text-on-surface-variant hover:text-primary transition-colors" href="home.html">Browse as Guest</a>
-                </footer>
             </div>
         </main>
     </div>
-
-    <script>
-        function toggleAuth(type) {
-            const isLogin = type === 'login';
-            document.getElementById('login-section').classList.toggle('hidden', !isLogin);
-            document.getElementById('register-section').classList.toggle('hidden', isLogin);
-            
-            // Tab Styling
-            const loginTab = document.getElementById('tab-login');
-            const regTab = document.getElementById('tab-register');
-            
-            loginTab.className = isLogin ? "flex-1 py-3 text-sm font-semibold border-b-2 border-primary text-primary" : "flex-1 py-3 text-sm font-semibold text-on-surface-variant";
-            regTab.className = !isLogin ? "flex-1 py-3 text-sm font-semibold border-b-2 border-primary text-primary" : "flex-1 py-3 text-sm font-semibold text-on-surface-variant";
-        }
-    </script>
+    <script src="./js/login.js"></script>
 </body>
 </html>
