@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BakeEase | Your Cart & Checkout</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="styles/cnc.css" />
+</head>
+
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.html'">
+                BakeEase
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="home.html">Home</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="catalog.html">Menu</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Custom Cake</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Game</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="contact.html">About</a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button class="relative text-primary hover:bg-stone-100/50 p-2 rounded-lg transition-all">
+                    <span class="material-symbols-outlined filled" data-icon="shopping_cart" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+                    <span class="absolute top-0 right-0 bg-primary text-on-primary text-[10px] w-4 h-4 flex items-center justify-center rounded-full">3</span>
+                </button>
+                <button class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" onclick="window.location.href='login.html'">
+                    Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-28 pb-20 px-6 max-w-7xl mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-10 gap-12">
+
+            <div class="lg:col-span-6 space-y-8">
+                <div class="flex items-baseline gap-4 mb-8">
+                    <h1 class="text-4xl font-bold tracking-tight text-on-surface">Your Cart</h1>
+                    <span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-sm font-semibold">3 items</span>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="group relative flex gap-6 p-4 rounded-xl hover:bg-surface-container-low transition-colors duration-300">
+                        <div class="w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="rich dark chocolate truffle cake" src="./images/chocolate-truffle-cake.png" />
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="material-symbols-outlined text-green-600 text-sm" data-icon="circle" data-weight="fill">circle</span>
+                                        <h3 class="text-xl font-bold text-on-surface">Chocolate Truffle Cake</h3>
+                                    </div>
+                                    <p class="text-stone-500 text-sm italic">Rich Belgian Chocolate, 500g</p>
+                                </div>
+                                <button class="text-outline hover:text-error transition-colors">
+                                    <span class="material-symbols-outlined" data-icon="close">close</span>
+                                </button>
+                            </div>
+                            <div class="flex justify-between items-end mt-4">
+                                <div class="flex items-center bg-surface-container-lowest rounded-lg border border-outline-variant p-1">
+                                    <button class="w-8 h-8 flex items-center justify-center hover:bg-surface-container rounded transition-colors">-</button>
+                                    <span class="w-10 text-center font-semibold">1</span>
+                                    <button class="w-8 h-8 flex items-center justify-center hover:bg-surface-container rounded transition-colors">+</button>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-stone-400">₹799 each</p>
+                                    <p class="text-lg font-bold text-primary">₹799</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-px bg-outline-variant/30 mx-4"></div>
+
+                    <div class="group relative flex gap-6 p-4 rounded-xl hover:bg-surface-container-low transition-colors duration-300">
+                        <div class="w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="vanilla cupcakes" src="./images/vanilla-cupcakes.png" />
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="material-symbols-outlined text-green-600 text-sm" data-icon="circle" data-weight="fill">circle</span>
+                                        <h3 class="text-xl font-bold text-on-surface">Vanilla Dream Cupcakes (x6 box)</h3>
+                                    </div>
+                                    <p class="text-stone-500 text-sm italic">Classic Madagascar Vanilla</p>
+                                </div>
+                                <button class="text-outline hover:text-error transition-colors">
+                                    <span class="material-symbols-outlined" data-icon="close">close</span>
+                                </button>
+                            </div>
+                            <div class="flex justify-between items-end mt-4">
+                                <div class="flex items-center bg-surface-container-lowest rounded-lg border border-outline-variant p-1">
+                                    <button class="w-8 h-8 flex items-center justify-center hover:bg-surface-container rounded transition-colors">-</button>
+                                    <span class="w-10 text-center font-semibold">2</span>
+                                    <button class="w-8 h-8 flex items-center justify-center hover:bg-surface-container rounded transition-colors">+</button>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-stone-400">₹320 each</p>
+                                    <p class="text-lg font-bold text-primary">₹640</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-px bg-outline-variant/30 mx-4"></div>
+
+                    <div class="group relative flex gap-6 p-4 rounded-xl hover:bg-surface-container-low transition-colors duration-300">
+                        <div class="w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="walnut brownies" src="./images/walnut-brownies.png" />
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="material-symbols-outlined text-red-600 text-sm" data-icon="change_history" data-weight="fill">change_history</span>
+                                        <h3 class="text-xl font-bold text-on-surface">Walnut Brownie Box</h3>
+                                    </div>
+                                    <p class="text-stone-500 text-sm italic">Fudgy with Toasted Walnuts</p>
+                                </div>
+                                <button class="text-outline hover:text-error transition-colors">
+                                    <span class="material-symbols-outlined" data-icon="close">close</span>
+                                </button>
+                            </div>
+                            <div class="flex justify-between items-end mt-4">
+                                <div class="flex items-center bg-surface-container-lowest rounded-lg border border-outline-variant p-1">
+                                    <button class="w-8 h-8 flex items-center justify-center hover:bg-surface-container rounded transition-colors">-</button>
+                                    <span class="w-10 text-center font-semibold">1</span>
+                                    <button class="w-8 h-8 flex items-center justify-center hover:bg-surface-container rounded transition-colors">+</button>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-stone-400">₹380 each</p>
+                                    <p class="text-lg font-bold text-primary">₹380</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-green-50 dark:bg-green-950/20 border border-green-100 dark:border-green-900/30 p-4 rounded-xl flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-green-700" data-icon="sell">sell</span>
+                        <p class="text-green-800 dark:text-green-200 font-semibold">BAKE20 applied — 20% off!</p>
+                    </div>
+                    <button class="text-green-700 underline text-sm font-bold uppercase tracking-wider">Remove</button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4">
+                <div class="sticky top-28 space-y-6">
+                    <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-lg shadow-on-surface/5 border border-outline-variant/10">
+                        <h2 class="text-2xl font-bold mb-6 text-on-surface">Order Summary</h2>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between text-on-surface-variant">
+                                <span>Subtotal</span>
+                                <span class="font-semibold">₹1,819</span>
+                            </div>
+                            <div class="flex justify-between text-green-600">
+                                <span>Discount (20%)</span>
+                                <span class="font-semibold">-₹364</span>
+                            </div>
+                            <div class="flex justify-between text-on-surface-variant">
+                                <span>Delivery Fee</span>
+                                <span class="font-semibold">₹49</span>
+                            </div>
+                            <div class="h-px bg-outline-variant/30 my-4"></div>
+                            <div class="flex justify-between text-2xl font-bold text-on-surface">
+                                <span>Total</span>
+                                <span>₹1,504</span>
+                            </div>
+                        </div>
+
+                        <div class="flex p-1 bg-surface-container rounded-xl mb-8">
+                            <button class="flex-1 py-2 rounded-lg bg-white shadow-sm text-primary font-bold transition-all">Home Delivery</button>
+                            <button class="flex-1 py-2 rounded-lg text-on-surface-variant hover:text-primary transition-all">Pickup</button>
+                        </div>
+
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1 ml-1">Delivery Address</label>
+                                <input class="w-full bg-surface-container-lowest border-outline-variant/30 rounded-lg focus:ring-0 focus:border-primary-container p-3 text-on-surface" type="text" value="Apt 4B, Emerald Residency, Sector 5" />
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1 ml-1">Date</label>
+                                    <select class="w-full bg-surface-container-lowest border-outline-variant/30 rounded-lg focus:ring-0 focus:border-primary-container p-3 text-on-surface">
+                                        <option>Tomorrow, Oct 24</option>
+                                        <option>Friday, Oct 25</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1 ml-1">Time Slot</label>
+                                    <select class="w-full bg-surface-container-lowest border-outline-variant/30 rounded-lg focus:ring-0 focus:border-primary-container p-3 text-on-surface">
+                                        <option>10:00 AM - 12:00 PM</option>
+                                        <option>02:00 PM - 04:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 text-primary font-semibold text-sm">
+                                <span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                                <span>Estimated delivery: 2-4 hours from slot start</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <label class="block text-xs font-bold text-outline uppercase tracking-widest mb-3 ml-1">Payment Method</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center justify-between p-4 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+                                        <span class="font-bold text-on-surface">UPI</span>
+                                    </div>
+                                    <input checked="" class="text-primary focus:ring-0" name="payment" type="radio" />
+                                </label>
+                                <label class="flex items-center justify-between p-4 rounded-xl border border-outline-variant/30 hover:border-primary/50 transition-colors cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-stone-500" data-icon="payments">payments</span>
+                                        <span class="font-bold text-on-surface">Cash on Delivery</span>
+                                    </div>
+                                    <input class="text-primary focus:ring-0" name="payment" type="radio" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all shadow-lg shadow-primary/20">
+                            Place Order
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                        </button>
+                        <div class="flex items-center justify-center gap-2 mt-4 text-outline text-xs uppercase font-bold tracking-widest">
+                            <span class="material-symbols-outlined text-sm" data-icon="lock" data-weight="fill">lock</span>
+                            Secure SSL Encrypted Checkout
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full mt-auto bg-stone-900 dark:bg-black border-t border-stone-800">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto text-center md:text-left">
+            <div class="col-span-1 md:col-span-1">
+                <span class="text-xl font-bold text-stone-50 mb-4 block">BakeEase</span>
+                <p class="text-sm font-light text-stone-400 font-body">Crafting artisanal memories with flour, sugar, and passion since 1994.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Explore</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="catalog.html">Menu</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Custom Designs</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Bulk Orders</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Support</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Shipping Info</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="contact.html">Contact Us</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Legal</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Privacy Policy</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-8 pb-8 border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm font-light text-stone-500 font-body">© 2024 BakeEase Artisan Bakery. All rights reserved.</p>
+            <div class="flex gap-4">
+                <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">social_leaderboard</span>
+                <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">photo_camera</span>
+                <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">play_circle</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

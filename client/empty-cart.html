@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="./js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link href="./styles/empty-cart.css" rel="stylesheet" />
+</head>
+
+<body class="font-body selection:bg-primary-fixed selection:text-on-primary-fixed flex flex-col min-h-screen">
+
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" 
+                 onclick="window.location.href='home.html'">
+                BakeEase
+            </div>
+
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="home.html">Home</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="catalog.html">Menu</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Custom Cake</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Game</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="contact.html">About</a>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <button class="relative text-primary hover:bg-stone-100/50 p-2 rounded-lg transition-all">
+                    <span class="material-symbols-outlined" data-icon="shopping_cart" style="font-variation-settings: 'FILL' 1;">
+                        shopping_cart
+                    </span>
+                </button>
+                <button class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" 
+                        onclick="window.location.href='login.html'">
+                    Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col items-center justify-center px-6 pt-32 pb-20">
+        <div class="max-w-xl w-full text-center space-y-12">
+            
+            <div class="relative inline-block">
+                <div class="absolute inset-0 bg-surface-container-low rounded-full blur-3xl opacity-60 scale-150 -z-10"></div>
+                <div class="relative bg-surface-container-lowest rounded-full p-12 shadow-sm border border-outline-variant/10">
+                    <div aria-label="Cake Emoji" role="img"
+                         class="text-9xl transform -rotate-6 transition-transform hover:rotate-0 duration-500 ease-in-out cursor-default select-none">
+                        🍰
+                    </div>
+                </div>
+                <div class="absolute -top-4 -right-4 bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-xs font-label font-semibold tracking-widest uppercase">
+                    Freshly Baked
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h1 class="text-4xl md:text-5xl font-headline font-bold text-on-surface tracking-tight leading-tight">
+                    Your cart is empty
+                </h1>
+                <p class="text-lg md:text-xl font-body text-on-surface-variant max-w-md mx-auto leading-relaxed">
+                    Looks like you haven't added anything yet.
+                </p>
+            </div>
+
+            <div>
+                <button class="group inline-flex items-center justify-center px-10 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-label font-semibold rounded-lg shadow-lg hover:opacity-90 active:scale-95 transition-all duration-200 uppercase tracking-wider">
+                    <span>Browse Menu</span>
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 pt-12 border-t border-outline-variant/10">
+                <div class="group relative overflow-hidden rounded-xl bg-surface-container-low p-6 text-left transition-all hover:bg-surface-container-high border border-outline-variant/10">
+                    <span class="block text-primary font-headline text-2xl mb-2">Morning Pastries</span>
+                    <p class="text-sm text-on-surface-variant mb-4">Start your day with our buttery, flaky croissants and danishes.</p>
+                    <img src="./images/morning-pastries.png" alt="Morning Pastries" class="w-full h-32 object-cover rounded-md" />
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl bg-surface-container-low p-6 text-left transition-all hover:bg-surface-container-high border border-outline-variant/10">
+                    <span class="block text-primary font-headline text-2xl mb-2">Artisan Loaves</span>
+                    <p class="text-sm text-on-surface-variant mb-4">Slow-fermented sourdough and rustic grains for the perfect slice.</p>
+                    <img src="./images/artisan-loaves.png" alt="Artisan Loaves" class="w-full h-32 object-cover rounded-md" />
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full bg-stone-900 dark:bg-black border-t border-stone-800">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto text-center md:text-left">
+            <div class="col-span-1 md:col-span-1">
+                <span class="text-xl font-bold text-stone-50 mb-4 block">BakeEase</span>
+                <p class="text-sm font-light text-stone-400 font-body">
+                    Crafting artisanal memories with flour, sugar, and passion since 1994.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Explore</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="catalog.html">Menu</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Custom Designs</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Bulk Orders</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Support</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Shipping Info</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="contact.html">Contact Us</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Legal</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Privacy Policy</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-8 pb-8 border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm font-light text-stone-500 font-body">© 2024 BakeEase Artisan Bakery. All rights reserved.</p>
+            <div class="flex gap-4">
+                <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">social_leaderboard</span>
+                <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">photo_camera</span>
+                <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">play_circle</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

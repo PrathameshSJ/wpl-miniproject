@@ -20,7 +20,7 @@
             <a class="text-orange-700 dark:text-orange-400 font-bold border-b-2 border-orange-700 dark:border-orange-400 pb-1 font-body" href="contact.html">About</a>
         </div>
         <div class="flex items-center space-x-6">
-            <button class="relative text-stone-600 dark:text-stone-400 hover:bg-stone-100/50 p-2 rounded-lg transition-all">
+            <button class="relative text-stone-600 dark:text-stone-400 hover:bg-stone-100/50 p-2 rounded-lg transition-all cart-btn">
                 <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
             </button>
             <button class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" onclick="window.location.href='login.html'">Login</button>
@@ -203,44 +203,63 @@
     </section>
 </main>
 
-<footer class="bg-stone-900 dark:bg-black w-full mt-auto border-t border-stone-800">
+<footer class="w-full mt-auto bg-stone-900 dark:bg-black border-t border-stone-800">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto text-center md:text-left">
-        <div>
-            <span class="text-xl font-bold text-stone-50 mb-4 block font-serif">BakeEase</span>
-            <p class="text-stone-400 text-sm font-light font-body leading-relaxed">Crafting artisanal moments since 2012. Our ovens never sleep so your mornings are always fresh.</p>
+        <div class="col-span-1 md:col-span-1">
+            <span class="text-xl font-bold text-stone-50 mb-4 block">BakeEase</span>
+            <p class="text-sm font-light text-stone-400 font-body">
+                Crafting artisanal memories with flour, sugar, and passion since 1994.
+            </p>
         </div>
         <div>
-            <h4 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Explore</h4>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Explore</h3>
             <ul class="space-y-2">
-                <li><a class="text-stone-400 hover:text-stone-200 transition-colors font-body text-sm" href="#">Our Menu</a></li>
-                <li><a class="text-stone-400 hover:text-stone-200 transition-colors font-body text-sm" href="404.html">Workshops</a></li>
-                <li><a class="text-stone-400 hover:text-stone-200 transition-colors font-body text-sm" href="404.html">Gifting</a></li>
-                <li><a class="text-stone-400 hover:text-stone-200 transition-colors font-body text-sm" href="404.html">Careers</a></li>
+                <li>
+                    <a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="catalog.html">Menu</a>
+                </li>
+                <li>
+                    <a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Custom Designs</a>
+                </li>
+                <li>
+                    <a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Bulk Orders</a>
+                </li>
             </ul>
         </div>
         <div>
-            <h4 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Help</h4>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Support</h3>
             <ul class="space-y-2">
-                <li><a class="text-stone-400 hover:text-stone-200 transition-colors font-body text-sm" href="404.html">Shipping Info</a></li>
-                <li><a class="text-orange-400 underline font-body text-sm" href="contact.html">Contact Us</a></li>
-                <li><a class="text-orange-400 underline font-body text-sm" href="404.html">Privacy Policy</a></li>
-                <li><a class="text-orange-400 underline font-body text-sm" href="404.html">Terms of Service</a></li>
+                <li>
+                    <a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Shipping Info</a>
+                </li>
+                <li>
+                    <a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="contact.html">Contact Us</a>
+                </li>
+                <li>
+                    <a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">FAQs</a>
+                </li>
             </ul>
         </div>
         <div>
-            <h4 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Stay Sweet</h4>
-            <div class="flex gap-4 justify-center md:justify-start">
-                <a class="w-10 h-10 rounded-full border border-stone-800 flex items-center justify-center text-orange-400 hover:bg-stone-800 transition-all" href="#">
-                    <span class="material-symbols-outlined" data-icon="share">share</span>
-                </a>
-                <a class="w-10 h-10 rounded-full border border-stone-800 flex items-center justify-center text-orange-400 hover:bg-stone-800 transition-all" href="#">
-                    <span class="material-symbols-outlined" data-icon="local_cafe">local_cafe</span>
-                </a>
-            </div>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Legal</h3>
+            <ul class="space-y-2">
+                <li>
+                    <a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Privacy Policy</a>
+                </li>
+                <li>
+                    <a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Terms of Service</a>
+                </li>
+            </ul>
         </div>
     </div>
-    <div class="border-t border-stone-800 py-6 text-center">
-        <p class="text-stone-500 text-xs font-light font-body">© 2024 BakeEase Artisan Bakery. All rights reserved.</p>
+    <div class="max-w-7xl mx-auto px-8 pb-8 border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm font-light text-stone-500 font-body">
+            © 2024 BakeEase Artisan Bakery. All rights reserved.
+        </p>
+        <div class="flex gap-4">
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">social_leaderboard</span>
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">photo_camera</span>
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">play_circle</span>
+        </div>
     </div>
 </footer>
 </body>

@@ -6,30 +6,27 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="./js/tailwind-config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <link href="./styles/home.css" rel="stylesheet"/>
 </head>
 <body>
 
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
-<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-<div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.html'">BakeEase
-            </div>
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-orange-700 dark:text-orange-400 font-bold border-b-2 border-orange-700 dark:border-orange-400 pb-1 font-body" href="home.html">Home</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="catalog.html">Menu</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Custom Cake</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Game</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="contact.html">About</a>
-</div>
-<div class="flex items-center space-x-6">
-<button class="relative text-stone-600 dark:text-stone-400 hover:bg-stone-100/50 p-2 rounded-lg transition-all">
-<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
-</button>
-<button class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" onclick="window.location.href='login.html'">Login</button>
-</div>
-</div>
+    <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+        <div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.html'">BakeEase</div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a class="text-orange-700 dark:text-orange-400 font-bold border-b-2 border-orange-700 dark:border-orange-400 pb-1 font-body" href="home.html">Home</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="catalog.html">Menu</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Custom Cake</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Game</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="contact.html">About</a>
+        </div>
+        <div class="flex items-center space-x-6">
+            <button class="relative text-stone-600 dark:text-stone-400 hover:bg-stone-100/50 p-2 rounded-lg transition-all cart-btn">
+                <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+            </button>
+            <button class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" onclick="window.location.href='login.html'">Login</button>
+        </div>
+    </div>
 </nav>
 
 <section class="hero pt-24">
@@ -295,44 +292,43 @@
     </div>
 </section>
 
-<footer class="footer">
-    <div class="footer-grid">
-        <div>
-            <span class="footer-brand">BakeEase</span>
-            <p class="footer-desc">Mumbai's premier artisan bakery. Delivering sweetness and handcrafted joy to your doorstep every day.</p>
-            <div class="footer-social">
-                <a href="#"><span class="material-symbols-outlined" data-icon="facebook">social_leaderboard</span></a>
-                <a href="#"><span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span></a>
-            </div>
+<footer class="w-full mt-auto bg-stone-900 dark:bg-black border-t border-stone-800">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto text-center md:text-left">
+        <div class="col-span-1 md:col-span-1">
+            <span class="text-xl font-bold text-stone-50 mb-4 block">BakeEase</span>
+            <p class="text-sm font-light text-stone-400 font-body">Crafting artisanal memories with flour, sugar, and passion since 1994.</p>
         </div>
         <div>
-            <h4 class="footer-title">Explore</h4>
-            <ul class="footer-links">
-                <li><a class="footer-link" href="catalog.html">Menu</a></li>
-                <li><a class="footer-link" href="#">Custom Cake</a></li>
-                <li><a class="footer-link" href="#">BakeMaster Game</a></li>
-                <li><a class="footer-link" href="#">Gift Cards</a></li>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Explore</h3>
+            <ul class="space-y-2">
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="catalog.html">Menu</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Custom Designs</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Bulk Orders</a></li>
             </ul>
         </div>
         <div>
-            <h4 class="footer-title">Support</h4>
-            <ul class="footer-links">
-                <li><a class="footer-link" href="#">Shipping Info</a></li>
-                <li><a class="footer-link" href="contact.html">Contact Us</a></li>
-                <li><a class="footer-link" href="#">Privacy Policy</a></li>
-                <li><a class="footer-link" href="#">Terms of Service</a></li>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Support</h3>
+            <ul class="space-y-2">
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Shipping Info</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="contact.html">Contact Us</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">FAQs</a></li>
             </ul>
         </div>
         <div>
-            <h4 class="footer-title">Contact Info</h4>
-            <p class="footer-contact">123 Artisan Way, Bandra West,</p>
-            <p class="footer-contact">Mumbai, Maharashtra 400050</p>
-            <p class="footer-contact footer-phone">+91 98765 43210</p>
-            <p class="footer-contact">hello@bakeease.in</p>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Legal</h3>
+            <ul class="space-y-2">
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Privacy Policy</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Terms of Service</a></li>
+            </ul>
         </div>
     </div>
-    <div class="footer-bottom">
-        <p class="footer-copyright">© 2024 BakeEase Artisan Bakery. All rights reserved.</p>
+    <div class="max-w-7xl mx-auto px-8 pb-8 border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm font-light text-stone-500 font-body">© 2024 BakeEase Artisan Bakery. All rights reserved.</p>
+        <div class="flex gap-4">
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">social_leaderboard</span>
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">photo_camera</span>
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">play_circle</span>
+        </div>
     </div>
 </footer>
 
