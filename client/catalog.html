@@ -2,323 +2,308 @@
 
 <html class="light" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BakeEase - Product Catalogue</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="./js/tailwind-config.js"></script>
-
-<link href="./styles/catalog.css" rel="stylesheet"/></head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>BakeEase - Product Catalogue</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="./js/tailwind-config.js"></script>
+    <link href="./styles/catalog.css" rel="stylesheet"/>
+</head>
 <body class="bg-surface text-on-surface">
-<!-- TopNavBar Execution -->
+
 <header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
-<nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-<div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.html'">BakeEase
-            </div>
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="home.html">Home</a>
-<a class="text-orange-700 dark:text-orange-400 font-bold border-b-2 border-orange-700 dark:border-orange-400 pb-1" href="catalog.html">Menu</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="#">Custom
-                    Cake</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="404.html">Game</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="contact.html">About</a>
-</div>
-<div class="flex items-center space-x-4">
-<button class="p-2 hover:bg-stone-100/50 dark:hover:bg-stone-800/50 rounded-lg transition-all active:scale-95 duration-150 ease-in-out">
-<span class="material-symbols-outlined text-orange-800 dark:text-orange-400">shopping_cart</span>
-</button>
-<button class="px-6 py-2 bg-primary text-on-primary font-semibold rounded-lg hover:opacity-90 transition-all active:scale-95 duration-150 ease-in-out">
-                    Login
-                </button>
-</div>
-</nav>
+    <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+        <div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.html'">BakeEase</div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="home.html">Home</a>
+            <a class="text-orange-700 dark:text-orange-400 font-bold border-b-2 border-orange-700 dark:border-orange-400 pb-1" href="catalog.html">Menu</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="#">Custom Cake</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="404.html">Game</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors" href="contact.html">About</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button class="p-2 hover:bg-stone-100/50 dark:hover:bg-stone-800/50 rounded-lg transition-all active:scale-95 duration-150 ease-in-out">
+                <span class="material-symbols-outlined text-orange-800 dark:text-orange-400">shopping_cart</span>
+            </button>
+            <button class="px-6 py-2 bg-primary text-on-primary font-semibold rounded-lg hover:opacity-90 transition-all active:scale-95 duration-150 ease-in-out">Login</button>
+        </div>
+    </nav>
 </header>
 <main class="pt-24 max-w-7xl mx-auto px-6 flex gap-8">
-<!-- Sidebar Filters -->
-<aside class="w-[280px] shrink-0 sticky top-24 h-[calc(100vh-120px)] overflow-y-auto no-scrollbar pr-4">
-<div class="flex justify-between items-end mb-6">
-<h2 class="text-2xl font-bold text-on-surface font-headline">Filters</h2>
-<button class="text-sm font-medium text-error hover:underline">Clear All Filters</button>
-</div>
-<!-- Price Range -->
-<div class="mb-8">
-<h3 class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Price Range</h3>
-<div class="px-2">
-<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="2000" min="0" type="range"/>
-<div class="flex justify-between mt-2 text-sm font-body text-on-surface-variant">
-<span>₹0</span>
-<span>₹2000</span>
-</div>
-</div>
-</div>
-<!-- Occasion Multi-select -->
-<div class="mb-8">
-<h3 class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Occasion</h3>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1.5 rounded-full bg-primary-fixed-dim text-on-primary-fixed text-sm font-medium cursor-pointer">Birthday</span>
-<span class="px-3 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-sm font-medium cursor-pointer hover:bg-surface-variant transition-colors">Wedding</span>
-<span class="px-3 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-sm font-medium cursor-pointer hover:bg-surface-variant transition-colors">Anniversary</span>
-<span class="px-3 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-sm font-medium cursor-pointer hover:bg-surface-variant transition-colors">Baby
-                        Shower</span>
-<span class="px-3 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-sm font-medium cursor-pointer hover:bg-surface-variant transition-colors">Casual</span>
-</div>
-</div>
-<!-- Flavour Checkboxes -->
-<div class="mb-8">
-<h3 class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Flavour</h3>
-<div class="space-y-3">
-<label class="flex items-center gap-3 cursor-pointer group">
-<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
-<span class="text-on-surface group-hover:text-primary transition-colors">Chocolate</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
-<span class="text-on-surface group-hover:text-primary transition-colors">Vanilla</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
-<span class="text-on-surface group-hover:text-primary transition-colors">Red Velvet</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
-<span class="text-on-surface group-hover:text-primary transition-colors">Mango</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
-<span class="text-on-surface group-hover:text-primary transition-colors">Butterscotch</span>
-</label>
-</div>
-</div>
-<!-- Rating Toggle -->
-<div class="mb-8">
-<h3 class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Rating</h3>
-<label class="flex items-center justify-between cursor-pointer group">
-<span class="text-on-surface">4★ and above</span>
-<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-surface-container-highest group-has-[:checked]:bg-primary transition-colors">
-<input class="sr-only peer" type="checkbox"/>
-<div class="absolute left-1 h-4 w-4 rounded-full bg-white transition-all peer-checked:left-6">
-</div>
-</div>
-</label>
-</div>
-</aside>
-<!-- Right Content Area -->
-<section class="flex-1 pb-16">
-<!-- Search & Sort Bar -->
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-<div class="relative flex-1 max-w-lg">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary-container text-on-surface shadow-sm" placeholder="Search cakes, pastries…" type="text"/>
-</div>
-<div class="flex items-center gap-6">
-<span class="text-sm font-body text-on-surface-variant">Showing 12 of 48 products</span>
-<div class="flex items-center gap-4">
-<select class="bg-transparent border-none focus:ring-0 text-sm font-semibold text-primary cursor-pointer pr-8">
-<option>Sort By: Price: Low–High</option>
-<option>Sort By: Popularity</option>
-<option>Sort By: Rating</option>
-</select>
-<div class="flex border border-outline-variant rounded-lg overflow-hidden">
-<button class="p-2 bg-surface-container-high text-primary"><span class="material-symbols-outlined text-sm">grid_view</span></button>
-<button class="p-2 bg-surface-container-lowest text-outline"><span class="material-symbols-outlined text-sm">view_list</span></button>
-</div>
-</div>
-</div>
-</div>
-<!-- Product Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Card 1: Best Seller -->
-<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-<div class="relative aspect-[4/5] overflow-hidden">
-<img alt="Luxury Belgian Chocolate Cake" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="close-up of a multi-layered dark chocolate cake with ganache dripping down the sides and fresh raspberries on top, studio lighting" src="./images/Luxury Belgian Chocolate Cake.png"/>
-<div class="absolute top-3 left-3 flex gap-2">
-<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Best
-                                Seller</span>
-<div class="veg-dot mt-1"></div>
-</div>
-<button class="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur rounded-full text-primary shadow-lg translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-<span class="material-symbols-outlined">add_shopping_cart</span>
-</button>
-</div>
-<div class="p-5">
-<span class="text-[10px] font-bold text-outline uppercase tracking-[0.2em] mb-1 block">Truffle
-                            Cakes</span>
-<h4 class="text-lg font-headline text-on-surface mb-2">Belgian Dark Forest</h4>
-<div class="flex items-center justify-between">
-<span class="text-xl font-bold text-primary">₹1,250</span>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-sm text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-sm font-semibold text-on-surface">4.8</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Card 2: Regular -->
-<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-<div class="relative aspect-[4/5] overflow-hidden">
-<img alt="Classic Vanilla Bean Cake" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="elegant white vanilla bean cake decorated with edible pressed flowers and minimal cream frosting, bright airy boutique setting" src="./images/Classic Vanilla Bean Cake.png"/>
-<div class="absolute top-3 left-3 flex gap-2">
-<div class="veg-dot mt-1"></div>
-</div>
-<button class="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur rounded-full text-primary shadow-lg translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-<span class="material-symbols-outlined">add_shopping_cart</span>
-</button>
-</div>
-<div class="p-5">
-<span class="text-[10px] font-bold text-outline uppercase tracking-[0.2em] mb-1 block">Classic
-                            Cakes</span>
-<h4 class="text-lg font-headline text-on-surface mb-2">Pure Vanilla Bean</h4>
-<div class="flex items-center justify-between">
-<span class="text-xl font-bold text-primary">₹850</span>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-sm text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-sm font-semibold text-on-surface">4.5</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Card 3: Skeleton Loader -->
-<div class="bg-surface-container rounded-xl overflow-hidden animate-pulse">
-<div class="aspect-[4/5] bg-surface-container-highest"></div>
-<div class="p-5 space-y-3">
-<div class="h-2 w-16 bg-surface-container-highest rounded"></div>
-<div class="h-4 w-3/4 bg-surface-container-highest rounded"></div>
-<div class="flex justify-between items-center pt-2">
-<div class="h-6 w-20 bg-surface-container-highest rounded"></div>
-<div class="h-4 w-10 bg-surface-container-highest rounded"></div>
-</div>
-</div>
-</div>
-<!-- More cards to fill the grid -->
-<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-<div class="relative aspect-[4/5] overflow-hidden">
-<img alt="Red Velvet Delight" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="rich crimson red velvet cake slice with thick layers of cream cheese frosting, dramatic moody lighting with cocoa powder dusting" src="./images/Red Velvet Delight.png"/>
-<div class="absolute top-3 left-3 flex gap-2">
-<div class="veg-dot mt-1"></div>
-</div>
-<button class="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur rounded-full text-primary shadow-lg translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-<span class="material-symbols-outlined">add_shopping_cart</span>
-</button>
-</div>
-<div class="p-5">
-<span class="text-[10px] font-bold text-outline uppercase tracking-[0.2em] mb-1 block">Signature</span>
-<h4 class="text-lg font-headline text-on-surface mb-2">Crimson Velvet Dream</h4>
-<div class="flex items-center justify-between">
-<span class="text-xl font-bold text-primary">₹1,100</span>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-sm text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-sm font-semibold text-on-surface">4.9</span>
-</div>
-</div>
-</div>
-</div>
-<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-<div class="relative aspect-[4/5] overflow-hidden">
-<img alt="Mango Mousse" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="vibrant mango cheesecake with fresh fruit glaze and mint leaves, bright sunlight hitting the yellow surface, summer vibe" src="./images/Mango Mousse.png"/>
-<div class="absolute top-3 left-3 flex gap-2">
-<div class="veg-dot mt-1"></div>
-</div>
-<button class="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur rounded-full text-primary shadow-lg translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-<span class="material-symbols-outlined">add_shopping_cart</span>
-</button>
-</div>
-<div class="p-5">
-<span class="text-[10px] font-bold text-outline uppercase tracking-[0.2em] mb-1 block">Seasonal</span>
-<h4 class="text-lg font-headline text-on-surface mb-2">Alphonso Sunshine</h4>
-<div class="flex items-center justify-between">
-<span class="text-xl font-bold text-primary">₹950</span>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-sm text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-sm font-semibold text-on-surface">4.7</span>
-</div>
-</div>
-</div>
-</div>
-<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-<div class="relative aspect-[4/5] overflow-hidden">
-<img alt="Butterscotch Gold" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="crunchy butterscotch cake with caramel drizzle and praline pieces, warm golden tones, bakery display style" src="./images/Butterscotch Gold.png"/>
-<div class="absolute top-3 left-3 flex gap-2">
-<div class="veg-dot mt-1"></div>
-</div>
-<button class="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur rounded-full text-primary shadow-lg translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-<span class="material-symbols-outlined">add_shopping_cart</span>
-</button>
-</div>
-<div class="p-5">
-<span class="text-[10px] font-bold text-outline uppercase tracking-[0.2em] mb-1 block">Classic</span>
-<h4 class="text-lg font-headline text-on-surface mb-2">Caramel Butterscotch</h4>
-<div class="flex items-center justify-between">
-<span class="text-xl font-bold text-primary">₹780</span>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-sm text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-sm font-semibold text-on-surface">4.4</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Pagination (Implicit for Catalogue) -->
-<div class="mt-12 flex justify-center items-center gap-4">
-<button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-outline hover:border-primary hover:text-primary transition-colors">
-<span class="material-symbols-outlined">chevron_left</span>
-</button>
-<div class="flex gap-2">
-<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-on-primary font-bold">1</button>
-<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors">2</button>
-<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors">3</button>
-<span class="px-2 self-end mb-2">...</span>
-<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors">8</button>
-</div>
-<button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-outline hover:border-primary hover:text-primary transition-colors">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
-</div>
-</section>
+    <!-- Sidebar Filters -->
+    <aside class="w-[280px] shrink-0 sticky top-24 h-[calc(100vh-120px)] overflow-y-auto no-scrollbar pr-4">
+        <div class="flex justify-between items-end mb-6">
+            <h2 class="text-2xl font-bold text-on-surface font-headline">Filters</h2>
+            <button class="text-sm font-medium text-error hover:underline">Clear All Filters</button>
+        </div>
+        <!-- Price Range -->
+        <div class="mb-8">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Price Range</h3>
+            <div class="px-2">
+                <input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="2000" min="0" type="range"/>
+                <div class="flex justify-between mt-2 text-sm font-body text-on-surface-variant">
+                    <span>₹0</span>
+                    <span>₹2000</span>
+                </div>
+            </div>
+        </div>
+        <!-- Occasion Multi-select -->
+        <div class="mb-8">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Occasion</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 rounded-full bg-primary-fixed-dim text-on-primary-fixed text-sm font-medium cursor-pointer">Birthday</span>
+                <span class="px-3 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-sm font-medium cursor-pointer hover:bg-surface-variant transition-colors">Wedding</span>
+                <span class="px-3 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-sm font-medium cursor-pointer hover:bg-surface-variant transition-colors">Anniversary</span>
+                <span class="px-3 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-sm font-medium cursor-pointer hover:bg-surface-variant transition-colors">Baby Shower</span>
+                <span class="px-3 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant text-sm font-medium cursor-pointer hover:bg-surface-variant transition-colors">Casual</span>
+            </div>
+        </div>
+        <!-- Flavour Checkboxes -->
+        <div class="mb-8">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Flavour</h3>
+            <div class="space-y-3">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                    <input checked="" class="rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
+                    <span class="text-on-surface group-hover:text-primary transition-colors">Chocolate</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                    <input class="rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
+                    <span class="text-on-surface group-hover:text-primary transition-colors">Vanilla</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                    <input class="rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
+                    <span class="text-on-surface group-hover:text-primary transition-colors">Red Velvet</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                    <input class="rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
+                    <span class="text-on-surface group-hover:text-primary transition-colors">Mango</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                    <input class="rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
+                    <span class="text-on-surface group-hover:text-primary transition-colors">Butterscotch</span>
+                </label>
+            </div>
+        </div>
+        <!-- Rating Toggle -->
+        <div class="mb-8">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Rating</h3>
+            <label class="flex items-center justify-between cursor-pointer group">
+                <span class="text-on-surface">4★ and above</span>
+                <div class="relative inline-flex h-6 w-11 items-center rounded-full bg-surface-container-highest group-has-[:checked]:bg-primary transition-colors">
+                    <input class="sr-only peer" type="checkbox"/>
+                    <div class="absolute left-1 h-4 w-4 rounded-full bg-white transition-all peer-checked:left-6"></div>
+                </div>
+            </label>
+        </div>
+    </aside>
+    <!-- Right Content Area -->
+    <section class="flex-1 pb-16">
+        <!-- Search & Sort Bar -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+            <div class="relative flex-1 max-w-lg">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+                <input class="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary-container text-on-surface shadow-sm" placeholder="Search cakes, pastries…" type="text"/>
+            </div>
+            <div class="flex items-center gap-6">
+                <span class="text-sm font-body text-on-surface-variant">Showing 12 of 48 products</span>
+                <div class="flex items-center gap-4">
+                    <select class="bg-transparent border-none focus:ring-0 text-sm font-semibold text-primary cursor-pointer pr-8">
+                        <option>Sort By: Price: Low–High</option>
+                        <option>Sort By: Popularity</option>
+                        <option>Sort By: Rating</option>
+                    </select>
+                    <div class="flex border border-outline-variant rounded-lg overflow-hidden">
+                        <button class="p-2 bg-surface-container-high text-primary"><span class="material-symbols-outlined text-sm">grid_view</span></button>
+                        <button class="p-2 bg-surface-container-lowest text-outline"><span class="material-symbols-outlined text-sm">view_list</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1: Best Seller -->
+            <div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <img alt="Luxury Belgian Chocolate Cake" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="close-up of a multi-layered dark chocolate cake with ganache dripping down the sides and fresh raspberries on top, studio lighting" src="./images/Luxury Belgian Chocolate Cake.png"/>
+                    <div class="absolute top-3 left-3 flex gap-2">
+                        <span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Best Seller</span>
+                        <div class="veg-dot mt-1"></div>
+                    </div>
+                    <button class="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur rounded-full text-primary shadow-lg translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="material-symbols-outlined">add_shopping_cart</span>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <span class="text-[10px] font-bold text-outline uppercase tracking-[0.2em] mb-1 block">Truffle Cakes</span>
+                    <h4 class="text-lg font-headline text-on-surface mb-2">Belgian Dark Forest</h4>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-primary">₹1,250</span>
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-sm font-semibold text-on-surface">4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2: Regular -->
+            <div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <img alt="Classic Vanilla Bean Cake" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="elegant white vanilla bean cake decorated with edible pressed flowers and minimal cream frosting, bright airy boutique setting" src="./images/Classic Vanilla Bean Cake.png"/>
+                    <div class="absolute top-3 left-3 flex gap-2">
+                        <div class="veg-dot mt-1"></div>
+                    </div>
+                    <button class="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur rounded-full text-primary shadow-lg translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="material-symbols-outlined">add_shopping_cart</span>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <span class="text-[10px] font-bold text-outline uppercase tracking-[0.2em] mb-1 block">Classic Cakes</span>
+                    <h4 class="text-lg font-headline text-on-surface mb-2">Pure Vanilla Bean</h4>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-primary">₹850</span>
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-sm font-semibold text-on-surface">4.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3: Skeleton Loader -->
+            <div class="bg-surface-container rounded-xl overflow-hidden animate-pulse">
+                <div class="aspect-[4/5] bg-surface-container-highest"></div>
+                <div class="p-5 space-y-3">
+                    <div class="h-2 w-16 bg-surface-container-highest rounded"></div>
+                    <div class="h-4 w-3/4 bg-surface-container-highest rounded"></div>
+                    <div class="flex justify-between items-center pt-2">
+                        <div class="h-6 w-20 bg-surface-container-highest rounded"></div>
+                        <div class="h-4 w-10 bg-surface-container-highest rounded"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- More cards to fill the grid -->
+            <div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <img alt="Red Velvet Delight" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="rich crimson red velvet cake slice with thick layers of cream cheese frosting, dramatic moody lighting with cocoa powder dusting" src="./images/Red Velvet Delight.png"/>
+                    <div class="absolute top-3 left-3 flex gap-2">
+                        <div class="veg-dot mt-1"></div>
+                    </div>
+                    <button class="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur rounded-full text-primary shadow-lg translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="material-symbols-outlined">add_shopping_cart</span>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <span class="text-[10px] font-bold text-outline uppercase tracking-[0.2em] mb-1 block">Signature</span>
+                    <h4 class="text-lg font-headline text-on-surface mb-2">Crimson Velvet Dream</h4>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-primary">₹1,100</span>
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-sm font-semibold text-on-surface">4.9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <img alt="Mango Mousse" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="vibrant mango cheesecake with fresh fruit glaze and mint leaves, bright sunlight hitting the yellow surface, summer vibe" src="./images/Mango Mousse.png"/>
+                    <div class="absolute top-3 left-3 flex gap-2">
+                        <div class="veg-dot mt-1"></div>
+                    </div>
+                    <button class="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur rounded-full text-primary shadow-lg translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="material-symbols-outlined">add_shopping_cart</span>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <span class="text-[10px] font-bold text-outline uppercase tracking-[0.2em] mb-1 block">Seasonal</span>
+                    <h4 class="text-lg font-headline text-on-surface mb-2">Alphonso Sunshine</h4>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-primary">₹950</span>
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-sm font-semibold text-on-surface">4.7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <img alt="Butterscotch Gold" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="crunchy butterscotch cake with caramel drizzle and praline pieces, warm golden tones, bakery display style" src="./images/Butterscotch Gold.png"/>
+                    <div class="absolute top-3 left-3 flex gap-2">
+                        <div class="veg-dot mt-1"></div>
+                    </div>
+                    <button class="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur rounded-full text-primary shadow-lg translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="material-symbols-outlined">add_shopping_cart</span>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <span class="text-[10px] font-bold text-outline uppercase tracking-[0.2em] mb-1 block">Classic</span>
+                    <h4 class="text-lg font-headline text-on-surface mb-2">Caramel Butterscotch</h4>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-primary">₹780</span>
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-sm font-semibold text-on-surface">4.4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Pagination (Implicit for Catalogue) -->
+        <div class="mt-12 flex justify-center items-center gap-4">
+            <button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-outline hover:border-primary hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <div class="flex gap-2">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-on-primary font-bold">1</button>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors">2</button>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors">3</button>
+                <span class="px-2 self-end mb-2">...</span>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors">8</button>
+            </div>
+            <button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-outline hover:border-primary hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+        </div>
+    </section>
 </main>
-<!-- Footer Execution -->
+
 <footer class="w-full mt-auto bg-stone-900 dark:bg-black border-t border-stone-800">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto text-center md:text-left">
-<div class="col-span-1 md:col-span-1">
-<span class="text-xl font-bold text-stone-50 mb-4 block">BakeEase</span>
-<p class="text-sm font-light text-stone-400 font-body">Crafting artisanal memories with flour, sugar,
-                    and passion since 1994.</p>
-</div>
-<div>
-<h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Explore</h3>
-<ul class="space-y-2">
-<li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="catalog.html">Menu</a></li>
-<li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Custom Designs</a></li>
-<li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Bulk Orders</a></li>
-</ul>
-</div>
-<div>
-<h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Support</h3>
-<ul class="space-y-2">
-<li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Shipping Info</a></li>
-<li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="contact.html">Contact Us</a></li>
-<li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">FAQs</a></li>
-</ul>
-</div>
-<div>
-<h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Legal</h3>
-<ul class="space-y-2">
-<li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Privacy Policy</a></li>
-<li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Terms of Service</a></li>
-</ul>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-8 pb-8 border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-sm font-light text-stone-500 font-body">© 2024 BakeEase Artisan Bakery. All rights reserved.
-            </p>
-<div class="flex gap-4">
-<span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">social_leaderboard</span>
-<span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">photo_camera</span>
-<span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">play_circle</span>
-</div>
-</div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto text-center md:text-left">
+        <div class="col-span-1 md:col-span-1">
+            <span class="text-xl font-bold text-stone-50 mb-4 block">BakeEase</span>
+            <p class="text-sm font-light text-stone-400 font-body">Crafting artisanal memories with flour, sugar, and passion since 1994.</p>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Explore</h3>
+            <ul class="space-y-2">
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="catalog.html">Menu</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Custom Designs</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Bulk Orders</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Support</h3>
+            <ul class="space-y-2">
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Shipping Info</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="contact.html">Contact Us</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">FAQs</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Legal</h3>
+            <ul class="space-y-2">
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Privacy Policy</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-8 pb-8 border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm font-light text-stone-500 font-body">© 2024 BakeEase Artisan Bakery. All rights reserved.</p>
+        <div class="flex gap-4">
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">social_leaderboard</span>
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">photo_camera</span>
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">play_circle</span>
+        </div>
+    </div>
 </footer>
 </body>
 </html>

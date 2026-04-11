@@ -297,9 +297,6 @@ h1, h2, h3, h4, .title { font-family: serif; }
 .category-bar {
     background-color: var(--background);
     padding: 2rem;
-    position: sticky;
-    top: 72px;
-    z-index: 40;
     border-bottom: 1px solid rgba(213, 201, 188, 0.1);
 }
 

@@ -6,35 +6,33 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="./js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <link href="./styles/home.css" rel="stylesheet"/>
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <div class="nav-brand">
-            <a class="nav-logo" href="home.html">BakeEase</a>
-            <div class="nav-links">
-                <a class="nav-link" href="home.html">Home</a>
-                <a class="nav-link-inactive" href="catalog.html">Menu</a>
-                <a class="nav-link-inactive" href="404.html">Custom Cake</a>
-                <a class="nav-link-inactive" href="404.html">Game</a>
-                <a class="nav-link-inactive" href="contact.html">About</a>
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.html'">BakeEase
             </div>
-        </div>
-        <div class="nav-actions">
-            <button class="nav-cart-btn">
-                <span class="material-symbols-outlined nav-cart-icon" data-icon="shopping_cart">shopping_cart</span>
-                <span class="nav-cart-badge">2</span>
-            </button>
-            <button class="btn btn-primary" onclick="window.location.href='login.html'">Login</button>
-        </div>
-    </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-orange-700 dark:text-orange-400 font-bold border-b-2 border-orange-700 dark:border-orange-400 pb-1 font-body" href="home.html">Home</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="catalog.html">Menu</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Custom Cake</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Game</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="contact.html">About</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="relative text-stone-600 dark:text-stone-400 hover:bg-stone-100/50 p-2 rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" onclick="window.location.href='login.html'">Login</button>
+</div>
+</div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero">
+<section class="hero pt-24">
     <div class="hero-bg">
         <img alt="Bespoke artisan chocolate cake" data-alt="Close-up of a premium multi-layered chocolate cake with warm lighting, golden caramel drips, and rustic wooden background with flour dusting." src="./images/Bespoke artisan chocolate cake.png"/>
         <div class="hero-overlay"></div>
@@ -51,7 +49,6 @@
     </div>
 </section>
 
-<!-- Category Bar -->
 <section class="category-bar">
     <div class="category-bar-inner">
         <button class="pill pill-active">Cakes</button>
@@ -62,7 +59,6 @@
     </div>
 </section>
 
-<!-- Featured Products -->
 <section class="section container">
     <div class="section-header">
         <div>
@@ -174,7 +170,6 @@
     </div>
 </section>
 
-<!-- Promo Banner -->
 <section class="promo">
     <div class="promo-inner">
         <span class="promo-text">🎉 20% off this week — Use code BAKE20</span>
@@ -182,7 +177,6 @@
     </div>
 </section>
 
-<!-- Best Sellers -->
 <section class="section container section-bg">
     <div class="text-center" style="margin-bottom: 3rem;">
         <h2 class="section-title">Our Best Sellers</h2>
@@ -239,7 +233,6 @@
     </div>
 </section>
 
-<!-- Testimonials -->
 <section class="section container">
     <h2 class="section-title text-center" style="margin-bottom: 4rem;">Stories from Our Table</h2>
     <div class="testimonials-grid">
@@ -302,7 +295,6 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
     <div class="footer-grid">
         <div>
