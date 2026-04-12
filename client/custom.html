@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Build Your Dream Cake | BakeEase</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="./js/tailwind-config.js"></script>
+    <link href="./styles/custom.css" rel="stylesheet" />
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.html'">BakeEase</div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="home.html">Home</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="catalog.html">Menu</a>
+                <a class="text-orange-700 dark:text-orange-400 font-bold border-b-2 border-orange-700 dark:border-orange-400 pb-1 font-body" href="custom.html">Custom Cake</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Game</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="contact.html">About</a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button class="relative text-stone-600 dark:text-stone-400 hover:bg-stone-100/50 p-2 rounded-lg transition-all cart-btn">
+                    <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                </button>
+                <button class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" onclick="window.location.href='login.html'">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-screen-2xl mx-auto px-8 py-12 pt-24">
+        <header class="mb-12 text-center md:text-left max-w-3xl">
+            <h1 class="font-headline text-4xl md:text-5xl font-bold text-primary mb-4 tracking-tight">Build Your Dream Cake</h1>
+            <p class="text-on-surface-variant text-lg leading-relaxed">Every detail, exactly as you want it. We'll bake it fresh for you.</p>
+        </header>
+
+        <div class="mb-16">
+            <div class="flex items-center justify-between relative max-w-4xl">
+                <div class="absolute top-1/2 left-0 w-full h-0.5 bg-surface-container-high -translate-y-1/2 -z-10"></div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">1</div>
+                    <span class="text-xs font-semibold text-primary uppercase tracking-wider">Size</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold">2</div>
+                    <span class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Flavour</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold">3</div>
+                    <span class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Frosting</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold">4</div>
+                    <span class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Decoration</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold">5</div>
+                    <span class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Message</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-12">
+            <div class="lg:w-[55%] space-y-16">
+                <section>
+                    <h2 class="font-headline text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span class="text-primary-container">01</span> Choose Your Size
+                    </h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button class="p-6 rounded-xl border-2 border-primary-container bg-surface-container-lowest flex flex-col items-center text-center transition-all duration-300">
+                            <span class="font-bold text-lg">1 Kg</span>
+                            <span class="text-sm text-on-surface-variant">Serves 6-8 people</span>
+                        </button>
+                        <button class="p-6 rounded-xl border border-outline-variant bg-surface-container hover:bg-surface-container-high flex flex-col items-center text-center transition-all duration-300">
+                            <span class="font-bold text-lg">1.5 Kg</span>
+                            <span class="text-sm text-on-surface-variant">Serves 10-12 people</span>
+                        </button>
+                        <button class="p-6 rounded-xl border border-outline-variant bg-surface-container hover:bg-surface-container-high flex flex-col items-center text-center transition-all duration-300">
+                            <span class="font-bold text-lg">2 Kg</span>
+                            <span class="text-sm text-on-surface-variant">Serves 15-20 people</span>
+                        </button>
+                        <button class="p-6 rounded-xl border border-outline-variant bg-surface-container hover:bg-surface-container-high flex flex-col items-center text-center transition-all duration-300">
+                            <span class="font-bold text-lg">3 Kg+</span>
+                            <span class="text-sm text-on-surface-variant">Custom Tiered Cake</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="font-headline text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span class="text-primary-container">02</span> Select Flavour
+                    </h2>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="px-6 py-3 rounded-full bg-primary text-on-primary font-semibold transition-all">Vanilla Bean</button>
+                        <button class="px-6 py-3 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed transition-all">Rich Dark Chocolate</button>
+                        <button class="px-6 py-3 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed transition-all">Red Velvet</button>
+                        <button class="px-6 py-3 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed transition-all">Hazelnut Praline</button>
+                        <button class="px-6 py-3 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed transition-all">Lemon Zest</button>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="font-headline text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span class="text-primary-container">03</span> Choose Frosting
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="relative group cursor-pointer border-2 border-primary-container rounded-xl overflow-hidden bg-surface-container-lowest">
+                            <div class="h-32 bg-surface-container-low flex items-center justify-center">
+                                <div class="w-16 h-16 rounded-full bg-[#FAF3E0] shadow-inner ring-4 ring-white"></div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-primary">Vanilla Buttercream</h3>
+                                <p class="text-xs text-on-surface-variant">Smooth, classic, and not too sweet.</p>
+                            </div>
+                        </div>
+                        <div class="relative group cursor-pointer border border-outline-variant rounded-xl overflow-hidden bg-surface-container-lowest hover:border-primary-container transition-all">
+                            <div class="h-32 bg-surface-container-low flex items-center justify-center">
+                                <div class="w-16 h-16 rounded-full bg-[#4E342E] shadow-inner ring-4 ring-white"></div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold">Chocolate Ganache</h3>
+                                <p class="text-xs text-on-surface-variant">Rich, velvety semi-sweet glaze.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="font-headline text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span class="text-primary-container">04</span> Added Decorations
+                    </h2>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="flex items-center gap-2 px-5 py-3 rounded-lg bg-primary-fixed-dim text-on-primary-fixed font-semibold">
+                            <span class="material-symbols-outlined text-sm">celebration</span> Candles
+                        </button>
+                        <button class="flex items-center gap-2 px-5 py-3 rounded-lg bg-primary-fixed-dim text-on-primary-fixed font-semibold">
+                            <span class="material-symbols-outlined text-sm">grain</span> Sprinkles
+                        </button>
+                        <button class="flex items-center gap-2 px-5 py-3 rounded-lg bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed transition-all">
+                            <span class="material-symbols-outlined text-sm">filter_vintage</span> Edible Flowers
+                        </button>
+                        <button class="flex items-center gap-2 px-5 py-3 rounded-lg bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed transition-all">
+                            <span class="material-symbols-outlined text-sm">cake</span> Fondant Topper
+                        </button>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="font-headline text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span class="text-primary-container">05</span> Personalize It
+                    </h2>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 uppercase tracking-widest text-on-surface-variant">Cake Message</label>
+                            <textarea class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 rounded-none p-4 min-h-[120px] transition-all" placeholder="Write your message here (e.g., Happy Birthday Sarah!)"></textarea>
+                        </div>
+                        <div class="p-8 border-2 border-dashed border-outline-variant rounded-xl flex flex-col items-center justify-center gap-4 bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:border-primary transition-all cursor-pointer">
+                            <span class="material-symbols-outlined text-4xl">upload_file</span>
+                            <div class="text-center">
+                                <p class="font-bold">Upload Reference Image</p>
+                                <p class="text-xs">Show us the design style you love</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="lg:w-[45%]">
+                <div class="sticky top-28 bg-surface-container-lowest rounded-2xl overflow-hidden shadow-2xl shadow-on-surface/5 border border-outline-variant/10">
+                    <div class="relative h-80 bg-surface-container flex items-center justify-center overflow-hidden">
+                        <img alt="Cake Preview" class="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-multiply" src="images/custom-cake-preview.png" />
+                        <div class="relative z-10 text-center text-primary-container">
+                            <span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;">cake</span>
+                            <p class="font-headline font-bold text-xl mt-4">Previewing Your Creation</p>
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-white/60 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary">LIVE VIEW</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-headline text-xl font-bold mb-6">Order Summary</h3>
+                        <ul class="space-y-4 text-on-surface-variant mb-8">
+                            <li class="flex justify-between items-center">
+                                <span class="text-sm font-medium">Size: 1 Kg Vanilla Bean</span>
+                                <span class="font-bold text-on-surface">₹699</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="text-sm font-medium">Frosting: Vanilla Buttercream</span>
+                                <span class="font-bold text-on-surface">Included</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="text-sm font-medium">Add-on: Birthday Candles</span>
+                                <span class="font-bold text-on-surface">₹30</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="text-sm font-medium">Add-on: Festive Sprinkles</span>
+                                <span class="font-bold text-on-surface">₹20</span>
+                            </li>
+                        </ul>
+                        <div class="pt-6 border-t border-outline-variant flex justify-between items-center mb-8">
+                            <span class="font-headline text-xl font-bold">Total Payable</span>
+                            <span class="font-headline text-3xl font-bold text-primary">₹749</span>
+                        </div>
+                        <button class="w-full py-5 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold uppercase tracking-widest rounded-lg shadow-lg hover:shadow-xl transition-all active:scale-95">
+                            Add to Cart
+                        </button>
+                        <p class="text-center mt-4 text-xs text-on-surface-variant flex items-center justify-center gap-1">
+                            <span class="material-symbols-outlined text-sm">schedule</span> Handcrafted in 24 hours
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full mt-auto bg-stone-900 dark:bg-black border-t border-stone-800">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto text-center md:text-left">
+            <div class="col-span-1 md:col-span-1">
+                <span class="text-xl font-bold text-stone-50 mb-4 block">BakeEase</span>
+                <p class="text-sm font-light text-stone-400 font-body">Crafting artisanal memories with flour, sugar, and passion since 1994.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Explore</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="catalog.html">Menu</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="custom.html">Custom Designs</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Bulk Orders</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Support</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Shipping Info</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="contact.html">Contact Us</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Legal</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Privacy Policy</a></li>
+                    <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-8 pb-8 border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm font-light text-stone-500 font-body">© 2024 BakeEase Artisan Bakery. All rights reserved.</p>
+            <div class="flex gap-4">
+                <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">social_leaderboard</span>
+                <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">photo_camera</span>
+                <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">play_circle</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

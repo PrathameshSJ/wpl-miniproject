@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>My Orders | BakeEase</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="styles/orders.css" />
+</head>
+<body class="bg-background text-on-surface">
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="cursor-pointer text-2xl font-bold tracking-tight text-[#914617] dark:text-[#B05E2D] font-['Noto_Serif']" onclick="window.location.href='home.html'">BakeEase</div>
+            <div class="hidden md:flex items-center gap-6">
+                <a class="text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors px-3 py-2 rounded-lg text-sm font-medium" href="home.html">Home</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors px-3 py-2 rounded-lg text-sm font-medium" href="catalog.html">Menu</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors px-3 py-2 rounded-lg text-sm font-medium" href="404.html">Custom Cake</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors px-3 py-2 rounded-lg text-sm font-medium" href="404.html">Game</a>
+                <a class="text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors px-3 py-2 rounded-lg text-sm font-medium" href="contact.html">About</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="p-2 text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-full transition-colors relative">
+                    <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                    <span class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">3</span>
+                </button>
+                <button class="p-2 text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-full transition-colors">
+                    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                </button>
+                <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+                    <img alt="User profile" src="images/priya-s.png" />
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="flex min-h-screen pt-20">
+        <aside class="h-screen w-64 fixed left-0 top-0 pt-20 bg-[#FFF8F0] dark:bg-stone-950 flex flex-col border-r border-stone-200/20 dark:border-stone-800/20">
+            <div class="px-6 py-8 flex flex-col items-center">
+                <div class="w-20 h-20 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed text-2xl font-bold mb-3 shadow-inner">PS</div>
+                <h3 class="text-[#914617] font-bold text-lg">Priya Sharma</h3>
+                <p class="text-stone-500 text-xs">priya@gmail.com</p>
+                <div class="mt-4 px-3 py-1 bg-secondary-container/20 text-on-secondary-container text-[10px] uppercase tracking-wider font-bold rounded-full">Artisan Baker</div>
+            </div>
+            <nav class="flex-1 px-4 space-y-1">
+                <a class="flex items-center gap-3 px-4 py-3 bg-[#B05E2D]/10 text-[#914617] dark:text-[#B05E2D] font-semibold rounded-lg translate-x-1 transition-all" href="#">
+                    <span class="material-symbols-outlined" data-icon="local_mall">local_mall</span>
+                    <span>My Orders</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-lg transition-all" href="#">
+                    <span class="material-symbols-outlined" data-icon="track_changes">track_changes</span>
+                    <span>Track Order</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-lg transition-all" href="#">
+                    <span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+                    <span>Saved Addresses</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-lg transition-all" href="#">
+                    <span class="material-symbols-outlined" data-icon="rate_review">rate_review</span>
+                    <span>My Reviews</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-lg transition-all" href="#">
+                    <span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    <span>Account Settings</span>
+                </a>
+            </nav>
+            <div class="p-4 mt-auto mb-6">
+                <a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:text-error transition-all" href="#">
+                    <span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </aside>
+        <main class="ml-64 flex-1 p-10 bg-surface-container-low min-h-screen">
+            <header class="mb-10">
+                <h1 class="text-4xl font-serif-display font-bold text-on-surface mb-6 tracking-tight">My Orders</h1>
+                <div class="flex gap-3">
+                    <button class="px-6 py-2 bg-primary text-white font-semibold rounded-full shadow-md text-sm transition-transform active:scale-95">All Orders</button>
+                    <button class="px-6 py-2 bg-surface-container-lowest text-on-surface-variant font-medium rounded-full border border-outline-variant/30 hover:bg-surface-container-high transition-colors text-sm">Active</button>
+                    <button class="px-6 py-2 bg-surface-container-lowest text-on-surface-variant font-medium rounded-full border border-outline-variant/30 hover:bg-surface-container-high transition-colors text-sm">Completed</button>
+                    <button class="px-6 py-2 bg-surface-container-lowest text-on-surface-variant font-medium rounded-full border border-outline-variant/30 hover:bg-surface-container-high transition-colors text-sm">Cancelled</button>
+                </div>
+            </header>
+            <div class="space-y-8 max-w-5xl">
+                <article class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden group">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <h2 class="text-xl font-bold font-serif-display text-primary">#BE2024001</h2>
+                                    <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed text-xs font-bold rounded-full">Out for Delivery</span>
+                                </div>
+                                <p class="text-stone-500 text-sm">Placed on 28 Mar 2026</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-2xl font-serif-display font-bold text-on-surface">₹1,419</p>
+                                <p class="text-stone-400 text-xs">3 items</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 mb-8">
+                            <div class="flex -space-x-4">
+                                <img alt="Cake" class="w-16 h-16 rounded-lg object-cover ring-4 ring-white" src="images/chocolate-truffle-cake.png" />
+                                <img alt="Cupcakes" class="w-16 h-16 rounded-lg object-cover ring-4 ring-white" src="images/assorted-cupcakes.png" />
+                            </div>
+                            <p class="text-on-surface-variant italic text-sm">Chocolate Truffle Cake x 1, Cupcake Box x 2</p>
+                        </div>
+                        <div class="relative mb-8 px-4">
+                            <div class="absolute top-1/2 left-0 w-full h-1 bg-surface-container-high -translate-y-1/2 z-0"></div>
+                            <div class="absolute top-1/2 left-0 w-2/3 h-1 bg-primary-container -translate-y-1/2 z-0"></div>
+                            <div class="relative flex justify-between z-10">
+                                <div class="flex flex-col items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white text-[10px]">
+                                        <span class="material-symbols-outlined !text-xs" data-weight="fill">check</span>
+                                    </div>
+                                    <span class="text-[10px] font-bold text-primary uppercase">Pending</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white text-[10px]">
+                                        <span class="material-symbols-outlined !text-xs" data-weight="fill">check</span>
+                                    </div>
+                                    <span class="text-[10px] font-bold text-primary uppercase">Baking</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-primary-container ring-4 ring-primary-container/20 flex items-center justify-center text-white text-[10px] animate-pulse">
+                                        <span class="material-symbols-outlined !text-xs">delivery_dining</span>
+                                    </div>
+                                    <span class="text-[10px] font-bold text-primary-container uppercase">Out for Delivery</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-stone-400 text-[10px]">
+                                        <span class="material-symbols-outlined !text-xs">home</span>
+                                    </div>
+                                    <span class="text-[10px] font-bold text-stone-400 uppercase">Delivered</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+                            <button class="px-8 py-3 bg-white border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary/5 transition-all active:scale-95 text-xs uppercase tracking-widest">Track Order</button>
+                            <a class="text-primary font-bold text-sm underline underline-offset-4 decoration-primary/30 hover:decoration-primary transition-all" href="#">View Details</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex">
+                    <div class="w-32 bg-surface-container flex items-center justify-center">
+                        <img alt="Brownie" class="w-full h-full object-cover" src="images/walnut-brownies.png" />
+                    </div>
+                    <div class="flex-1 p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <h2 class="text-lg font-bold font-serif-display text-on-surface">#BE2024002</h2>
+                                    <span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded-full uppercase tracking-tight">Completed</span>
+                                </div>
+                                <p class="text-stone-500 text-xs">20 Mar 2026 • Walnut Brownie Box x 1</p>
+                            </div>
+                            <p class="text-lg font-serif-display font-bold text-on-surface">₹380</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <button class="px-6 py-2 bg-white border border-outline text-on-surface-variant font-bold rounded-lg hover:bg-surface-container-low transition-all text-xs uppercase">Reorder</button>
+                            <a class="text-secondary font-semibold text-sm hover:text-primary transition-colors" href="#">Leave Review</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex opacity-75">
+                    <div class="w-32 bg-stone-100 flex items-center justify-center grayscale">
+                        <img alt="Sourdough" class="w-full h-full object-cover" src="images/artisan-sourdough.png" />
+                    </div>
+                    <div class="flex-1 p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <h2 class="text-lg font-bold font-serif-display text-stone-400">#BE2024003</h2>
+                                    <span class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-bold rounded-full uppercase tracking-tight">Cancelled</span>
+                                </div>
+                                <p class="text-stone-400 text-xs">15 Mar 2026 • Sourdough Loaf x 2</p>
+                            </div>
+                            <p class="text-lg font-serif-display font-bold text-stone-400">₹440</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <a class="text-stone-400 font-semibold text-sm hover:text-on-surface transition-colors" href="#">View Details</a>
+                        </div>
+                    </div>
+                </article>
+                <section class="mt-16 bg-[#B05E2D] rounded-2xl p-10 relative overflow-hidden text-white flex items-center justify-between">
+                    <div class="relative z-10 max-w-md">
+                        <h2 class="text-3xl font-serif-display font-bold mb-4 leading-tight">Freshly Baked for Your Morning Routine.</h2>
+                        <p class="text-white/80 font-body mb-8 leading-relaxed">Our new batch of artisanal croissants is ready. Subscribe to a weekly bread box and get 15% off.</p>
+                        <button class="px-8 py-3 bg-white text-primary font-bold rounded-lg hover:shadow-xl transition-all active:scale-95 uppercase tracking-widest text-xs">Explore Subscription</button>
+                    </div>
+                    <div class="absolute right-0 top-0 h-full w-1/2 pointer-events-none overflow-hidden">
+                        <img alt="Croissants" class="w-full h-full object-cover opacity-40 mix-blend-overlay rotate-12 scale-110 translate-x-12" src="images/croissants.png" />
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

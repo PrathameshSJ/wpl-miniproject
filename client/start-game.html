@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BakeMaster Mini-Game</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="stylesheet" href="styles/game-start.css"/>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+    <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+        <div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.html'">BakeEase</div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="home.html">Home</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="catalog.html">Menu</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Custom Cake</a>
+            <a class="text-orange-700 dark:text-orange-400 border-b-2 border-orange-700 pb-1 hover:text-orange-800 transition-colors font-body" href="start-game.html">Game</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="contact.html">About</a>
+        </div>
+        <div class="flex items-center space-x-6">
+            <button class="relative text-stone-600 dark:text-stone-400 hover:bg-stone-100/50 p-2 rounded-lg transition-all cart-btn">
+                <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+            </button>
+            <button class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" onclick="window.location.href='login.html'">Login</button>
+        </div>
+    </div>
+</nav>
+<!-- Main Game Container -->
+<main class="min-h-screen pt-20 pb-32 flex flex-col items-center justify-center relative overflow-hidden" style="background-color: #2C1810;">
+<!-- Texture Overlay -->
+<div class="absolute inset-0 parchment-texture pointer-events-none"></div>
+<!-- Background Grain/Depth -->
+<div class="absolute inset-0 opacity-20 pointer-events-none" style="background: radial-gradient(circle at center, #3D2214 0%, #2C1810 100%);"></div>
+<!-- Floating Decorative Icons -->
+<div class="absolute top-24 left-10 opacity-20 transform -rotate-12">
+<span class="material-symbols-outlined text-6xl text-orange-200" data-icon="bakery_dining">bakery_dining</span>
+</div>
+<div class="absolute bottom-20 left-20 opacity-20 transform rotate-45">
+<span class="material-symbols-outlined text-5xl text-orange-200" data-icon="opacity">opacity</span>
+</div>
+<div class="absolute top-40 right-16 opacity-20 transform rotate-12">
+<span class="material-symbols-outlined text-7xl text-orange-200" data-icon="Grain">grain</span>
+</div>
+<div class="absolute bottom-40 right-24 opacity-20 transform -rotate-6">
+<span class="material-symbols-outlined text-5xl text-orange-200" data-icon="Kitchen">kitchen</span>
+</div>
+<!-- TopAppBar (Game Specific) -->
+<div class="w-full max-w-lg mb-8">
+<div class="flex justify-between items-center px-4 py-3 bg-stone-900 dark:bg-black text-orange-400 font-inter uppercase tracking-widest text-sm rounded-b-xl shadow-2xl border-b border-stone-700">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-stone-500 hover:bg-stone-800 p-1 rounded transition-colors cursor-pointer" data-icon="close">close</span>
+<span class="text-orange-300 font-black">BakeMaster Mini-Game</span>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-stone-500" data-icon="timer">timer</span>
+<span class="material-symbols-outlined text-stone-500" data-icon="stars">stars</span>
+</div>
+</div>
+</div>
+<!-- Game Content Shell -->
+<section class="z-10 w-full max-w-2xl px-6 flex flex-col items-center text-center">
+<!-- Hero Header -->
+<div class="mb-12">
+<h1 class="text-6xl md:text-8xl font-headline font-bold text-[#FDF6EC] mb-4 tracking-tighter drop-shadow-lg">
+<span class="block text-4xl font-body font-black uppercase tracking-[0.3em] text-orange-400/80 mb-2">The Artisan Challenge</span>
+                    🎮 BakeMaster
+                </h1>
+<p class="text-[#FDF6EC]/60 font-body text-lg italic max-w-md mx-auto">Master the Maillard reaction in this high-stakes patisserie simulation.</p>
+</div>
+<!-- Score Card -->
+<div class="mb-10 w-full max-w-sm p-6 bg-stone-800/40 backdrop-blur-sm border border-stone-700/50 rounded-2xl shadow-inner">
+<div class="flex flex-col items-center">
+<span class="text-orange-400 text-sm font-bold uppercase tracking-widest mb-1">Current Record</span>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-400 text-3xl" data-icon="emoji_events" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+<span class="text-3xl font-headline font-bold text-[#FDF6EC]">Best Score: 2,400 pts</span>
+</div>
+</div>
+</div>
+<!-- Difficulty Selection -->
+<div class="mb-12">
+<p class="text-orange-400/80 text-xs font-bold uppercase tracking-widest mb-4">Select Difficulty</p>
+<div class="flex gap-4">
+<!-- Easy -->
+<button class="px-6 py-2 rounded-full border border-stone-700 text-[#FDF6EC]/60 font-label font-semibold hover:bg-stone-800 transition-all">
+                        Easy
+                    </button>
+<!-- Medium (Selected) -->
+<button class="px-8 py-2 rounded-full bg-orange-400 text-stone-900 font-label font-bold ring-4 ring-orange-400/20 shadow-lg shadow-orange-900/40">
+                        Medium
+                    </button>
+<!-- Hard -->
+<button class="px-6 py-2 rounded-full border border-stone-700 text-[#FDF6EC]/60 font-label font-semibold hover:bg-stone-800 transition-all">
+                        Hard
+                    </button>
+</div>
+</div>
+<!-- Start Button -->
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-primary-container rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<button class="relative bg-gradient-to-br from-primary to-primary-container text-on-primary-container px-12 py-5 rounded-lg text-xl font-label font-bold uppercase tracking-wider flex items-center gap-4 hover:scale-105 active:scale-95 transition-all shadow-2xl">
+                    Start Baking!
+                    <span class="material-symbols-outlined font-black" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Preview Card (Bento Style) -->
+<div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-left">
+<div class="bg-stone-800/20 border border-stone-700/30 p-4 rounded-xl flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-stone-700">
+<img alt="Sourdough" class="w-full h-full object-cover grayscale opacity-50" data-alt="Close-up of artisan sourdough bread on a rustic wooden table with scattered flour and dramatic low-key lighting" src="images/artisan-sourdough.png"/>
+</div>
+<div>
+<h4 class="text-[#FDF6EC] font-bold text-sm">Recipe Collection</h4>
+<p class="text-stone-500 text-xs">Unlock 12 artisan breads</p>
+</div>
+</div>
+<div class="bg-stone-800/20 border border-stone-700/30 p-4 rounded-xl flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-stone-700">
+<img alt="Bakery Oven" class="w-full h-full object-cover grayscale opacity-50" data-alt="Interior of a professional bakery oven with glowing heating elements and golden brown pastries inside" src="images/artisan-loaves.png"/>
+</div>
+<div>
+<h4 class="text-[#FDF6EC] font-bold text-sm">Daily Quest</h4>
+<p class="text-stone-500 text-xs">Earn 500 bonus points</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Game Component) -->
+<nav class="fixed bottom-0 left-0 w-full z-40 flex justify-around items-center px-6 pb-8 pt-4 bg-stone-800 dark:bg-stone-950 text-orange-400 font-inter font-semibold text-xs rounded-t-3xl border-t border-stone-700 shadow-[0_-8px_30px_rgb(0,0,0,0.5)]">
+<div class="flex flex-col items-center gap-1 text-stone-400 p-3 hover:bg-stone-700/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="bakery_dining">bakery_dining</span>
+<span>Flour</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-stone-400 p-3 hover:bg-stone-700/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="opacity">opacity</span>
+<span>Sugar</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-stone-400 p-3 hover:bg-stone-700/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="Kitchen">kitchen</span>
+<span>Butter</span>
+</div>
+<div class="flex flex-col items-center gap-1 bg-stone-700 text-orange-300 rounded-xl p-3 ring-2 ring-orange-500/50 scale-110 duration-200 ease-out cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="Grain">grain</span>
+<span>Yeast</span>
+</div>
+</nav>
+</body></html>
