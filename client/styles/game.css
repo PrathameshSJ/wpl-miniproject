@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Inter:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.filled-icon {
+    font-variation-settings: 'FILL' 1;
+}
+
+.maillard-gradient {
+    background: linear-gradient(135deg, #914617 0%, #B05E2D 100%);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.cake-layer-shadow {
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.3);
+}
+
+main {
+    padding-bottom: 160px !important;
+    margin-bottom: 90px;
+}
+
+section {
+    margin-bottom: 90px;
+}
