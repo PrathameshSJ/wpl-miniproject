@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>BakeEase Admin - Inventory Tracker</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script src="js/tailwind-config.js"></script>
+        <link href="styles/inventory.css" rel="stylesheet"/>
+    </head>
+    <body class="font-body text-on-surface">
+        <div id="sidebar-container"></div>
+        <main class="ml-[240px] min-h-screen flex flex-col">
+            <div id="topbar-container"></div>
+            <div class="p-8 max-w-7xl mx-auto w-full">
+                <div class="mb-8 bg-secondary-container bg-opacity-90 rounded-xl px-6 py-4 flex items-center gap-4 text-on-secondary-container shadow-sm border border-secondary/20">
+                    <span class="material-symbols-outlined text-2xl icon-filled" data-icon="warning">warning</span>
+                    <p class="font-medium">⚠️ 3 ingredients are running low. Review and restock soon.</p>
+                    <button class="ml-auto text-sm font-bold underline decoration-2 underline-offset-4 hover:opacity-70 transition-opacity uppercase tracking-wider">Review Now</button>
+                </div>
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <h1 class="font-headline text-4xl text-on-surface tracking-tight">Inventory</h1>
+                        <p class="text-on-surface-variant mt-2 font-body">Manage raw materials and track stock levels across all bakeries.</p>
+                    </div>
+                    <button class="bg-primary-container text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 shadow-lg hover:scale-[1.02] active:scale-95 transition-all uppercase tracking-widest text-sm">
+                        <span class="material-symbols-outlined" data-icon="add">add</span>
+                        Add Ingredient
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+                        <p class="text-stone-500 text-xs font-semibold uppercase tracking-wider mb-1">Total Stock Value</p>
+                        <h3 class="text-2xl font-headline text-primary">$12,480.00</h3>
+                    </div>
+                    <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+                        <p class="text-stone-500 text-xs font-semibold uppercase tracking-wider mb-1">Items Out of Stock</p>
+                        <h3 class="text-2xl font-headline text-error">1 Item</h3>
+                    </div>
+                    <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+                        <p class="text-stone-500 text-xs font-semibold uppercase tracking-wider mb-1">Low Stock Alerts</p>
+                        <h3 class="text-2xl font-headline text-secondary">2 Items</h3>
+                    </div>
+                    <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+                        <p class="text-stone-500 text-xs font-semibold uppercase tracking-wider mb-1">Avg. Turnover Rate</p>
+                        <h3 class="text-2xl font-headline text-primary-container">12.4 Days</h3>
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-surface-container-low text-on-surface-variant uppercase text-[11px] font-bold tracking-widest">
+                                    <th class="px-8 py-5">Ingredient Name</th>
+                                    <th class="px-6 py-5">Current Stock</th>
+                                    <th class="px-6 py-5">Unit</th>
+                                    <th class="px-6 py-5">Threshold</th>
+                                    <th class="px-6 py-5">Status</th>
+                                    <th class="px-6 py-5">Last Updated</th>
+                                    <th class="px-8 py-5 text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant/10">
+                                <tr class="hover:bg-surface-bright transition-colors group">
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+                                                <img class="w-full h-full object-cover" data-alt="block of high-quality organic butter on marble surface, soft window lighting, warm tones" src="images/inventory-butter.jpg"/>
+                                            </div>
+                                            <span class="font-semibold text-on-surface">Butter (Unsalted)</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 font-medium">15.0</td>
+                                    <td class="px-6 py-6 text-on-surface-variant">kg</td>
+                                    <td class="px-6 py-6 text-on-surface-variant font-medium">20.0</td>
+                                    <td class="px-6 py-6">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-error-container text-on-error-container uppercase">Low Stock</span>
+                                    </td>
+                                    <td class="px-6 py-6 text-sm text-stone-500">2 hours ago</td>
+                                    <td class="px-8 py-6 text-right">
+                                        <button class="text-primary-container hover:text-primary material-symbols-outlined transition-colors" data-icon="edit">edit</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-bright transition-colors group">
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+                                                <img class="w-full h-full object-cover" data-alt="chunks of 70% dark chocolate on wooden board with cocoa powder dusting, moody lighting" src="images/inventory-dark-chocolate.jpg"/>
+                                            </div>
+                                            <span class="font-semibold text-on-surface">Dark Chocolate 70%</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 font-medium">8.5</td>
+                                    <td class="px-6 py-6 text-on-surface-variant">kg</td>
+                                    <td class="px-6 py-6 text-on-surface-variant font-medium">10.0</td>
+                                    <td class="px-6 py-6">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-error-container text-on-error-container uppercase">Low Stock</span>
+                                    </td>
+                                    <td class="px-6 py-6 text-sm text-stone-500">5 hours ago</td>
+                                    <td class="px-8 py-6 text-right">
+                                        <button class="text-primary-container hover:text-primary material-symbols-outlined transition-colors" data-icon="edit">edit</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-bright transition-colors group bg-error/5">
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 grayscale">
+                                                <img class="w-full h-full object-cover" data-alt="whole vanilla beans in a small jar, shallow depth of field, elegant minimalist composition" src="images/inventory-vanilla.jpg"/>
+                                            </div>
+                                            <span class="font-semibold text-on-surface">Vanilla Beans (Madagascar)</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 font-bold text-error">0.0</td>
+                                    <td class="px-6 py-6 text-on-surface-variant">units</td>
+                                    <td class="px-6 py-6 text-on-surface-variant font-medium">5.0</td>
+                                    <td class="px-6 py-6">
+                                        <span class="text-error font-bold text-xs uppercase tracking-tighter">Out of Stock</span>
+                                    </td>
+                                    <td class="px-6 py-6 text-sm text-stone-500">1 day ago</td>
+                                    <td class="px-8 py-6 text-right">
+                                        <button class="bg-error text-white px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest hover:bg-on-error-container transition-colors">Reorder</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-bright transition-colors group">
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+                                                <img class="w-full h-full object-cover" data-alt="pile of white organic flour with a wooden scoop, bright clean bakery setting" src="images/inventory-flour.jpg"/>
+                                            </div>
+                                            <span class="font-semibold text-on-surface">All-Purpose Flour</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 font-medium">120.0</td>
+                                    <td class="px-6 py-6 text-on-surface-variant">kg</td>
+                                    <td class="px-6 py-6 text-on-surface-variant font-medium">50.0</td>
+                                    <td class="px-6 py-6">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700 uppercase">OK</span>
+                                    </td>
+                                    <td class="px-6 py-6 text-sm text-stone-500">10 mins ago</td>
+                                    <td class="px-8 py-6 text-right">
+                                        <button class="text-primary-container hover:text-primary material-symbols-outlined transition-colors" data-icon="edit">edit</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-bright transition-colors group">
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+                                                <img class="w-full h-full object-cover" data-alt="heaping bowl of granulated white sugar with soft ambient lighting, macro shot" src="images/inventory-sugar.jpg"/>
+                                            </div>
+                                            <span class="font-semibold text-on-surface">Granulated Sugar</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 font-medium">85.0</td>
+                                    <td class="px-6 py-6 text-on-surface-variant">kg</td>
+                                    <td class="px-6 py-6 text-on-surface-variant font-medium">30.0</td>
+                                    <td class="px-6 py-6">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700 uppercase">OK</span>
+                                    </td>
+                                    <td class="px-6 py-6 text-sm text-stone-500">3 hours ago</td>
+                                    <td class="px-8 py-6 text-right">
+                                        <button class="text-primary-container hover:text-primary material-symbols-outlined transition-colors" data-icon="edit">edit</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-bright transition-colors group border-b-0">
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+                                                <img class="w-full h-full object-cover" data-alt="fresh heavy cream being poured from a glass jug, rich creamy texture, bright morning light" src="images/inventory-cream.jpg"/>
+                                            </div>
+                                            <span class="font-semibold text-on-surface">Heavy Cream 36%</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 font-medium">45.0</td>
+                                    <td class="px-6 py-6 text-on-surface-variant">L</td>
+                                    <td class="px-6 py-6 text-on-surface-variant font-medium">15.0</td>
+                                    <td class="px-6 py-6">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700 uppercase">OK</span>
+                                    </td>
+                                    <td class="px-6 py-6 text-sm text-stone-500">1 hour ago</td>
+                                    <td class="px-8 py-6 text-right">
+                                        <button class="text-primary-container hover:text-primary material-symbols-outlined transition-colors" data-icon="edit">edit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="px-8 py-4 bg-surface-container-low flex items-center justify-between">
+                        <span class="text-xs text-on-surface-variant font-medium">Showing 1 to 6 of 42 items</span>
+                        <div class="flex gap-2">
+                            <button class="p-1 rounded hover:bg-stone-200 transition-colors disabled:opacity-30" disabled="">
+                                <span class="material-symbols-outlined text-lg" data-icon="chevron_left">chevron_left</span>
+                            </button>
+                            <button class="p-1 rounded hover:bg-stone-200 transition-colors">
+                                <span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 bg-surface-container-low rounded-xl p-6 border border-outline-variant/10">
+                        <div class="flex items-center justify-between mb-6">
+                            <h4 class="font-headline text-xl">Upcoming Deliveries</h4>
+                            <span class="text-xs font-bold text-primary-container uppercase tracking-widest">Next 7 Days</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-lg shadow-sm border border-outline-variant/5">
+                                <div class="bg-primary-fixed p-2 rounded-lg text-primary">
+                                    <span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-semibold text-sm">Main Flour Mills Inc.</p>
+                                    <p class="text-xs text-stone-500">500kg Wheat Flour • 200kg Rye</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-bold text-sm text-primary-container">Tomorrow</p>
+                                    <p class="text-[10px] text-stone-400 uppercase">Estimated 09:00 AM</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-lg shadow-sm border border-outline-variant/5 opacity-80">
+                                <div class="bg-secondary-fixed p-2 rounded-lg text-secondary">
+                                    <span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-semibold text-sm">Dairy Gold Partners</p>
+                                    <p class="text-xs text-stone-500">100kg Salted Butter • 50L Milk</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-bold text-sm text-stone-500">Oct 26</p>
+                                    <p class="text-[10px] text-stone-400 uppercase">Pending Confirmation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-primary text-white rounded-xl p-8 relative overflow-hidden shadow-2xl">
+                        <div class="relative z-10">
+                            <h4 class="font-headline text-2xl mb-4">Inventory Health</h4>
+                            <p class="text-primary-fixed text-sm mb-8 leading-relaxed">Your ingredient availability is currently at 92%. We recommend placing orders for items below threshold by end of day.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between text-xs font-bold uppercase tracking-widest">
+                                    <span>Organic Sourcing</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary-fixed-dim w-[85%] rounded-full"></div>
+                                </div>
+                            </div>
+                            <button class="mt-8 w-full bg-white text-primary py-3 rounded-lg font-bold uppercase text-xs tracking-widest hover:bg-primary-fixed transition-colors">Generate Full Report</button>
+                        </div>
+                        <div class="absolute -bottom-12 -right-12 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl"></div>
+                    </div>
+                </div>
+            </div>
+            <footer class="mt-auto px-8 py-8 border-t border-[#E8D5C4] flex justify-between items-center bg-surface-dim">
+                <p class="text-xs text-on-surface-variant/60">© 2023 BakeEase Management System • v4.2.1-Artisan</p>
+                <div class="flex gap-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/40">
+                    <a class="hover:text-primary transition-colors" href="#">Privacy</a>
+                    <a class="hover:text-primary transition-colors" href="#">Support</a>
+                    <a class="hover:text-primary transition-colors" href="#">Terms</a>
+                </div>
+            </footer>
+        </main>
+        <script src="js/inventory.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+

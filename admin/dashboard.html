@@ -9,76 +9,9 @@
         <link href="styles/dashboard.css" rel="stylesheet" />
     </head>
     <body class="bg-surface text-on-surface flex min-h-screen">
-        <aside class="bg-surface-container-high h-screen w-[240px] fixed left-0 top-0 border-r border-outline-variant shadow-xl flex flex-col py-6 z-50">
-            <div class="px-6 mb-8">
-                <h1 class="text-xl font-bold text-primary tracking-tight">BakeEase Admin</h1>
-                <p class="text-on-surface-variant text-xs mt-1">Internal Management</p>
-            </div>
-            <nav class="flex-1 space-y-1">
-                <a class="bg-primary text-on-primary rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 font-medium transition-transform scale-95 active:scale-90" href="#">
-                    <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-                    <span>Dashboard</span>
-                </a>
-                <a class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 font-medium transition-all" href="#">
-                    <span class="material-symbols-outlined" data-icon="bakery_dining">bakery_dining</span>
-                    <span>Products</span>
-                </a>
-                <a class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 font-medium transition-all" href="#">
-                    <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
-                    <span>Orders</span>
-                </a>
-                <a class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 font-medium transition-all" href="#">
-                    <span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
-                    <span>Inventory</span>
-                </a>
-                <a class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 font-medium transition-all" href="#">
-                    <span class="material-symbols-outlined" data-icon="group">group</span>
-                    <span>Customers</span>
-                </a>
-                <a class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 font-medium transition-all" href="#">
-                    <span class="material-symbols-outlined" data-icon="rate_review">rate_review</span>
-                    <span>Reviews</span>
-                </a>
-                <a class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 font-medium transition-all" href="#">
-                    <span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
-                    <span>Reports</span>
-                </a>
-                <a class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 font-medium transition-all" href="#">
-                    <span class="material-symbols-outlined" data-icon="settings">settings</span>
-                    <span>Settings</span>
-                </a>
-            </nav>
-            <div class="mt-auto border-t border-outline-variant pt-4">
-                <div class="px-6 flex items-center gap-3 mb-6">
-                    <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
-                        <img alt="Amit Kumar, Admin" class="w-full h-full rounded-full object-cover" src="https://ui-avatars.com/api/?name=Amit+Kumar&background=random" />
-                    </div>
-                    <div class="overflow-hidden">
-                        <p class="text-on-surface text-sm font-semibold truncate">Amit Kumar</p>
-                        <p class="text-on-surface-variant text-xs truncate">Admin Access</p>
-                    </div>
-                </div>
-                <a class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg mx-2 px-4 py-2 flex items-center gap-3 font-medium transition-all" href="#">
-                    <span class="material-symbols-outlined" data-icon="logout">logout</span>
-                    <span>Logout</span>
-                </a>
-            </div>
-        </aside>
+        <div id="sidebar-container"></div>
         <main class="ml-[240px] flex-1 min-h-screen bg-[#F5F0EB]">
-            <header class="bg-[#F5F0EB] sticky top-0 z-40 border-b border-[#E8D5C4] flex justify-between items-center px-8 py-6">
-                <h2 class="font-headline font-bold text-2xl text-on-surface">Good morning, Amit 👋</h2>
-                <div class="flex items-center gap-8">
-                    <span class="text-on-surface-variant font-semibold text-lg">Wednesday, 1 April 2026</span>
-                    <div class="flex items-center gap-4">
-                        <button class="text-stone-500 hover:opacity-80 transition-opacity cursor-pointer">
-                            <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-                        </button>
-                        <button class="text-stone-500 hover:opacity-80 transition-opacity cursor-pointer">
-                            <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
-                        </button>
-                    </div>
-                </div>
-            </header>
+            <div id="topbar-container"></div>
             <div class="p-8 space-y-8">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-primary-container">
@@ -300,5 +233,6 @@
                 </div>
             </div>
         </main>
+        <script src="js/dashboard.js"></script>
     </body>
 </html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Customer Reviews | Artisan Admin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link href="styles/reviews.css" rel="stylesheet" />
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed-dim">
+    <div id="sidebar-container"></div>
+
+    <main class="ml-[240px] min-h-screen">
+        <div id="topbar-container"></div>
+
+        <div class="p-8 max-w-7xl mx-auto">
+            <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <h3 class="text-4xl font-headline font-bold text-on-surface mb-2">Customer Reviews</h3>
+                    <p class="text-stone-500">Manage and moderate the voices of your community.</p>
+                </div>
+                <div class="flex gap-4 items-center">
+                    <div class="flex flex-col gap-1">
+                        <label class="text-[10px] uppercase tracking-widest font-bold text-stone-400 px-1">Global Rating</label>
+                        <div class="flex items-center gap-1 bg-surface-container-lowest px-3 py-2 rounded-lg border border-outline-variant/10 shadow-sm">
+                            <span class="material-symbols-outlined text-orange-400 text-sm icon-filled" data-icon="star">star</span>
+                            <span class="font-bold text-on-surface">4.8</span>
+                            <span class="text-xs text-stone-400">/ 5.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface-container-low p-5 rounded-xl mb-8 flex flex-wrap items-center gap-4">
+                <div class="flex-1 min-w-[240px] relative">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" data-icon="search">search</span>
+                    <input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary-container text-sm transition-all" placeholder="Search by product or keyword..." type="text" />
+                </div>
+                <div class="w-40">
+                    <select class="w-full px-4 py-2.5 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary-container text-sm appearance-none cursor-pointer">
+                        <option>All Ratings</option>
+                        <option>5 ★ Only</option>
+                        <option>4 ★ &amp; Above</option>
+                        <option>3 ★ &amp; Below</option>
+                    </select>
+                </div>
+                <div class="w-56 relative">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm" data-icon="calendar_month">calendar_month</span>
+                    <input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary-container text-sm" placeholder="Date Range" readonly type="text" value="Oct 01 - Oct 14, 2023" />
+                </div>
+                <button class="bg-surface-container-highest hover:bg-stone-200 text-on-surface-variant p-2.5 rounded-lg transition-colors">
+                    <span class="material-symbols-outlined align-middle" data-icon="filter_list">filter_list</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-outline-variant/10">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-surface-container-low/50">
+                            <th class="px-6 py-4 text-xs uppercase tracking-widest font-bold text-stone-500">Date</th>
+                            <th class="px-6 py-4 text-xs uppercase tracking-widest font-bold text-stone-500">Customer</th>
+                            <th class="px-6 py-4 text-xs uppercase tracking-widest font-bold text-stone-500">Product</th>
+                            <th class="px-6 py-4 text-xs uppercase tracking-widest font-bold text-stone-500">Rating</th>
+                            <th class="px-6 py-4 text-xs uppercase tracking-widest font-bold text-stone-500">Review Text</th>
+                            <th class="px-6 py-4 text-xs uppercase tracking-widest font-bold text-stone-500">Status</th>
+                            <th class="px-6 py-4 text-xs uppercase tracking-widest font-bold text-stone-500 text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-stone-100">
+                        <tr class="hover:bg-surface-container-low/30 transition-colors group">
+                            <td class="px-6 py-5">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-sm font-medium text-stone-900">Oct 14, 2023</span>
+                                    <span class="px-2 py-0.5 bg-orange-100 text-orange-700 text-[10px] font-bold rounded-full uppercase">New</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-on-secondary-fixed font-bold text-xs">EJ</div>
+                                    <span class="text-sm font-semibold">Eleanor Jenkins</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5"><span class="text-sm text-stone-600">Sourdough Classic</span></td>
+                            <td class="px-6 py-5">
+                                <div class="flex gap-0.5">
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5 max-w-xs">
+                                <p class="text-sm text-stone-600 line-clamp-2">The crust was absolutely divine, perfectly crunchy while the inside remained incredibly soft and airy. Best breakfast loaf I've found in years...</p>
+                                <button class="text-primary text-xs font-bold mt-1 hover:underline">read more</button>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-full flex items-center w-fit gap-1">
+                                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                                    Published
+                                </span>
+                            </td>
+                            <td class="px-6 py-5 text-right space-x-2">
+                                <button class="p-2 hover:bg-stone-100 rounded-lg transition-colors text-stone-400 hover:text-stone-600" title="Hide Review"><span class="material-symbols-outlined text-xl" data-icon="visibility_off">visibility_off</span></button>
+                                <button class="p-2 hover:bg-primary/10 rounded-lg transition-colors text-primary" title="Reply"><span class="material-symbols-outlined text-xl" data-icon="reply">reply</span></button>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-surface-container-low/30 transition-colors group">
+                            <td class="px-6 py-5"><span class="text-sm font-medium text-stone-900">Oct 12, 2023</span></td>
+                            <td class="px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-stone-200 flex items-center justify-center text-stone-600 font-bold text-xs">MR</div>
+                                    <span class="text-sm font-semibold">Marcus Rivera</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5"><span class="text-sm text-stone-600">Almond Croissant</span></td>
+                            <td class="px-6 py-5">
+                                <div class="flex gap-0.5">
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-stone-200 text-lg" data-icon="star">star</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5 max-w-xs">
+                                <p class="text-sm text-stone-600 line-clamp-2">Great flavor, though it was slightly over-toasted today. Still very enjoyable with a cup of coffee.</p>
+                                <button class="text-primary text-xs font-bold mt-1 hover:underline">read more</button>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-full flex items-center w-fit gap-1"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>Published</span>
+                            </td>
+                            <td class="px-6 py-5 text-right space-x-2">
+                                <button class="p-2 hover:bg-stone-100 rounded-lg transition-colors text-stone-400 hover:text-stone-600"><span class="material-symbols-outlined text-xl" data-icon="visibility_off">visibility_off</span></button>
+                                <button class="p-2 hover:bg-primary/10 rounded-lg transition-colors text-primary"><span class="material-symbols-outlined text-xl" data-icon="reply">reply</span></button>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-surface-container-low/30 transition-colors group">
+                            <td class="px-6 py-5"><span class="text-sm font-medium text-stone-900">Oct 11, 2023</span></td>
+                            <td class="px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-stone-200 flex items-center justify-center text-stone-600 font-bold text-xs">SL</div>
+                                    <span class="text-sm font-semibold">Sarah Laine</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5"><span class="text-sm text-stone-600">Pain au Chocolat</span></td>
+                            <td class="px-6 py-5">
+                                <div class="flex gap-0.5">
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-stone-200 text-lg" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-stone-200 text-lg" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-stone-200 text-lg" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-stone-200 text-lg" data-icon="star">star</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5 max-w-xs">
+                                <p class="text-sm text-stone-600 line-clamp-2">Arrived quite late and was cold. Very disappointed as I usually love your service.</p>
+                                <button class="text-primary text-xs font-bold mt-1 hover:underline">read more</button>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="px-3 py-1 bg-stone-100 text-stone-500 text-xs font-semibold rounded-full flex items-center w-fit gap-1"><span class="w-1.5 h-1.5 bg-stone-400 rounded-full"></span>Hidden</span>
+                            </td>
+                            <td class="px-6 py-5 text-right space-x-2">
+                                <button class="p-2 hover:bg-stone-100 rounded-lg transition-colors text-stone-400 hover:text-stone-600"><span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span></button>
+                                <button class="p-2 hover:bg-primary/10 rounded-lg transition-colors text-primary"><span class="material-symbols-outlined text-xl" data-icon="reply">reply</span></button>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-surface-container-low/30 transition-colors group">
+                            <td class="px-6 py-5"><span class="text-sm font-medium text-stone-900">Oct 09, 2023</span></td>
+                            <td class="px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold text-xs">TW</div>
+                                    <span class="text-sm font-semibold">Thomas Wright</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5"><span class="text-sm text-stone-600">Cinnamon Bun</span></td>
+                            <td class="px-6 py-5">
+                                <div class="flex gap-0.5">
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5 max-w-xs">
+                                <p class="text-sm text-stone-600 line-clamp-2">Decadent and delicious. The icing is not too sweet, which is a rare find. A weekend staple!</p>
+                                <button class="text-primary text-xs font-bold mt-1 hover:underline">read more</button>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-full flex items-center w-fit gap-1"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>Published</span>
+                            </td>
+                            <td class="px-6 py-5 text-right space-x-2">
+                                <button class="p-2 hover:bg-stone-100 rounded-lg transition-colors text-stone-400 hover:text-stone-600"><span class="material-symbols-outlined text-xl" data-icon="visibility_off">visibility_off</span></button>
+                                <button class="p-2 hover:bg-primary/10 rounded-lg transition-colors text-primary"><span class="material-symbols-outlined text-xl" data-icon="reply">reply</span></button>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-surface-container-low/30 transition-colors group">
+                            <td class="px-6 py-5"><span class="text-sm font-medium text-stone-900">Oct 05, 2023</span></td>
+                            <td class="px-6 py-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-stone-200 flex items-center justify-center text-stone-600 font-bold text-xs">DK</div>
+                                    <span class="text-sm font-semibold">David Kim</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5"><span class="text-sm text-stone-600">Baguette Tradition</span></td>
+                            <td class="px-6 py-5">
+                                <div class="flex gap-0.5">
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-orange-400 text-lg icon-filled" data-icon="star">star</span>
+                                    <span class="material-symbols-outlined text-stone-200 text-lg" data-icon="star">star</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5 max-w-xs">
+                                <p class="text-sm text-stone-600 line-clamp-2">Authentic flavor, transportive experience. Makes the perfect accompaniment to cheese.</p>
+                                <button class="text-primary text-xs font-bold mt-1 hover:underline">read more</button>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-full flex items-center w-fit gap-1"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>Published</span>
+                            </td>
+                            <td class="px-6 py-5 text-right space-x-2">
+                                <button class="p-2 hover:bg-stone-100 rounded-lg transition-colors text-stone-400 hover:text-stone-600"><span class="material-symbols-outlined text-xl" data-icon="visibility_off">visibility_off</span></button>
+                                <button class="p-2 hover:bg-primary/10 rounded-lg transition-colors text-primary"><span class="material-symbols-outlined text-xl" data-icon="reply">reply</span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="px-6 py-4 bg-surface-container-low/20 flex items-center justify-between">
+                    <p class="text-xs text-stone-500">Showing 1 to 5 of 128 entries</p>
+                    <div class="flex gap-2">
+                        <button class="px-3 py-1.5 bg-surface-container-lowest border border-stone-200 rounded text-xs font-bold text-stone-500 hover:bg-stone-50 transition-colors disabled:opacity-50" disabled>Previous</button>
+                        <button class="px-3 py-1.5 bg-primary text-white rounded text-xs font-bold transition-colors">1</button>
+                        <button class="px-3 py-1.5 bg-surface-container-lowest border border-stone-200 rounded text-xs font-bold text-stone-500 hover:bg-stone-50 transition-colors">2</button>
+                        <button class="px-3 py-1.5 bg-surface-container-lowest border border-stone-200 rounded text-xs font-bold text-stone-500 hover:bg-stone-50 transition-colors">3</button>
+                        <button class="px-3 py-1.5 bg-surface-container-lowest border border-stone-200 rounded text-xs font-bold text-stone-500 hover:bg-stone-50 transition-colors">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/reviews.js"></script>
+</body>
+</html>
