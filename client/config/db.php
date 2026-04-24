@@ -1,7 +1,7 @@
 <?php
 
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'exp7_bakeease');
+define('DB_NAME', 'bakeease');
 define('DB_USER', 'root');
 define('DB_PASS', '');        
 define('DB_CHARSET', 'utf8mb4');
