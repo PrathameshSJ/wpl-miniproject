@@ -1,0 +1,4 @@
+C:\xampp\php\php.exe -S localhost:8000
+into bakeease folder with xampp on in bg and open
+Client Side: http://localhost:8000/client/home.html
+Admin Panel: http://localhost:8000/admin/dashboard.html

@@ -4,12 +4,14 @@
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <title>BakeEase Admin - Sales Dashboard</title>
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script src="../assets/js/tailwind-cdn.js"></script>
         <script src="js/tailwind-config.js"></script>
-        <link href="styles/dashboard.css" rel="stylesheet" />
+        <link href="styles/base.css" rel="stylesheet" />
     </head>
     <body class="bg-surface text-on-surface flex min-h-screen">
         <div id="sidebar-container"></div>
+        <script src="js/admin-common.js"></script>
+        <script src="js/dashboard.js"></script>
         <main class="ml-[240px] flex-1 min-h-screen bg-[#F5F0EB]">
             <div id="topbar-container"></div>
             <div class="p-8 space-y-8">
@@ -17,7 +19,7 @@
                     <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-primary-container">
                         <p class="text-on-surface-variant text-sm font-medium mb-2 uppercase tracking-wider">Total Revenue Today</p>
                         <div class="flex items-baseline gap-2">
-                            <h3 class="text-3xl font-bold text-on-surface">₹12,480</h3>
+                            <h3 class="stat-value text-3xl font-bold text-on-surface">₹0</h3>
                             <span class="text-emerald-600 text-sm font-bold flex items-center">
                                 <span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
                                 18%
@@ -27,7 +29,7 @@
                     <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-primary-container">
                         <p class="text-on-surface-variant text-sm font-medium mb-2 uppercase tracking-wider">Orders Today</p>
                         <div class="flex items-baseline gap-2">
-                            <h3 class="text-3xl font-bold text-on-surface">34</h3>
+                            <h3 class="stat-value text-3xl font-bold text-on-surface">0</h3>
                             <span class="text-emerald-600 text-sm font-bold flex items-center">
                                 <span class="material-symbols-outlined text-xs" data-icon="add">add</span>
                                 5
@@ -37,14 +39,14 @@
                     <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-secondary">
                         <p class="text-on-surface-variant text-sm font-medium mb-2 uppercase tracking-wider">Pending Orders</p>
                         <div class="flex items-baseline gap-2">
-                            <h3 class="text-3xl font-bold text-on-surface">8</h3>
+                            <h3 class="stat-value text-3xl font-bold text-on-surface">0</h3>
                             <span class="text-stone-400 text-sm font-medium">Stable</span>
                         </div>
                     </div>
                     <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-error">
                         <p class="text-on-surface-variant text-sm font-medium mb-2 uppercase tracking-wider">Low Stock Alerts</p>
                         <div class="flex items-center gap-3">
-                            <h3 class="text-3xl font-bold text-on-surface">3</h3>
+                            <h3 class="stat-value text-3xl font-bold text-on-surface">0</h3>
                             <span class="bg-error-container text-on-error-container text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">Warning</span>
                         </div>
                     </div>
@@ -112,7 +114,7 @@
                                         <th class="px-6 py-4 text-center">Status</th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-sm">
+                                <tbody id="recent-orders-body" class="text-sm">
                                     <tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
                                         <td class="px-6 py-4 font-mono font-semibold">#BE1205</td>
                                         <td class="px-6 py-4">Rohan Sharma</td>
@@ -164,7 +166,7 @@
                     </div>
                     <div class="bg-surface-container-lowest rounded-xl shadow-sm p-6 flex flex-col">
                         <h3 class="text-xl font-bold text-on-surface mb-6">Best Sellers this week</h3>
-                        <div class="space-y-6 flex-1">
+                        <div id="best-sellers" class="space-y-6 flex-1">
                             <div class="flex items-center gap-4 group">
                                 <span class="w-8 h-8 flex items-center justify-center bg-primary text-white font-bold rounded-lg shrink-0">1</span>
                                 <div class="flex-1">
@@ -225,7 +227,7 @@
                     </div>
                 </div>
                 <div class="relative h-64 w-full rounded-2xl overflow-hidden shadow-xl mt-12">
-                    <img class="w-full h-full object-cover grayscale opacity-20" alt="Bakery Background" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=2000" />
+                    <img class="w-full h-full object-cover grayscale opacity-20" alt="Bakery Background" src="../assets/images/dashboard-bg.jpg" />
                     <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent flex flex-col justify-center px-12 text-white">
                         <h4 class="font-headline text-3xl mb-2">Baking Success One Order at a Time</h4>
                         <p class="max-w-md text-white/80 font-medium">Amit, your revenue is up by 18% compared to last Wednesday. Keep an eye on those low stock alerts to maintain the momentum.</p>
@@ -233,6 +235,5 @@
                 </div>
             </div>
         </main>
-        <script src="js/dashboard.js"></script>
     </body>
 </html>

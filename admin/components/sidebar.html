@@ -9,7 +9,7 @@
       <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
       <span class="font-['Inter'] text-sm font-medium">Dashboard</span>
     </a>
-    <a class="bg-primary text-on-primary rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 scale-95 active:scale-90 transition-transform" href="products.html">
+    <a class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 transition-colors" href="products.html">
       <span class="material-symbols-outlined" data-icon="bakery_dining">bakery_dining</span>
       <span class="font-['Inter'] text-sm font-medium">Products</span>
     </a>
@@ -40,17 +40,15 @@
   </nav>
   <div class="mt-auto px-2">
     <div class="flex items-center gap-3 px-4 py-4 border-t border-outline-variant mb-2">
-      <div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
-        <img class="w-full h-full object-cover" alt="Amit Kumar" src="images/profile-pic.jpg"/>
-      </div>
+      <div id="sidebar-avatar" class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">AK</div>
       <div class="flex-1 min-w-0">
-        <p class="text-on-surface text-xs font-semibold truncate">Amit Kumar</p>
+        <p id="sidebar-user-name" class="text-on-surface text-xs font-semibold truncate">Admin</p>
         <p class="text-on-surface-variant text-[10px] truncate">Admin</p>
       </div>
     </div>
-    <a class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg px-4 py-2 flex items-center gap-3 transition-colors w-full text-left" href="#">
+    <button onclick="adminLogout()" class="text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg px-4 py-2 flex items-center gap-3 transition-colors w-full text-left">
       <span class="material-symbols-outlined" data-icon="logout">logout</span>
       <span class="font-['Inter'] text-sm font-medium">Logout</span>
-    </a>
+    </button>
   </div>
 </aside>

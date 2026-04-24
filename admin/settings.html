@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Admin Settings - The Artisan Editorial</title>
+    <script src="../assets/js/tailwind-cdn.js"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link href="styles/base.css" rel="stylesheet" />
+</head>
+
+<body class="bg-background text-on-surface flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <main class="flex-1 ml-[240px] min-h-screen">
+        <div id="topbar-container"></div>
+        <!-- Settings Content Area -->
+        <div class="p-8 max-w-5xl mx-auto">
+            <div class="mb-10">
+                <h2 class="text-4xl font-bold text-on-surface tracking-tight mb-2">Settings</h2>
+                <p class="text-on-surface-variant font-label">Manage your artisan bakery's digital presence and
+                    operations.</p>
+            </div>
+            <!-- Tabs Navigation -->
+            <nav class="flex space-x-8 mb-10 border-b border-outline-variant/30">
+                <button
+                    class="pb-4 text-primary font-semibold border-b-2 border-primary transition-all">General</button>
+                <button class="pb-4 text-on-surface-variant hover:text-on-surface transition-all">Bakery Info</button>
+                <button class="pb-4 text-on-surface-variant hover:text-on-surface transition-all">Payments</button>
+                <button class="pb-4 text-on-surface-variant hover:text-on-surface transition-all">Notifications</button>
+            </nav>
+            <!-- Settings Form Canvas -->
+            <section class="space-y-12">
+                <!-- Section: Brand Identity -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Brand Identity</h3>
+                        <p class="text-sm text-on-surface-variant font-label leading-relaxed">Your bakery's public face.
+                            This information will appear on digital receipts and your public storefront.</p>
+                    </div>
+                    <div class="md:col-span-2 bg-surface-container-low p-8 rounded-xl space-y-6">
+                        <div class="grid grid-cols-1 gap-6">
+                            <div>
+                                <label
+                                    class="block text-xs font-semibold uppercase tracking-wider text-on-surface-variant mb-2 font-label">Bakery
+                                    Name</label>
+                                <input
+                                    class="w-full bg-surface-container-lowest border-none focus:ring-0 focus:border-b-2 focus:border-primary-container p-3 rounded-lg font-body shadow-sm"
+                                    type="text" value="The Artisan Editorial" />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-semibold uppercase tracking-wider text-on-surface-variant mb-2 font-label">Bakery
+                                    Logo</label>
+                                <div class="flex items-center gap-6">
+                                    <div
+                                        class="w-24 h-24 rounded-lg bg-surface-container-lowest border-2 border-dashed border-outline-variant flex items-center justify-center overflow-hidden">
+                                        <img class="w-full h-full object-cover"
+                                            data-alt="minimalist logo of a golden wheat stalk on a clean off-white background with elegant serif typography"
+                                            src="images/logo.jpg" />
+                                    </div>
+                                    <div class="space-y-2">
+                                        <button
+                                            class="px-4 py-2 bg-surface-container-high text-on-surface font-label text-sm rounded-lg hover:bg-surface-container-highest transition-colors">Replace
+                                            Logo</button>
+                                        <p class="text-xs text-on-surface-variant">SVG, PNG, or JPG (max 2MB)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section: Contact & Location -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start border-t border-outline-variant/10 pt-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Contact &amp; Location</h3>
+                        <p class="text-sm text-on-surface-variant font-label leading-relaxed">Where your customers can
+                            find you and how they can reach out for inquiries.</p>
+                    </div>
+                    <div class="md:col-span-2 bg-surface-container-low p-8 rounded-xl space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label
+                                    class="block text-xs font-semibold uppercase tracking-wider text-on-surface-variant mb-2 font-label">Primary
+                                    Contact Email</label>
+                                <input
+                                    class="w-full bg-surface-container-lowest border-none focus:ring-0 focus:border-b-2 focus:border-primary-container p-3 rounded-lg font-body shadow-sm"
+                                    type="email" value="hello@bakeease.admin" />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-semibold uppercase tracking-wider text-on-surface-variant mb-2 font-label">Phone
+                                    Number</label>
+                                <input
+                                    class="w-full bg-surface-container-lowest border-none focus:ring-0 focus:border-b-2 focus:border-primary-container p-3 rounded-lg font-body shadow-sm"
+                                    type="tel" value="+1 (555) 892-0442" />
+                            </div>
+                            <div class="md:col-span-2">
+                                <label
+                                    class="block text-xs font-semibold uppercase tracking-wider text-on-surface-variant mb-2 font-label">Address</label>
+                                <textarea
+                                    class="w-full bg-surface-container-lowest border-none focus:ring-0 focus:border-b-2 focus:border-primary-container p-3 rounded-lg font-body shadow-sm"
+                                    rows="3">122 Artisan Lane, Suite 400
+The Flour District, NY 10014</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <!-- Footer Actions -->
+                <div class="flex justify-end items-center gap-4 pt-12 pb-24 border-t border-outline-variant/10">
+                    <button
+                        class="px-6 py-3 font-label font-semibold text-on-surface-variant hover:bg-surface-container transition-colors rounded-lg">Discard
+                        Changes</button>
+                    <button
+                        class="px-10 py-3 bg-gradient-to-br from-primary to-primary-container text-white font-label font-bold rounded-lg shadow-lg hover:shadow-xl transition-all active:scale-95">
+                        Save Changes
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="js/admin-common.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+
+</html>

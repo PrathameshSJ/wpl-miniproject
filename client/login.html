@@ -5,8 +5,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>BakeEase - Artisan Login</title>
     
-    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script src="../assets/js/tailwind-cdn.js"></script>
     <script src="./js/tailwind-config.js"></script>
+    <link href="./styles/base.css" rel="stylesheet"/>
     <link href="./styles/login.css" rel="stylesheet"/>
 </head>
 <body class="min-h-screen bg-surface overflow-hidden">
@@ -28,13 +29,15 @@
                     <p class="text-on-surface-variant italic mt-2">Crafting memories, one bite at a time.</p>
                 </header>
 
-                <nav class="flex border-b border-surface-variant">
-                    <button id="tab-login" onclick="toggleAuth('login')" class="flex-1 py-3 text-sm font-semibold border-b-2 border-primary text-primary transition-all">Login</button>
-                    <button id="tab-register" onclick="toggleAuth('register')" class="flex-1 py-3 text-sm font-semibold text-on-surface-variant hover:text-primary transition-all">Register</button>
-                </nav>
+
+
+                <div class="flex mb-6">
+                    <button id="tab-login" onclick="toggleAuth('login')" class="flex-1 py-3 text-sm font-semibold border-b-2 border-primary text-primary transition-all">Sign In</button>
+                    <button id="tab-register" onclick="toggleAuth('register')" class="flex-1 py-3 text-sm font-semibold text-on-surface-variant hover:text-primary transition-all">Create Account</button>
+                </div>
 
                 <section id="login-section" class="space-y-4">
-                    <form class="space-y-4">
+                    <form id="login-form" class="space-y-4">
                         <div class="space-y-1">
                             <label class="text-xs font-bold uppercase text-on-surface-variant ml-1">Email</label>
                             <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm focus:border-primary outline-none" type="email" placeholder="bakeease@example.com"/>
@@ -47,15 +50,14 @@
                             <input class="w-full bg-surface-low border-surface-variant rounded-lg px-4 py-3 text-sm focus:border-primary outline-none" type="password" placeholder="••••••••"/>
                         </div>
                         <button class="w-full artisan-gradient text-white font-bold py-3 rounded-lg shadow hover:opacity-90 transition-all uppercase tracking-widest text-xs" type="submit">Login to Kitchen</button>
+                        <p id="login-error" class="text-error text-xs text-center hidden"></p>
                     </form>
 
-                    <footer class="text-center">
-                        <a class="text-xs font-bold text-on-surface-variant hover:text-primary transition-colors" href="home.html">Browse as Guest</a>
-                    </footer>
+
                 </section>
 
                 <section id="register-section" class="space-y-4 hidden">
-                    <form class="space-y-4">
+                    <form id="register-form" class="space-y-4">
                         <div class="grid grid-cols-2 gap-4">
                             <div class="space-y-1">
                                 <label class="text-xs font-bold uppercase text-on-surface-variant ml-1">Full Name</label>
@@ -91,6 +93,10 @@
             </div>
         </main>
     </div>
+    <script src="./js/api.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/components.js"></script>
     <script src="./js/login.js"></script>
 </body>
 </html>

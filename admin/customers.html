@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Customer Management - Artisan Admin</title>
+        <script src="../assets/js/tailwind-cdn.js"></script>
+        <script src="js/tailwind-config.js"></script>
+        <link href="styles/base.css" rel="stylesheet" />
+    </head>
+    <body class="bg-stone-50 text-on-surface">
+        <div id="sidebar-container"></div>
+        <main class="ml-[240px] min-h-screen">
+            <div id="topbar-container"></div>
+            <div class="px-8 py-10">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+                    <div>
+                        <h2 class="text-4xl font-bold serif-header text-on-surface tracking-tight">Customers</h2>
+                        <p class="text-stone-500 mt-1">Manage and monitor your artisan community members.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center bg-white border border-stone-200 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-primary/10 transition-all">
+                            <span class="material-symbols-outlined text-stone-400 pl-3" data-icon="filter_list">filter_list</span>
+                            <select class="bg-transparent border-none text-sm font-semibold text-stone-700 py-2.5 pl-2 pr-8 focus:ring-0">
+                                <option>All Membership Tiers</option>
+                                <option>Gold Crust</option>
+                                <option>Sourdough Society</option>
+                                <option>Baker's Guild</option>
+                            </select>
+                        </div>
+                        <button class="bg-white border border-stone-200 px-4 py-2.5 rounded-lg flex items-center gap-2 hover:bg-stone-50 transition-colors text-sm font-semibold text-stone-700">
+                            <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                            Export CSV
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-stone-200/50">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-stone-50 border-b border-stone-100">
+                                <th class="px-6 py-4 text-xs font-bold text-stone-500 uppercase tracking-wider">Customer</th>
+                                <th class="px-6 py-4 text-xs font-bold text-stone-500 uppercase tracking-wider">Contact</th>
+                                <th class="px-6 py-4 text-xs font-bold text-stone-500 uppercase tracking-wider">Orders</th>
+                                <th class="px-6 py-4 text-xs font-bold text-stone-500 uppercase tracking-wider">Total Spend</th>
+                                <th class="px-6 py-4 text-xs font-bold text-stone-500 uppercase tracking-wider">Join Date</th>
+                                <th class="px-6 py-4 text-xs font-bold text-stone-500 uppercase tracking-wider">Admin Status</th>
+                                <th class="px-6 py-4 text-xs font-bold text-stone-500 uppercase tracking-wider text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-stone-100">
+                            <tr class="hover:bg-stone-50/50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-primary font-bold text-sm">EL</div>
+                                        <div>
+                                            <div class="text-sm font-semibold text-stone-900">Eleanor Lysander</div>
+                                            <div class="text-xs text-stone-500">Gold Crust Member</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-stone-600">
+                                    <div>e.lysander@domain.com</div>
+                                    <div class="text-xs text-stone-400 mt-0.5">+1 (555) 012-3456</div>
+                                </td>
+                                <td class="px-6 py-4 text-sm font-medium text-stone-700">42</td>
+                                <td class="px-6 py-4 text-sm font-bold text-primary">$1,240.50</td>
+                                <td class="px-6 py-4 text-sm text-stone-500">Oct 12, 2023</td>
+                                <td class="px-6 py-4">
+                                    <button class="w-10 h-5 bg-orange-600 rounded-full relative transition-colors">
+                                        <span class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-sm"></span>
+                                    </button>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-stone-400 hover:text-primary transition-colors p-1">
+                                        <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-stone-50/50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-stone-600 font-bold text-sm">MC</div>
+                                        <div>
+                                            <div class="text-sm font-semibold text-stone-900">Marcus Chen</div>
+                                            <div class="text-xs text-stone-500">New Artisan</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-stone-600">
+                                    <div>mchen.bakery@web.com</div>
+                                    <div class="text-xs text-stone-400 mt-0.5">+1 (555) 987-6543</div>
+                                </td>
+                                <td class="px-6 py-4 text-sm font-medium text-stone-700">8</td>
+                                <td class="px-6 py-4 text-sm font-bold text-primary">$186.20</td>
+                                <td class="px-6 py-4 text-sm text-stone-500">Jan 05, 2024</td>
+                                <td class="px-6 py-4">
+                                    <button class="w-10 h-5 bg-orange-600 rounded-full relative transition-colors">
+                                        <span class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-sm"></span>
+                                    </button>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-stone-400 hover:text-primary transition-colors p-1">
+                                        <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-stone-50/50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary font-bold text-sm">SB</div>
+                                        <div>
+                                            <div class="text-sm font-semibold text-stone-900">Sarah Blackwell</div>
+                                            <div class="text-xs text-stone-500">Baker's Guild</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-stone-600">
+                                    <div>sarah.black@provider.net</div>
+                                    <div class="text-xs text-stone-400 mt-0.5">+1 (555) 234-5678</div>
+                                </td>
+                                <td class="px-6 py-4 text-sm font-medium text-stone-700">112</td>
+                                <td class="px-6 py-4 text-sm font-bold text-primary">$3,890.00</td>
+                                <td class="px-6 py-4 text-sm text-stone-500">Jun 28, 2022</td>
+                                <td class="px-6 py-4">
+                                    <button class="w-10 h-5 bg-orange-600 rounded-full relative transition-colors">
+                                        <span class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-sm"></span>
+                                    </button>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-stone-400 hover:text-primary transition-colors p-1">
+                                        <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-stone-50/50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center text-stone-500 font-bold text-sm">JW</div>
+                                        <div>
+                                            <div class="text-sm font-semibold text-stone-900">Julian Webber</div>
+                                            <div class="text-xs text-stone-500">Guest</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-stone-600">
+                                    <div>j.webber@clientmail.org</div>
+                                    <div class="text-xs text-stone-400 mt-0.5">+1 (555) 456-7890</div>
+                                </td>
+                                <td class="px-6 py-4 text-sm font-medium text-stone-700">1</td>
+                                <td class="px-6 py-4 text-sm font-bold text-primary">$45.00</td>
+                                <td class="px-6 py-4 text-sm text-stone-500">Feb 14, 2024</td>
+                                <td class="px-6 py-4">
+                                    <button class="w-10 h-5 bg-stone-300 rounded-full relative transition-colors">
+                                        <span class="absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-sm"></span>
+                                    </button>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-stone-400 hover:text-primary transition-colors p-1">
+                                        <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-stone-50/50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-sm">DF</div>
+                                        <div>
+                                            <div class="text-sm font-semibold text-stone-900">Diana Fontana</div>
+                                            <div class="text-xs text-stone-500">Gold Crust Member</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-stone-600">
+                                    <div>diana.fontana@bakery.io</div>
+                                    <div class="text-xs text-stone-400 mt-0.5">+1 (555) 765-4321</div>
+                                </td>
+                                <td class="px-6 py-4 text-sm font-medium text-stone-700">67</td>
+                                <td class="px-6 py-4 text-sm font-bold text-primary">$1,920.15</td>
+                                <td class="px-6 py-4 text-sm text-stone-500">Nov 30, 2022</td>
+                                <td class="px-6 py-4">
+                                    <button class="w-10 h-5 bg-orange-600 rounded-full relative transition-colors">
+                                        <span class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-sm"></span>
+                                    </button>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-stone-400 hover:text-primary transition-colors p-1">
+                                        <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-stone-50/50 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim/40 flex items-center justify-center text-tertiary font-bold text-sm">RK</div>
+                                        <div>
+                                            <div class="text-sm font-semibold text-stone-900">Robert King</div>
+                                            <div class="text-xs text-stone-500">Sourdough Society</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-stone-600">
+                                    <div>rking@lifestyle.com</div>
+                                    <div class="text-xs text-stone-400 mt-0.5">+1 (555) 321-0987</div>
+                                </td>
+                                <td class="px-6 py-4 text-sm font-medium text-stone-700">29</td>
+                                <td class="px-6 py-4 text-sm font-bold text-primary">$645.75</td>
+                                <td class="px-6 py-4 text-sm text-stone-500">Aug 09, 2023</td>
+                                <td class="px-6 py-4">
+                                    <button class="w-10 h-5 bg-orange-600 rounded-full relative transition-colors">
+                                        <span class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-sm"></span>
+                                    </button>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-stone-400 hover:text-primary transition-colors p-1">
+                                        <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="px-6 py-4 bg-stone-50 flex items-center justify-between border-t border-stone-100">
+                        <p class="text-xs text-stone-500">Showing 6 of 842 customers</p>
+                        <div class="flex gap-2">
+                            <button class="px-3 py-1 bg-white border border-stone-200 rounded text-xs font-semibold text-stone-400 cursor-not-allowed">Previous</button>
+                            <button class="px-3 py-1 bg-white border border-stone-200 rounded text-xs font-semibold text-stone-700 hover:bg-stone-50">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+                    <div class="bg-primary-container p-6 rounded-xl text-white shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="material-symbols-outlined bg-white/20 p-2 rounded-lg" data-icon="person_add">person_add</span>
+                            <span class="text-xs font-semibold bg-white/20 px-2 py-0.5 rounded-full">+12%</span>
+                        </div>
+                        <p class="text-sm opacity-80">New This Month</p>
+                        <h4 class="text-3xl font-bold mt-1">142</h4>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-stone-200/50 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="material-symbols-outlined bg-orange-50 text-primary p-2 rounded-lg" data-icon="star">star</span>
+                            <span class="text-xs font-semibold text-green-600">88% active</span>
+                        </div>
+                        <p class="text-sm text-stone-500">Elite Loyalty Tier</p>
+                        <h4 class="text-3xl font-bold text-on-surface mt-1">28</h4>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-stone-200/50 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="material-symbols-outlined bg-orange-50 text-primary p-2 rounded-lg" data-icon="payments">payments</span>
+                            <span class="text-xs font-semibold text-orange-600">Top 5%</span>
+                        </div>
+                        <p class="text-sm text-stone-500">Avg. Customer Value</p>
+                        <h4 class="text-3xl font-bold text-on-surface mt-1">$342.10</h4>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="js/admin-common.js"></script>
+        <script src="js/customers.js"></script>
+    </body>
+</html>

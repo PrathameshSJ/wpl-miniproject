@@ -4,9 +4,9 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>BakeEase Admin - Orders Management</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-cdn.js"></script>
     <script src="js/tailwind-config.js"></script>
-<link href="styles/orders.css" rel="stylesheet"/>
+<link href="styles/base.css" rel="stylesheet"/>
 </head>
 <body class="bg-surface text-on-surface">
     <!-- SideNavBar Shell -->
@@ -107,205 +107,8 @@
                             <th class="px-6 py-4 text-center">Action</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-surface-container">
-                        <!-- Order #BE1201 -->
-                        <tr class="hover:bg-surface-container-low/50 transition-colors">
-                            <td class="px-6 py-5 font-bold text-primary">#BE1201</td>
-                            <td class="px-6 py-5 font-medium">Siddharth Sharma</td>
-                            <td class="px-6 py-5 text-sm text-stone-500">Oct 24, 08:30 AM</td>
-                            <td class="px-6 py-5 text-sm">2x Butter Croissant, 1x sourdough</td>
-                            <td class="px-6 py-5 text-right font-semibold">₹450.00</td>
-                            <td class="px-6 py-5">
-                                <span class="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter">UPI</span>
-                            </td>
-                            <td class="px-6 py-5">
-                                <span class="flex items-center gap-1.5 text-green-700 text-xs font-bold">
-                                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                                    Completed
-                                </span>
-                            </td>
-                            <td class="px-6 py-5 text-center relative">
-<div class="relative inline-block text-left">
-    <div>
-        <button class="update-btn text-xs bg-primary text-white border-none rounded-lg focus:ring-0 cursor-pointer p-1.5 px-3 font-bold flex items-center gap-1">
-            Update <span class="material-symbols-outlined text-xs">expand_more</span>
-        </button>
-    </div>
-    <div class="dropdown-menu hidden absolute right-0 mt-2 w-48 bg-white shadow-xl rounded-lg border border-outline-variant/20 py-2 z-10 overflow-hidden">
-        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm text-primary">outdoor_grill</span> Mark as Baking
-        </button>
-        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm text-blue-600">local_shipping</span> Out for Delivery
-        </button>
-        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm text-green-600">check_circle</span> Completed
-        </button>
-        <div class="border-t border-stone-100 my-1"></div>
-        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-red-50 text-red-600 transition-colors flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm">cancel</span> Cancel
-        </button>
-    </div>
-</div>
-                            </td>
-                        </tr>
-                        <!-- Order #BE1202 -->
-                        <tr class="hover:bg-surface-container-low/50 transition-colors">
-                            <td class="px-6 py-5 font-bold text-primary">#BE1202</td>
-                            <td class="px-6 py-5 font-medium">Priya Verma</td>
-                            <td class="px-6 py-5 text-sm text-stone-500">Oct 24, 09:15 AM</td>
-                            <td class="px-6 py-5 text-sm">1x Chocolate Eclair Box (6pc)</td>
-                            <td class="px-6 py-5 text-right font-semibold">₹890.00</td>
-                            <td class="px-6 py-5">
-                                <span class="bg-stone-100 text-stone-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter">COD</span>
-                            </td>
-                            <td class="px-6 py-5">
-                                <span class="flex items-center gap-1.5 text-primary text-xs font-bold">
-                                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                                    Baking
-                                </span>
-                            </td>
-<td class="px-6 py-5 text-center relative">
-    <div class="relative inline-block">
-<button class="update-btn text-xs bg-primary text-white border-none rounded-lg focus:ring-0 cursor-pointer p-1.5 px-3 font-bold flex items-center gap-1">
-    Update
-    <span class="material-symbols-outlined text-xs">expand_more</span>
-</button>
-        <div class="dropdown-menu hidden absolute right-0 mt-2 w-48 bg-white shadow-xl rounded-lg border border-outline-variant/20 py-2 z-10 overflow-hidden">
-            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                <span class="material-symbols-outlined text-sm text-primary">outdoor_grill</span> Mark as Baking
-            </button>
-            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                <span class="material-symbols-outlined text-sm text-blue-600">local_shipping</span> Out for Delivery
-            </button>
-            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                <span class="material-symbols-outlined text-sm text-green-600">check_circle</span> Completed
-            </button>
-            <div class="border-t border-stone-100 my-1"></div>
-            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-red-50 text-red-600 transition-colors flex items-center gap-2">
-                <span class="material-symbols-outlined text-sm">cancel</span> Cancel
-            </button>
-        </div>
-    </div>
-</td>
-                        </tr>
-                        <!-- Order #BE1203 -->
-                        <tr class="hover:bg-surface-container-low/50 transition-colors">
-                            <td class="px-6 py-5 font-bold text-primary">#BE1203</td>
-                            <td class="px-6 py-5 font-medium">Rahul Kapoor</td>
-                            <td class="px-6 py-5 text-sm text-stone-500">Oct 24, 10:05 AM</td>
-                            <td class="px-6 py-5 text-sm">4x Blueberry Muffin, 2x Latte</td>
-                            <td class="px-6 py-5 text-right font-semibold">₹620.00</td>
-                            <td class="px-6 py-5">
-                                <span class="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter">UPI</span>
-                            </td>
-                            <td class="px-6 py-5">
-                                <span class="flex items-center gap-1.5 text-blue-700 text-xs font-bold">
-                                    <span class="material-symbols-outlined text-sm" data-icon="moped">moped</span>
-                                    Out for Delivery
-                                </span>
-                            </td>
-<td class="px-6 py-5 text-center relative">
-    <div class="relative inline-block">
-        <button class="update-btn text-xs bg-primary text-white border-none rounded-lg focus:ring-0 cursor-pointer p-1.5 px-3 font-bold flex items-center gap-1">
-            Update <span class="material-symbols-outlined text-xs">expand_more</span>
-        </button>
-        <div class="dropdown-menu hidden absolute right-0 mt-2 w-48 bg-white shadow-xl rounded-lg border border-outline-variant/20 py-2 z-10 overflow-hidden">
-            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                <span class="material-symbols-outlined text-sm text-primary">outdoor_grill</span> Mark as Baking
-            </button>
-            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                <span class="material-symbols-outlined text-sm text-blue-600">local_shipping</span> Out for Delivery
-            </button>
-            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                <span class="material-symbols-outlined text-sm text-green-600">check_circle</span> Completed
-            </button>
-            <div class="border-t border-stone-100 my-1"></div>
-            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-red-50 text-red-600 transition-colors flex items-center gap-2">
-                <span class="material-symbols-outlined text-sm">cancel</span> Cancel
-            </button>
-        </div>
-    </div>
-</td>
-                        </tr>
-                        <!-- Order #BE1204 - HIGHLIGHTED -->
-                        <tr class="bg-secondary-fixed/30 hover:bg-secondary-fixed/40 transition-colors relative">
-                            <td class="px-6 py-5 font-bold text-primary">#BE1204</td>
-                            <td class="px-6 py-5 font-medium">Ananya Das</td>
-                            <td class="px-6 py-5 text-sm text-stone-500">Oct 24, 10:45 AM</td>
-                            <td class="px-6 py-5 text-sm">1x Whole Wheat Loaf, 1x Baguette</td>
-                            <td class="px-6 py-5 text-right font-semibold">₹320.00</td>
-                            <td class="px-6 py-5">
-                                <span class="bg-stone-100 text-stone-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter">COD</span>
-                            </td>
-                            <td class="px-6 py-5">
-                                <span class="flex items-center gap-1.5 text-on-secondary-container text-xs font-bold">
-                                    <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
-                                    Pending
-                                </span>
-                            </td>
-                            <td class="px-6 py-5 text-center relative">
-                                <div class="inline-block relative">
-                                    <button class="update-btn text-xs bg-primary text-white border-none rounded-lg focus:ring-0 cursor-pointer p-1.5 px-3 font-bold flex items-center gap-1">
-                                        Update <span class="material-symbols-outlined text-xs">expand_more</span>
-                                    </button>
-                                    <div class="dropdown-menu hidden absolute right-0 mt-2 w-48 bg-white shadow-xl rounded-lg border border-outline-variant/20 py-2 z-10 overflow-hidden">
-                                        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                                            <span class="material-symbols-outlined text-sm text-primary">outdoor_grill</span> Mark as Baking
-                                        </button>
-                                        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                                            <span class="material-symbols-outlined text-sm text-blue-600">local_shipping</span> Out for Delivery
-                                        </button>
-                                        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                                            <span class="material-symbols-outlined text-sm text-green-600">check_circle</span> Completed
-                                        </button>
-                                        <div class="border-t border-stone-100 my-1"></div>
-                                        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-red-50 text-red-600 transition-colors flex items-center gap-2">
-                                            <span class="material-symbols-outlined text-sm">cancel</span> Cancel
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Order #BE1205 -->
-                        <tr class="hover:bg-surface-container-low/50 transition-colors">
-                            <td class="px-6 py-5 font-bold text-primary">#BE1205</td>
-                            <td class="px-6 py-5 font-medium">Karan Mehra</td>
-                            <td class="px-6 py-5 text-sm text-stone-500">Oct 24, 11:20 AM</td>
-                            <td class="px-6 py-5 text-sm">3x Cheesecake Slice, 1x Espresso</td>
-                            <td class="px-6 py-5 text-right font-semibold">₹740.00</td>
-                            <td class="px-6 py-5">
-                                <span class="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter">UPI</span>
-                            </td>
-                            <td class="px-6 py-5">
-                                <span class="flex items-center gap-1.5 text-stone-500 text-xs font-bold">
-                                    <span class="material-symbols-outlined text-sm" data-icon="block">block</span>
-                                    Cancelled
-                                </span>
-                            </td>
-                            <td class="px-6 py-5 text-center relative">
-                                <div class="inline-block relative">
-                                    <button class="update-btn text-xs bg-primary text-white border-none rounded-lg focus:ring-0 cursor-pointer p-1.5 px-3 font-bold flex items-center gap-1">
-                                        Update <span class="material-symbols-outlined text-xs">expand_more</span>
-                                    </button>
-                                    <div class="dropdown-menu hidden absolute right-0 mt-2 w-48 bg-white shadow-xl rounded-lg border border-outline-variant/20 py-2 z-10 overflow-hidden">
-                                        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                                            <span class="material-symbols-outlined text-sm text-primary">outdoor_grill</span> Mark as Baking
-                                        </button>
-                                        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                                            <span class="material-symbols-outlined text-sm text-blue-600">local_shipping</span> Out for Delivery
-                                        </button>
-                                        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-2">
-                                            <span class="material-symbols-outlined text-sm text-green-600">check_circle</span> Completed
-                                        </button>
-                                        <div class="border-t border-stone-100 my-1"></div>
-                                        <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-red-50 text-red-600 transition-colors flex items-center gap-2">
-                                            <span class="material-symbols-outlined text-sm">cancel</span> Cancel
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+                    <tbody id="orders-body" class="divide-y divide-surface-container">
+                        <tr><td colspan="8" class="px-6 py-12 text-center text-on-surface-variant">Loading orders...</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -365,5 +168,6 @@
         </div>
     </section>
 </body>
+<script src="js/admin-common.js"></script>
 <script src="js/orders.js"></script>
 </html>

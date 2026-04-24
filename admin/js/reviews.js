@@ -1,44 +1,63 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const sidebarContainer = document.getElementById("sidebar-container");
-  const topbarContainer = document.getElementById("topbar-container");
+/**
+ * BakeEase Admin Reviews — review moderation with JWT auth
+ */
 
-  const loadComponent = (container, path, errorLabel) => {
-    if (!container) return Promise.resolve();
-
-    return fetch(path)
-      .then((response) => response.text())
-      .then((html) => {
-        container.innerHTML = html;
-      })
-      .catch((error) => {
-        console.error(`Error loading ${errorLabel}:`, error);
-      });
-  };
-
-  const setActiveSidebarLink = (targetHref) => {
-    const sidebar = document.querySelector("#sidebar-container aside");
-    if (!sidebar) return;
-
-    const navLinks = sidebar.querySelectorAll('nav a[href$=".html"]');
-    const inactiveClasses =
-      "text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 transition-colors";
-    const activeClasses =
-      "bg-primary text-on-primary rounded-lg mx-2 my-1 px-4 py-2 flex items-center gap-3 scale-95 active:scale-90 transition-transform";
-
-    navLinks.forEach((link) => {
-      link.className = inactiveClasses;
-    });
-
-    const activeLink = sidebar.querySelector(`nav a[href="${targetHref}"]`);
-    if (activeLink) {
-      activeLink.className = activeClasses;
-    }
-  };
-
-  Promise.all([
-    loadComponent(sidebarContainer, "components/sidebar.html", "sidebar"),
-    loadComponent(topbarContainer, "components/topbar.html", "topbar"),
-  ]).then(() => {
-    setActiveSidebarLink("reviews.html");
-  });
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadAdminComponents();
+    setActiveSidebarLink('reviews.html');
+    loadReviews();
 });
+
+async function loadReviews() {
+    const container = document.getElementById('reviews-list');
+    if (!container) return;
+    try {
+        const reviews = await adminFetch('/reviews.php');
+        if (!reviews.length) {
+            container.innerHTML = '<p class="text-center text-on-surface-variant py-12">No reviews yet</p>';
+            return;
+        }
+        container.innerHTML = reviews.map(r => {
+            const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+            return `<div class="p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/10 shadow-sm">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h4 class="font-bold text-on-surface">${r.reviewer_name}</h4>
+                        <p class="text-xs text-on-surface-variant">on <strong>${r.product_name}</strong> · ${new Date(r.created_at).toLocaleDateString()}</p>
+                        <span class="text-amber-500 text-sm">${stars}</span>
+                    </div>
+                    <span class="${r.is_approved ? 'bg-emerald-100 text-emerald-700' : 'bg-orange-100 text-orange-700'} px-3 py-1 rounded-full text-[11px] font-bold">${r.is_approved ? 'Approved' : 'Pending'}</span>
+                </div>
+                <p class="text-on-surface-variant text-sm mb-4">${r.comment || '<em>No comment</em>'}</p>
+                <div class="flex gap-2">
+                    ${!r.is_approved ? `<button onclick="moderateReview(${r.review_id}, 1)" class="text-xs font-bold bg-emerald-600 text-white px-4 py-1.5 rounded-lg hover:bg-emerald-700">Approve</button>` : ''}
+                    ${r.is_approved ? `<button onclick="moderateReview(${r.review_id}, 0)" class="text-xs font-bold bg-orange-600 text-white px-4 py-1.5 rounded-lg hover:bg-orange-700">Unapprove</button>` : ''}
+                    <button onclick="deleteReview(${r.review_id})" class="text-xs font-bold text-red-600 border border-red-300 px-4 py-1.5 rounded-lg hover:bg-red-50">Delete</button>
+                </div>
+            </div>`;
+        }).join('');
+    } catch (err) { console.error('Reviews load failed:', err); }
+}
+
+async function moderateReview(id, approved) {
+    try {
+        await adminFetch(`/reviews.php?id=${id}`, {
+            method: 'PATCH',
+            body: { is_approved: approved },
+        });
+        adminToast(approved ? 'Review approved' : 'Review unapproved', 'success');
+        loadReviews();
+    } catch (err) { adminToast('Failed: ' + err.message, 'error'); }
+}
+
+async function deleteReview(id) {
+    if (!confirm('Delete this review?')) return;
+    try {
+        await adminFetch(`/reviews.php?id=${id}`, {
+            method: 'PATCH',
+            body: { delete: true },
+        });
+        adminToast('Review deleted', 'success');
+        loadReviews();
+    } catch (err) { adminToast('Failed: ' + err.message, 'error'); }
+}

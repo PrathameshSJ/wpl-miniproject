@@ -1,18 +1,69 @@
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
     <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         <div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.html'">BakeEase</div>
+        
+        <!-- Mobile hamburger -->
+        <button class="md:hidden text-stone-600 dark:text-stone-400 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+
+        <!-- Desktop nav -->
         <div class="hidden md:flex items-center space-x-8">
-            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="home.html">Home</a>
-            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="catalog.html">Menu</a>
-            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Custom Cake</a>
-            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Game</a>
-            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="contact.html">About</a>
+            <a class="nav-link text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="home.html">Home</a>
+            <a class="nav-link text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="catalog.html">Menu</a>
+            <a class="nav-link text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="custom.html">Custom Cake</a>
+            <a class="nav-link text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="purble-place.html">Game</a>
+            <a class="nav-link text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="contact.html">About</a>
         </div>
-        <div class="flex items-center space-x-6">
-            <button class="relative text-stone-600 dark:text-stone-400 hover:bg-stone-100/50 p-2 rounded-lg transition-all cart-btn">
-                <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+
+        <div class="flex items-center space-x-3">
+            <!-- Cart -->
+            <button class="relative text-stone-600 dark:text-stone-400 hover:bg-stone-100/50 p-2 rounded-lg transition-all" onclick="window.location.href='cart.html'">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="cart-badge absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full items-center justify-center" style="display:none">0</span>
             </button>
-            <button class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" onclick="window.location.href='login.html'">Login</button>
+
+            <!-- Login button (shown when logged out) -->
+            <button id="nav-auth-btn" class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" onclick="window.location.href='login.html'">Login</button>
+
+            <!-- User dropdown (shown when logged in) -->
+            <div id="nav-user-menu" class="relative" style="display:none">
+                <button id="nav-user-trigger" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors" onclick="toggleUserDropdown(event)">
+                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span id="nav-user-initials" class="text-xs font-bold text-primary">U</span>
+                    </div>
+                    <span id="nav-user-name" class="text-sm font-semibold text-on-surface hidden md:inline">User</span>
+                    <span class="material-symbols-outlined text-stone-400 text-sm transition-transform" id="nav-chevron">expand_more</span>
+                </button>
+                <div id="nav-dropdown" class="hidden absolute right-0 top-full mt-2 w-56 bg-white dark:bg-stone-800 rounded-xl shadow-xl border border-stone-200 dark:border-stone-700 py-2 z-[60]">
+                    <div class="px-4 py-3 border-b border-stone-100 dark:border-stone-700">
+                        <p id="nav-dropdown-name" class="text-sm font-bold text-on-surface">User</p>
+                        <p id="nav-dropdown-email" class="text-xs text-stone-500 truncate">email@test.com</p>
+                    </div>
+                    <a href="account.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-stone-700 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-700 transition-colors">
+                        <span class="material-symbols-outlined text-stone-400 text-[18px]">account_circle</span>
+                        My Account
+                    </a>
+                    <a id="nav-admin-link" href="../admin/dashboard.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-stone-700 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-700 transition-colors" style="display:none">
+                        <span class="material-symbols-outlined text-stone-400 text-[18px]">admin_panel_settings</span>
+                        Admin Dashboard
+                    </a>
+                    <div class="border-t border-stone-100 dark:border-stone-700 my-1"></div>
+                    <button onclick="logout()" class="flex items-center gap-3 px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors w-full text-left">
+                        <span class="material-symbols-outlined text-red-500 text-[18px]">logout</span>
+                        Sign Out
+                    </button>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 dark:border-stone-700 bg-surface dark:bg-stone-900 px-6 py-4 space-y-3">
+        <a class="nav-link block py-2 text-stone-600 dark:text-stone-400 hover:text-orange-800 font-body" href="home.html">Home</a>
+        <a class="nav-link block py-2 text-stone-600 dark:text-stone-400 hover:text-orange-800 font-body" href="catalog.html">Menu</a>
+        <a class="nav-link block py-2 text-stone-600 dark:text-stone-400 hover:text-orange-800 font-body" href="custom.html">Custom Cake</a>
+        <a class="nav-link block py-2 text-stone-600 dark:text-stone-400 hover:text-orange-800 font-body" href="start-game.html">Game</a>
+        <a class="nav-link block py-2 text-stone-600 dark:text-stone-400 hover:text-orange-800 font-body" href="contact.html">About</a>
     </div>
 </nav>

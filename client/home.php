@@ -1,0 +1,340 @@
+<?php
+require_once 'config/db.php';
+require_once 'config/auth.php';
+?>
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="./js/tailwind-config.js"></script>
+    <link href="./styles/home.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+    <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+        <div class="cursor-pointer text-2xl font-bold tracking-tight text-orange-900 dark:text-orange-100 font-serif" onclick="window.location.href='home.php'">BakeEase</div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a class="text-orange-700 dark:text-orange-400 font-bold border-b-2 border-orange-700 dark:border-orange-400 pb-1 font-body" href="home.php">Home</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="catalog.html">Menu</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Custom Cake</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="404.html">Game</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-colors font-body" href="contact.html">About</a>
+        </div>
+        <div class="flex items-center space-x-6">
+            <button class="relative text-stone-600 dark:text-stone-400 hover:bg-stone-100/50 p-2 rounded-lg transition-all cart-btn">
+                <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+            </button>
+            <button class="bg-primary hover:opacity-90 text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm transition-all active:scale-95" onclick="window.location.href='login.php'">Login</button>
+        </div>
+    </div>
+</nav>
+
+<section class="hero pt-24">
+    <div class="hero-bg">
+        <img alt="Bespoke artisan chocolate cake" data-alt="Close-up of a premium multi-layered chocolate cake with warm lighting, golden caramel drips, and rustic wooden background with flour dusting." src="./images/bespoke-artisan-chocolate-cake.png"/>
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title">Fresh Baked, Just for You</h1>
+            <p class="hero-subtitle">Order custom cakes & pastries, crafted with love and delivered fresh across Mumbai.</p>
+            <div class="flex flex-wrap gap-4">
+                <button class="btn btn-secondary">Order Now</button>
+                <button class="btn btn-outline">Build Your Cake</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="category-bar">
+    <div class="category-bar-inner">
+        <button class="pill pill-active">Cakes</button>
+        <button class="pill pill-inactive">Cupcakes</button>
+        <button class="pill pill-inactive">Pastries</button>
+        <button class="pill pill-inactive">Bread</button>
+        <button class="pill pill-inactive">Custom</button>
+    </div>
+</section>
+
+<section class="section container">
+    <div class="section-header">
+        <div>
+            <span class="section-label">Our Favorites</span>
+            <h2 class="section-title">Featured Delights</h2>
+        </div>
+        <a class="view-all" href="#">View All Menu <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></a>
+    </div>
+    <div class="grid">
+        <!-- Product 1 -->
+        <div class="card">
+            <div class="card-img">
+                <img alt="Berry Vanilla Cake" src="./images/berry-vanilla-cake.png"/>
+                <div class="card-badges">
+                    <span class="badge">Cakes</span>
+                    <div class="veg-indicator" title="Vegetarian"></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-rating">
+                    <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="card-rating-value">4.5</span>
+                </div>
+                <h3 class="card-title">Berry Vanilla Cloud</h3>
+                <p class="card-desc">Light sponge with organic Madagascar vanilla and fresh seasonal berries.</p>
+                <div class="card-footer">
+                    <span class="card-price">₹1,250</span>
+                    <button class="add-btn">
+                        <span class="material-symbols-outlined add-btn-icon" data-icon="add_shopping_cart">add_shopping_cart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="card">
+            <div class="card-img">
+                <img alt="Chocolate Glazed Donut" src="./images/chocolate-glazed-donut.png"/>
+                <div class="card-badges">
+                    <span class="badge">Pastries</span>
+                    <div class="veg-indicator" title="Vegetarian"></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-rating">
+                    <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="card-rating-value">4.8</span>
+                </div>
+                <h3 class="card-title">Dark Truffle Donut</h3>
+                <p class="card-desc">70% dark Belgian chocolate glaze over a light, yeast-raised dough.</p>
+                <div class="card-footer">
+                    <span class="card-price">₹180</span>
+                    <button class="add-btn">
+                        <span class="material-symbols-outlined add-btn-icon" data-icon="add_shopping_cart">add_shopping_cart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="card">
+            <div class="card-img">
+                <img alt="Artisan Sourdough" src="./images/artisan-sourdough.png"/>
+                <div class="card-badges">
+                    <span class="badge">Bread</span>
+                    <div class="veg-indicator" title="Vegetarian"></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-rating">
+                    <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="card-rating-value">4.9</span>
+                </div>
+                <h3 class="card-title">Rustic Sourdough</h3>
+                <p class="card-desc">48-hour fermented loaf with a thick, caramelized crust and soft airy crumb.</p>
+                <div class="card-footer">
+                    <span class="card-price">₹350</span>
+                    <button class="add-btn">
+                        <span class="material-symbols-outlined add-btn-icon" data-icon="add_shopping_cart">add_shopping_cart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="card">
+            <div class="card-img">
+                <img alt="Assorted Cupcakes" src="./images/assorted-cupcakes.png"/>
+                <div class="card-badges">
+                    <span class="badge">Cupcakes</span>
+                    <div class="non-veg-indicator" title="Contains Egg"></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-rating">
+                    <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="card-rating-value">4.6</span>
+                </div>
+                <h3 class="card-title">Pastel Dream Box</h3>
+                <p class="card-desc">A curated selection of 6 artisanal cupcakes with velvet buttercream.</p>
+                <div class="card-footer">
+                    <span class="card-price">₹850</span>
+                    <button class="add-btn">
+                        <span class="material-symbols-outlined add-btn-icon" data-icon="add_shopping_cart">add_shopping_cart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="promo">
+    <div class="promo-inner">
+        <span class="promo-text">🎉 20% off this week — Use code BAKE20</span>
+        <button class="btn btn-primary">Shop Now</button>
+    </div>
+</section>
+
+<section class="section container section-bg">
+    <div class="text-center" style="margin-bottom: 3rem;">
+        <h2 class="section-title">Our Best Sellers</h2>
+        <p class="text-muted" style="max-width: 36rem; margin: 1rem auto 0;">The treats that keep Mumbai coming back for more. Hand-crafted daily using premium ingredients.</p>
+    </div>
+    <div class="grid">
+        <!-- Best Seller 1 -->
+        <div class="card">
+            <div class="card-img">
+                <img alt="Macarons" src="./images/macarons.png"/>
+                <span class="badge-bestseller absolute top-4 left-4">Bestseller</span>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Parisian Macarons</h3>
+                <p class="card-price">₹950 <span class="card-price-unit">/ Box of 12</span></p>
+            </div>
+        </div>
+
+        <!-- Best Seller 2 -->
+        <div class="card">
+            <div class="card-img">
+                <img alt="Croissants" src="./images/croissants.png"/>
+                <span class="badge-bestseller absolute top-4 left-4">Bestseller</span>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Buttery Croissants</h3>
+                <p class="card-price">₹120 <span class="card-price-unit">/ Piece</span></p>
+            </div>
+        </div>
+
+        <!-- Best Seller 3 -->
+        <div class="card">
+            <div class="card-img">
+                <img alt="Cheesecake" src="./images/cheesecake.png"/>
+                <span class="badge-bestseller absolute top-4 left-4">Bestseller</span>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">NY Cheesecake</h3>
+                <p class="card-price">₹250 <span class="card-price-unit">/ Slice</span></p>
+            </div>
+        </div>
+
+        <!-- Best Seller 4 -->
+        <div class="card">
+            <div class="card-img">
+                <img alt="Chocolate Eclairs" src="./images/chocolate-eclairs.png"/>
+                <span class="badge-bestseller absolute top-4 left-4">Bestseller</span>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Classic Eclairs</h3>
+                <p class="card-price">₹150 <span class="card-price-unit">/ Piece</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section container">
+    <h2 class="section-title text-center" style="margin-bottom: 4rem;">Stories from Our Table</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <span class="material-symbols-outlined quote-icon" data-icon="format_quote">format_quote</span>
+            <div class="testimonial-stars">
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="testimonial-text">"The custom cake we ordered for our anniversary was more than just a dessert; it was a work of art. The attention to detail in the sugar flowers was breathtaking."</p>
+            <div class="testimonial-author">
+                <img alt="Priya S." class="testimonial-avatar" data-alt="Portrait of a smiling young woman against a warm neutral background." src="./images/priya-s.png"/>
+                <div>
+                    <p class="testimonial-name">Priya Sharma</p>
+                    <p class="testimonial-location">Bandra, Mumbai</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <span class="material-symbols-outlined quote-icon" data-icon="format_quote">format_quote</span>
+            <div class="testimonial-stars">
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="testimonial-text">"Best sourdough in the city, hands down. It has that perfect tangy flavor and incredible crust. Their delivery is always on time too!"</p>
+            <div class="testimonial-author">
+                <img alt="Rahul K." class="testimonial-avatar" data-alt="Portrait of a young man with a slight beard wearing a casual linen shirt." src="./images/rahul-k.png"/>
+                <div>
+                    <p class="testimonial-name">Rahul Kapoor</p>
+                    <p class="testimonial-location">Juhu, Mumbai</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <span class="material-symbols-outlined quote-icon" data-icon="format_quote">format_quote</span>
+            <div class="testimonial-stars">
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 0;">star</span>
+            </div>
+            <p class="testimonial-text">"BakeEase is my go-to for office celebrations. Their assorted cupcake boxes are always a hit. Fresh, beautifully packed, and delicious."</p>
+            <div class="testimonial-author">
+                <img alt="Ananya M." class="testimonial-avatar" data-alt="Portrait of a professional looking woman with glasses in a bright office setting." src="./images/ananya-m.png"/>
+                <div>
+                    <p class="testimonial-name">Ananya Mehra</p>
+                    <p class="testimonial-location">Powai, Mumbai</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="w-full mt-auto bg-stone-900 dark:bg-black border-t border-stone-800">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto text-center md:text-left">
+        <div class="col-span-1 md:col-span-1">
+            <span class="text-xl font-bold text-stone-50 mb-4 block">BakeEase</span>
+            <p class="text-sm font-light text-stone-400 font-body">Crafting artisanal memories with flour, sugar, and passion since 1994.</p>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Explore</h3>
+            <ul class="space-y-2">
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="catalog.html">Menu</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Custom Designs</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">Bulk Orders</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Support</h3>
+            <ul class="space-y-2">
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Shipping Info</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="contact.html">Contact Us</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="#">FAQs</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold text-stone-50 mb-4 font-headline">Legal</h3>
+            <ul class="space-y-2">
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Privacy Policy</a></li>
+                <li><a class="text-sm font-light text-stone-400 hover:text-stone-200 transition-colors" href="404.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-8 pb-8 border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm font-light text-stone-500 font-body">© 2024 BakeEase Artisan Bakery. All rights reserved.</p>
+        <div class="flex gap-4">
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">social_leaderboard</span>
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">photo_camera</span>
+            <span class="text-orange-400 material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">play_circle</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

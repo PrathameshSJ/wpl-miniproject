@@ -4,9 +4,9 @@
         <meta charset="utf-8"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
         <title>BakeEase Admin - Inventory Tracker</title>
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script src="../assets/js/tailwind-cdn.js"></script>
         <script src="js/tailwind-config.js"></script>
-        <link href="styles/inventory.css" rel="stylesheet"/>
+        <link href="styles/base.css" rel="stylesheet"/>
     </head>
     <body class="font-body text-on-surface">
         <div id="sidebar-container"></div>
@@ -60,7 +60,7 @@
                                     <th class="px-8 py-5 text-right">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-outline-variant/10">
+                            <tbody id="inventory-body" class="divide-y divide-outline-variant/10">
                                 <tr class="hover:bg-surface-bright transition-colors group">
                                     <td class="px-8 py-6">
                                         <div class="flex items-center gap-3">
@@ -259,6 +259,7 @@
                 </div>
             </footer>
         </main>
+        <script src="js/admin-common.js"></script>
         <script src="js/inventory.js"></script>
     </body>
 </html>
