@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Products Management - BakeEase Admin</title>
+        <script src="../assets/js/tailwind-cdn.js"></script>
+        <script src="js/tailwind-config.js"></script>
+        <link href="styles/base.css" rel="stylesheet" />
+    </head>
+    <body class="flex min-h-screen text-on-surface">
+        <div id="sidebar-container"></div>
+        <script src="js/admin-common.js"></script>
+        <script src="js/products.js"></script>
+        <main class="flex-1 ml-[240px] flex flex-col relative h-screen overflow-y-auto">
+            <div id="topbar-container"></div>
+            <div class="p-8 pb-20">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <h1 class="text-4xl font-headline text-primary mb-1">Products</h1>
+                        <p class="text-stone-500 font-body">Manage your bakery catalog and stock levels.</p>
+                    </div>
+                    <button onclick="openAddPanel()" class="bg-primary hover:bg-primary-container text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 shadow-lg transition-all active:scale-95">
+                        <span class="material-symbols-outlined">add</span>
+                        ADD NEW PRODUCT
+                    </button>
+                </div>
+                <div class="flex gap-4 mb-6">
+                    <div class="flex-1 relative">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-400">search</span>
+                        <input class="w-full pl-12 pr-4 py-3 bg-surface-container-lowest border border-outline-variant/20 rounded-xl focus:ring-primary-container focus:border-primary-container outline-none font-body" placeholder="Search by product name..." type="text" />
+                    </div>
+                    <select id="category-filter" class="px-6 py-3 bg-surface-container-lowest border border-outline-variant/20 rounded-xl focus:ring-primary-container focus:border-primary-container outline-none font-body text-on-surface-variant min-w-[200px]">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+                <div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-outline-variant/10">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-surface-container-low border-b border-outline-variant/20">
+                                <th class="px-6 py-4 font-label font-semibold text-sm text-stone-500 uppercase tracking-wider">Product</th>
+                                <th class="px-6 py-4 font-label font-semibold text-sm text-stone-500 uppercase tracking-wider">Category</th>
+                                <th class="px-6 py-4 font-label font-semibold text-sm text-stone-500 uppercase tracking-wider text-right">Price</th>
+                                <th class="px-6 py-4 font-label font-semibold text-sm text-stone-500 uppercase tracking-wider text-center">Stock</th>
+                                <th class="px-6 py-4 font-label font-semibold text-sm text-stone-500 uppercase tracking-wider text-center">Status</th>
+                                <th class="px-6 py-4 font-label font-semibold text-sm text-stone-500 uppercase tracking-wider text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-body" class="font-body text-on-surface">
+                            <tr><td colspan="6" class="px-6 py-12 text-center text-on-surface-variant">Loading products...</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="px-6 py-4 flex items-center justify-between border-t border-outline-variant/10 bg-surface-container-low/30 font-body text-sm">
+                        <p id="products-count" class="text-stone-500">Loading...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div id="add-product-panel" class="fixed inset-0 bg-on-surface/20 backdrop-blur-sm z-50 flex justify-end hidden">
+            <div class="w-[480px] h-full bg-surface shadow-2xl flex flex-col animate-in slide-in-from-right duration-300">
+                <div class="px-8 py-6 border-b border-outline-variant/10 flex items-center justify-between">
+                    <h2 id="panel-title" class="text-2xl font-headline text-primary">Add New Product</h2>
+                    <button onclick="closeAddPanel()" class="p-2 text-stone-400 hover:text-on-surface rounded-full transition-colors">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div class="flex-1 overflow-y-auto px-8 py-6 space-y-6">
+                    <div class="space-y-2">
+                        <label class="font-label font-bold text-xs text-stone-500 uppercase tracking-widest">Product Name</label>
+                        <input id="product-name" class="w-full px-4 py-3 bg-white border border-outline-variant/20 rounded-xl focus:ring-2 focus:ring-primary-container/20 focus:border-primary-container outline-none font-body transition-all" placeholder="e.g. French Vanilla Macarons" type="text" />
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label class="font-label font-bold text-xs text-stone-500 uppercase tracking-widest">Category</label>
+                            <select id="product-category" class="w-full px-4 py-3 bg-white border border-outline-variant/20 rounded-xl focus:ring-2 focus:ring-primary-container/20 focus:border-primary-container outline-none font-body">
+                                <option value="">Select Category</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="font-label font-bold text-xs text-stone-500 uppercase tracking-widest">Base Price (₹)</label>
+                            <input id="product-price" class="w-full px-4 py-3 bg-white border border-outline-variant/20 rounded-xl focus:ring-2 focus:ring-primary-container/20 focus:border-primary-container outline-none font-body" placeholder="0.00" type="number" step="0.01" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label class="font-label font-bold text-xs text-stone-500 uppercase tracking-widest">Stock Quantity</label>
+                            <input id="product-stock" class="w-full px-4 py-3 bg-white border border-outline-variant/20 rounded-xl focus:ring-2 focus:ring-primary-container/20 focus:border-primary-container outline-none font-body" placeholder="20" type="number" value="20" />
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-label font-bold text-xs text-stone-500 uppercase tracking-widest">Description</label>
+                        <textarea id="product-description" class="w-full px-4 py-3 bg-white border border-outline-variant/20 rounded-xl focus:ring-2 focus:ring-primary-container/20 focus:border-primary-container outline-none font-body resize-none" placeholder="Briefly describe the product's flavor profile..." rows="4"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-label font-bold text-xs text-stone-500 uppercase tracking-widest">Product Image</label>
+                        <div id="drop-zone" onclick="document.getElementById('product-image').click()" class="border-2 border-dashed border-outline-variant/30 rounded-2xl p-8 text-center bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group relative overflow-hidden">
+                            <input type="file" id="product-image" class="hidden" accept="image/png, image/jpeg" onchange="handleFileSelect(event)">
+                            <div id="image-preview" class="hidden absolute inset-0">
+                                <img src="" alt="Preview" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                    <span class="text-white font-bold text-sm">Change Image</span>
+                                </div>
+                            </div>
+                            <div id="image-placeholder">
+                                <span class="material-symbols-outlined text-4xl text-stone-300 group-hover:text-primary transition-colors mb-2">cloud_upload</span>
+                                <p class="font-body text-sm text-stone-500">Drop image here or <span class="text-primary font-bold">click to upload</span></p>
+                                <p class="text-[10px] text-stone-400 mt-1 uppercase tracking-tighter">PNG, JPG up to 10MB</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-emerald-600">check_circle</span>
+                            <div>
+                                <p class="font-body font-semibold text-sm">Product Availability</p>
+                                <p class="text-xs text-stone-500">Visible on the customer storefront</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input id="product-available" checked="" class="sr-only peer" type="checkbox" />
+                            <div class="w-11 h-6 bg-stone-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                </div>
+                <div class="px-8 py-6 border-t border-outline-variant/10 bg-surface-container-lowest">
+                    <button onclick="saveProduct()" class="w-full bg-primary hover:bg-primary-container text-white py-4 rounded-xl font-bold uppercase tracking-widest shadow-lg transition-all active:scale-95 mb-4">
+                        Save Product
+                    </button>
+                    <button onclick="closeAddPanel()" class="w-full text-stone-500 font-label font-bold text-xs uppercase tracking-widest hover:text-primary transition-colors">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fullscreen Drop Overlay -->
+        <div id="fullscreen-drop-overlay" class="fixed inset-0 z-[100] bg-primary/20 backdrop-blur-sm flex items-center justify-center hidden pointer-events-none transition-opacity">
+            <div class="w-[calc(100%-4rem)] h-[calc(100%-4rem)] border-4 border-dashed border-primary rounded-3xl flex items-center justify-center">
+                <div class="bg-surface p-8 rounded-2xl shadow-2xl flex flex-col items-center">
+                    <span class="material-symbols-outlined text-6xl text-primary mb-4 animate-bounce">file_download</span>
+                    <h2 class="text-2xl font-headline text-primary">Drop Image Anywhere</h2>
+                    <p class="text-stone-500 font-body mt-2">Release to set as product image</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

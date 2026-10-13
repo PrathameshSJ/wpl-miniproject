@@ -1,97 +1,139 @@
-# 🧁 BakeEase
+# 🧁 BakeEase — MERN Stack Edition
 
-> **Online Bakery Ordering & Delivery Platform**
-> Web Programming Lab — Mini Project | Team of 3 | March 2026
+> **Online Artisanal Bakery Ordering & Delivery Platform**  
+> Modern Full-Stack MERN Application (MongoDB · Express.js · React · Node.js)
 
 [![SDG 8](https://img.shields.io/badge/SDG-8%20Decent%20Work%20%26%20Economic%20Growth-orange)](https://sdgs.un.org/goals/goal8)
-[![Stack](https://img.shields.io/badge/Stack-HTML%2FCSS%2FJS%20%2B%20Node.js%20%2B%20MySQL-blue)](#)
-[![Payments](https://img.shields.io/badge/Payments-Razorpay%20UPI%20%2B%20COD-green)](#)
+[![Stack](https://img.shields.io/badge/Stack-MongoDB%20%2B%20Express%20%2B%20React%20%2B%20Node.js-green)](#)
+[![Vite](https://img.shields.io/badge/Frontend-Vite%20%2B%20TailwindCSS-blue)](#)
 
 ---
 
 ## 📖 About
 
-BakeEase is a full-stack web application that digitises local bakery businesses by providing a seamless online storefront, order management, UPI/COD payments, and a **Purble Palace-inspired mini-game** (BakeMaster) for customer engagement.
-
-It supports two user types — **Customers** who browse and order, and **Admins** who manage products, orders, inventory, and view sales reports.
+**BakeEase** has been completely upgraded from legacy PHP/MySQL to the modern **MERN Stack** (MongoDB, Express.js, React, Node.js). It digitises local Mumbai bakeries by providing a rich storefront, custom cake builder studio, online order checkout (Click & Collect or Delivery), real-time order status tracking, a Purble Palace-inspired **BakeMaster** arcade mini-game, and a comprehensive **Admin Management Suite**.
 
 ---
 
-## 📄 Documentation
-
-| Document | Description |
-|---|---|
-| [📋 PRD.md](./PRD.md) | Product Requirements Document — features, user stories, functional & non-functional requirements |
-| [🎨 DESIGN.md](./DESIGN.md) | Design Document — colour palette, typography, page-by-page UI specs, database schema |
-| [⚙️ TECH_STACK.md](./TECH_STACK.md) | Tech Stack Document — architecture, packages, API endpoints, auth flow, Razorpay integration, team split |
-
----
-
-## 🗂️ Pages (Mid-Term Scope)
-
-| Page | Description |
-|---|---|
-| Registration / Login | Account creation and login with role-based access |
-| Homepage / Landing | Hero, featured products, category pills, promo banner, game CTA |
-| Product Catalogue & Search | Filter, sort, search across all bakery products |
-| Feedback / Contact Us | Contact info, feedback form with star rating, FAQ accordion |
-
----
-
-## 🛠️ Tech Stack
+## 🛠️ Modern MERN Architecture
 
 ```
-Frontend   →  HTML5 · CSS3 · Vanilla JavaScript (ES6+) · fetch() API
-Backend    →  Node.js 20 LTS · Express.js 4 · mysql2
-Database   →  MySQL 8 (via XAMPP / phpMyAdmin)
-Auth       →  JWT + bcrypt · localStorage
-Payments   →  Razorpay (UPI · COD) via CDN script
-Storage    →  Cloudinary (product image uploads)
-```
+Frontend (React SPA)
+├── Vite 6 + React 18 + TailwindCSS + Lucide Icons + Canvas-Confetti
+├── Components: Navbar, Footer, CartDrawer, AuthModal, ProductDetailModal
+└── Views:
+    ├── Home (Hero, category pills, featured treats, promo banner, testimonials)
+    ├── Menu / Catalogue (Live search, category pills, price range, sorting)
+    ├── Custom Cake Studio (5-step interactive bespoke cake builder & live preview)
+    ├── BakeMaster Game (Purble Palace-style arcade baking challenge)
+    ├── Checkout (Fulfillment toggle, address, UPI/COD, coupon validation)
+    ├── My Orders (Real-time 4-step baking progress tracker)
+    ├── Contact & Feedback (Review submission directly to MongoDB)
+    └── Admin Suite (KPIs, products, orders, inventory, customers, reviews, reports)
 
-No frontend frameworks. No build tools. Just files you open in a browser.
+Backend (REST API)
+├── Node.js LTS + Express.js 4 + Mongoose 8
+├── JSON Web Token (JWT) + bcryptjs password hashing
+├── In-Memory Fallback: Auto-starts embedded MongoDB if local instance is unavailable
+└── Auto-Seeder: Migrated all 22 products, categories, reviews, users from bakeease.sql
+```
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
+### 1. Install Dependencies
 ```bash
-# Clone
-git clone https://github.com/your-org/bakeease.git
-cd bakeease
+npm run install:all
+```
+*(Or run `npm install` in root, `server/`, and `client/` respectively)*
 
-# Backend
-cd server && npm install && cp .env.example .env && node server.js
-
-# Frontend
-# Open client/index.html with VS Code Live Server (right-click → Open with Live Server)
+### 2. Start Both Frontend & Backend Concurrently
+```bash
+npm run dev
 ```
 
-> Fill in `server/.env` with your DB credentials, JWT secret, and Razorpay test keys.
-> See [TECH_STACK.md](./TECH_STACK.md) for all required env variables and full setup steps.
+- **Frontend App:** [http://localhost:5173](http://localhost:5173)
+- **Backend API Server:** [http://localhost:5000](http://localhost:5000)
+- **API Health Check:** [http://localhost:5000/api/health](http://localhost:5000/api/health)
 
 ---
 
-## 🎮 BakeMaster Mini-Game
+## 🔑 Pre-Seeded Demo Credentials
 
-An in-app baking game inspired by **Purble Shop** from Purble Palace. Players fill customer cake orders by selecting the correct base, frosting, and decorations before the timer runs out. Three difficulty levels, 1–3 star scoring, session high score.
+| Role | Email | Password | Access |
+|---|---|---|---|
+| **Admin** | `admin@bakeease.in` | `admin123` | Storefront + Full Admin Control Suite |
+| **Customer** | `priya@example.com` | `customer123` | Browsing, Cart, Checkout, Order Tracking |
+| **Customer** | `rahul@example.com` | `customer123` | Browsing, Cart, Checkout, Order Tracking |
 
----
-
-## 🌍 SDG Alignment
-
-This project supports **SDG 8 — Decent Work & Economic Growth** by providing small Mumbai bakeries with a digital platform to expand their reach, automate operations, and grow revenue through online ordering.
-
----
-
-## 👥 Team
-
-| Member | Role |
-|---|---|
-| Member 1 | Frontend — Core Pages (Homepage, Catalogue, Auth, Contact) |
-| Member 2 | Backend + Database (API, Auth, Payments, Schema) |
-| Member 3 | Frontend — Features + Game (Cart, Checkout, Dashboard, Admin, BakeMaster) |
+> **Tip:** The sign-in modal features 1-click **Demo Admin** and **Demo Customer** buttons for instant testing.
 
 ---
 
-*Web Programming Lab Mini Project · March 2026*
+## 🎟️ Active Promo Code
+
+- **Code:** `BAKE20`
+- **Benefit:** 20% OFF on all orders above ₹500
+- **Try it:** Enter `BAKE20` in the basket or checkout screen.
+
+---
+
+## 📦 Project Structure
+
+```
+├── client/                     # React Frontend (Vite + TailwindCSS)
+│   ├── public/images/          # Product and ingredient assets (71 files)
+│   ├── src/
+│   │   ├── components/         # Navbar, Footer, CartDrawer, AuthModal, etc.
+│   │   ├── context/            # AuthContext, CartContext
+│   │   ├── views/              # HomeView, MenuView, CustomCakeView, GameView, CheckoutView, OrdersView, AdminView
+│   │   ├── api.js              # Central API client
+│   │   ├── App.jsx             # Main application router
+│   │   └── index.css           # Styling
+│   └── package.json
+│
+├── server/                     # Express.js + MongoDB Backend
+│   ├── config/                 # db.js (Mongoose connection + in-memory fallback)
+│   ├── middleware/             # auth.js (JWT protect & adminOnly)
+│   ├── models/                 # User, Product, Category, Order, Review, Inventory, Coupon, ContactMessage, Setting
+│   ├── routes/                 # auth, products, orders, categories, reviews, inventory, coupons, dashboard, reports, customers
+│   ├── seed.js                 # Seed script with SQL data
+│   ├── server.js               # Express application entry point
+│   ├── .env                    # Environment variables
+│   └── package.json
+│
+├── legacy/                     # Archived Legacy Code (PHP & HTML for reference)
+│   ├── server-php/
+│   ├── client-html/
+│   └── admin-html/
+│
+├── bakeease.sql                # Original MySQL dump reference
+├── howtorun.txt                # Quick execution guide
+└── package.json                # Monorepo scripts
+```
+
+---
+
+## 🔌 API Endpoints Reference
+
+| Method | Endpoint | Description | Auth |
+|---|---|---|---|
+| `POST` | `/api/auth/register` | Create customer account | Public |
+| `POST` | `/api/auth/login` | Authenticate & get JWT token | Public |
+| `GET` | `/api/auth/me` | Current user profile | Bearer Token |
+| `GET` | `/api/categories` | List categories with counts | Public |
+| `GET` | `/api/products` | List & filter products | Public |
+| `POST` | `/api/products` | Add new product | Admin |
+| `GET` | `/api/orders` | Orders list (customer or all) | Bearer Token |
+| `POST` | `/api/orders` | Place new order | Customer |
+| `PATCH` | `/api/orders/:id` | Update order status | Admin |
+| `GET` | `/api/reviews` | Top testimonials or by product | Public / Admin |
+| `POST` | `/api/reviews` | Submit product review | Customer |
+| `GET` | `/api/inventory` | Stock quantities & low stock alerts | Public / Admin |
+| `PUT` | `/api/inventory/:id` | Restock ingredient quantity | Admin |
+| `POST` | `/api/coupons` | Validate coupon discount | Public |
+| `GET` | `/api/dashboard` | Admin KPIs & 7-day sales | Admin |
+| `GET` | `/api/reports` | Business analytics & metrics | Admin |
+| `GET` | `/api/customers` | Customer loyalty & spend | Admin |
+| `GET` | `/api/settings` | Store hours & contact | Public |

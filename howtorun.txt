@@ -1,4 +1,35 @@
-C:\xampp\php\php.exe -S localhost:8000
-into bakeease folder with xampp on in bg and open
-Client Side: http://localhost:8000/client/home.html
-Admin Panel: http://localhost:8000/admin/dashboard.html
+============================================================
+🧁 BakeEase — MERN Stack Edition (MongoDB, Express, React, Node)
+============================================================
+
+HOW TO RUN:
+
+Option 1 (One-click launch both frontend and backend):
+   npm run dev
+
+Option 2 (Run services independently):
+   Terminal 1 (Backend - Express & MongoDB):
+      cd server
+      npm run dev
+      -> Running on http://localhost:5000
+
+   Terminal 2 (Frontend - React & Vite):
+      cd client
+      npm run dev
+      -> Running on http://localhost:5173
+
+DATABASE:
+   - Zero-Config: If no MongoDB is active, an embedded in-memory MongoDB automatically starts and seeds all data out-of-the-box!
+   - External MongoDB: Set MONGODB_URI in server/.env (e.g., local MongoDB or MongoDB Atlas connection string).
+
+DEMO CREDENTIALS:
+   Admin:
+      Email: admin@bakeease.in
+      Password: admin123
+   Customer:
+      Email: priya@example.com
+      Password: customer123
+
+PROMO CODE:
+   Code: BAKE20 (20% OFF orders above ₹500)
+============================================================

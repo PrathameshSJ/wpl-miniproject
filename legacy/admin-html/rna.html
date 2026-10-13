@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link href="styles/rna.css" rel="stylesheet" />
+</head>
+
+<body class="bg-surface text-on-surface">
+    <div id="sidebar-container"></div>
+    <main class="ml-[240px] min-h-screen">
+        <div id="topbar-container"></div>
+        <div class="p-8 max-w-7xl mx-auto space-y-10">
+            <!-- Header & Date Picker -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h2 class="text-4xl font-bold text-on-surface tracking-tight mb-2">Reports &amp; Insights</h2>
+                    <p class="text-on-surface-variant italic font-body">Visualizing the harvest: Monthly performance
+                        data across all bakeries.</p>
+                </div>
+                <div
+                    class="flex items-center gap-3 bg-surface-container-lowest p-1 rounded-lg border border-outline-variant/30">
+                    <button
+                        class="px-4 py-2 text-xs font-semibold uppercase tracking-wider bg-primary text-white rounded">Last
+                        30 Days</button>
+                    <button
+                        class="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-on-surface-variant hover:bg-surface-container transition-colors rounded">Quarterly</button>
+                    <button
+                        class="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-on-surface-variant hover:bg-surface-container transition-colors rounded">Yearly</button>
+                    <div class="px-4 py-2 flex items-center gap-2 border-l border-outline-variant/30 ml-2">
+                        <span class="material-symbols-outlined text-sm text-primary">event</span>
+                        <span class="text-xs font-medium">Oct 1, 2023 - Oct 31, 2023</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_32px_64px_-12px_rgba(30,27,22,0.04)] border border-outline-variant/10 group hover:translate-y-[-4px] transition-all">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined">receipt_long</span>
+                        </div>
+                        <span class="text-green-600 text-xs font-bold bg-green-50 px-2 py-1 rounded">+12.5%</span>
+                    </div>
+                    <p class="text-on-surface-variant text-xs font-semibold uppercase tracking-widest mb-1">Total Orders
+                    </p>
+                    <p class="text-3xl font-headline font-bold text-on-surface">1,482</p>
+                    <div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+                        <div class="bg-primary h-full w-[70%]"></div>
+                    </div>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_32px_64px_-12px_rgba(30,27,22,0.04)] border border-outline-variant/10 group hover:translate-y-[-4px] transition-all">
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+                            <span class="material-symbols-outlined">payments</span>
+                        </div>
+                        <span class="text-green-600 text-xs font-bold bg-green-50 px-2 py-1 rounded">+4.2%</span>
+                    </div>
+                    <p class="text-on-surface-variant text-xs font-semibold uppercase tracking-widest mb-1">Avg. Order
+                        Value</p>
+                    <p class="text-3xl font-headline font-bold text-on-surface">₹842.00</p>
+                    <div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+                        <div class="bg-secondary h-full w-[45%]"></div>
+                    </div>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_32px_64px_-12px_rgba(30,27,22,0.04)] border border-outline-variant/10 group hover:translate-y-[-4px] transition-all">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+                            <span class="material-symbols-outlined">person_add</span>
+                        </div>
+                        <span class="text-orange-600 text-xs font-bold bg-orange-50 px-2 py-1 rounded">+21.8%</span>
+                    </div>
+                    <p class="text-on-surface-variant text-xs font-semibold uppercase tracking-widest mb-1">Customer
+                        Growth</p>
+                    <p class="text-3xl font-headline font-bold text-on-surface">324</p>
+                    <div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+                        <div class="bg-tertiary h-full w-[85%]"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Large Sales Trend Line Chart -->
+            <div
+                class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_32px_64px_-12px_rgba(30,27,22,0.04)] border border-outline-variant/10">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-xl font-bold font-headline">Sales Trend (Monthly)</h3>
+                    <div class="flex gap-4">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-primary-container"></span>
+                            <span class="text-xs text-on-surface-variant font-medium">Revenue</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-[300px] w-full flex items-end justify-between relative px-2">
+                    <!-- Grid Lines Mock -->
+                    <div class="absolute inset-0 flex flex-col justify-between pointer-events-none py-2">
+                        <div class="w-full border-t border-stone-100"></div>
+                        <div class="w-full border-t border-stone-100"></div>
+                        <div class="w-full border-t border-stone-100"></div>
+                        <div class="w-full border-t border-stone-100"></div>
+                        <div class="w-full border-t border-stone-100"></div>
+                    </div>
+                    <!-- SVG Chart Overlay Mock -->
+                    <svg class="absolute inset-0 w-full h-[300px] overflow-visible" preserveaspectratio="none">
+                        <path class="w-full"
+                            d="M0,250 L80,220 L160,260 L240,200 L320,150 L400,180 L480,120 L560,90 L640,140 L720,110 L800,60 L880,40"
+                            fill="none" stroke="#B05E2D" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
+                            style="width: 100%"></path>
+                        <path
+                            d="M0,250 L80,220 L160,260 L240,200 L320,150 L400,180 L480,120 L560,90 L640,140 L720,110 L800,60 L880,40 V300 H0 Z"
+                            fill="url(#gradient-sales)" opacity="0.1"></path>
+                        <defs>
+                            <lineargradient id="gradient-sales" x1="0" x2="0" y1="0" y2="1">
+                                <stop offset="0%" stop-color="#B05E2D"></stop>
+                                <stop offset="100%" stop-color="#B05E2D" stop-opacity="0"></stop>
+                            </lineargradient>
+                        </defs>
+                    </svg>
+                    <!-- X-Axis Labels -->
+                    <div
+                        class="absolute bottom-[-32px] w-full flex justify-between px-2 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                        <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Two Smaller Charts Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Sales by Category (Donut Mock) -->
+                <div
+                    class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_32px_64px_-12px_rgba(30,27,22,0.04)] border border-outline-variant/10">
+                    <h3 class="text-xl font-bold font-headline mb-8">Sales by Category</h3>
+                    <div class="flex items-center justify-center gap-12 py-4">
+                        <div class="relative w-48 h-48">
+                            <svg class="w-full h-full transform -rotate-90">
+                                <circle cx="50%" cy="50%" fill="transparent" r="40%" stroke="#e8e2d8" stroke-width="24">
+                                </circle>
+                                <!-- Bread 40% -->
+                                <circle cx="50%" cy="50%" fill="transparent" r="40%" stroke="#914617"
+                                    stroke-dasharray="251.2" stroke-dashoffset="150" stroke-width="24"></circle>
+                                <!-- Pastries 25% -->
+                                <circle class="rotate-[144deg] origin-center" cx="50%" cy="50%" fill="transparent"
+                                    r="40%" stroke="#b05e2d" stroke-dasharray="251.2" stroke-dashoffset="200"
+                                    stroke-width="24"></circle>
+                                <!-- Cakes 20% -->
+                                <circle class="rotate-[234deg] origin-center" cx="50%" cy="50%" fill="transparent"
+                                    r="40%" stroke="#8e4e14" stroke-dasharray="251.2" stroke-dashoffset="210"
+                                    stroke-width="24"></circle>
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                <span class="text-2xl font-bold text-on-surface">42%</span>
+                                <span class="text-[10px] uppercase font-bold text-on-surface-variant">Bread</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wide">Bread</p>
+                                    <p class="text-sm font-body text-on-surface-variant">42.4%</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wide">Pastries</p>
+                                    <p class="text-sm font-body text-on-surface-variant">25.1%</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wide">Cakes</p>
+                                    <p class="text-sm font-body text-on-surface-variant">18.5%</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-surface-container-highest"></span>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wide">Others</p>
+                                    <p class="text-sm font-body text-on-surface-variant">14.0%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Top Selling Locations (Bar Chart Mock) -->
+                <div
+                    class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_32px_64px_-12px_rgba(30,27,22,0.04)] border border-outline-variant/10">
+                    <h3 class="text-xl font-bold font-headline mb-8">Top Selling Locations</h3>
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-bold uppercase tracking-widest">
+                                <span>Andheri</span>
+                                <span class="text-primary">₹245k</span>
+                            </div>
+                            <div class="h-3 w-full bg-surface-container-low rounded-full overflow-hidden">
+                                <div class="h-full bg-primary-container w-[92%] rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-bold uppercase tracking-widest">
+                                <span>Bandra</span>
+                                <span class="text-primary">₹189k</span>
+                            </div>
+                            <div class="h-3 w-full bg-surface-container-low rounded-full overflow-hidden">
+                                <div class="h-full bg-primary-container w-[74%] rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-bold uppercase tracking-widest">
+                                <span>Juhu</span>
+                                <span class="text-primary">₹156k</span>
+                            </div>
+                            <div class="h-3 w-full bg-surface-container-low rounded-full overflow-hidden">
+                                <div class="h-full bg-primary-container w-[62%] rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-bold uppercase tracking-widest">
+                                <span>Worli</span>
+                                <span class="text-primary">₹124k</span>
+                            </div>
+                            <div class="h-3 w-full bg-surface-container-low rounded-full overflow-hidden">
+                                <div class="h-full bg-primary-container w-[48%] rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-bold uppercase tracking-widest">
+                                <span>Colaba</span>
+                                <span class="text-primary">₹98k</span>
+                            </div>
+                            <div class="h-3 w-full bg-surface-container-low rounded-full overflow-hidden">
+                                <div class="h-full bg-primary-container w-[36%] rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Detailed Table Section -->
+            <div
+                class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_32px_64px_-12px_rgba(30,27,22,0.04)] border border-outline-variant/10">
+                <div class="px-8 py-6 border-b border-outline-variant/10 flex justify-between items-center">
+                    <h3 class="text-xl font-bold font-headline">Recent High-Value Orders</h3>
+                    <button class="text-sm font-semibold text-primary hover:underline">Download CSV</button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-surface-container-low">
+                            <tr>
+                                <th
+                                    class="px-8 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">
+                                    Order ID</th>
+                                <th
+                                    class="px-8 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">
+                                    Customer</th>
+                                <th
+                                    class="px-8 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">
+                                    Product Mix</th>
+                                <th
+                                    class="px-8 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">
+                                    Location</th>
+                                <th
+                                    class="px-8 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant text-right">
+                                    Revenue</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline-variant/5">
+                            <tr class="hover:bg-surface-container-low/50 transition-colors">
+                                <td class="px-8 py-4 font-mono text-xs text-primary">#BE-9421</td>
+                                <td class="px-8 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-xs font-bold text-orange-900">
+                                            RP</div>
+                                        <span class="text-sm font-medium">Rajesh Parmar</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-4 text-sm text-on-surface-variant">Custom Celebration Cake (2kg), 4x
+                                    Croissants</td>
+                                <td class="px-8 py-4 text-sm">Andheri West</td>
+                                <td class="px-8 py-4 text-right text-sm font-bold">₹4,850.00</td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-low/50 transition-colors">
+                                <td class="px-8 py-4 font-mono text-xs text-primary">#BE-9420</td>
+                                <td class="px-8 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-xs font-bold text-stone-900">
+                                            SK</div>
+                                        <span class="text-sm font-medium">Sanya Kapoor</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-4 text-sm text-on-surface-variant">Artisan Sourdough (3x), Baguette
+                                </td>
+                                <td class="px-8 py-4 text-sm">Bandra Pali Hill</td>
+                                <td class="px-8 py-4 text-right text-sm font-bold">₹1,240.00</td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-low/50 transition-colors">
+                                <td class="px-8 py-4 font-mono text-xs text-primary">#BE-9419</td>
+                                <td class="px-8 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-xs font-bold text-stone-900">
+                                            AS</div>
+                                        <span class="text-sm font-medium">Amit Shah</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-4 text-sm text-on-surface-variant">Macaron Gift Box (Large), Pastry
+                                    Box</td>
+                                <td class="px-8 py-4 text-sm">Juhu Vile Parle</td>
+                                <td class="px-8 py-4 text-right text-sm font-bold">₹3,200.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Decoration -->
+        <footer class="mt-12 py-12 bg-surface-dim/30 border-t border-outline-variant/10 text-center">
+            <div class="flex justify-center mb-6">
+                <span class="material-symbols-outlined text-primary-container/30 text-5xl">bakery_dining</span>
+            </div>
+            <p class="text-xs uppercase tracking-[0.3em] font-bold text-on-surface-variant/40">© 2023 BakeEase Artisan
+                Intelligence</p>
+        </footer>
+    </main>
+    <script src="js/rna.js"></script>
+</body>
+
+</html>

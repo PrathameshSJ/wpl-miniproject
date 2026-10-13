@@ -1,0 +1,74 @@
+// Suppress Tailwind CDN warning
+const originalWarn = console.warn;
+console.warn = function(...args) {
+    if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com should not be used in production')) return;
+    originalWarn.apply(console, args);
+};
+
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "inverse-surface": "#33302a",
+        "on-tertiary-container": "#fffbfa",
+        "on-surface": "#1e1b16",
+        "outline": "#877369",
+        "error-container": "#ffdad6",
+        "surface": "#fff8f0",
+        "on-primary-container": "#fffbfa",
+        "tertiary-container": "#a46444",
+        "primary-fixed-dim": "#ffb68f",
+        "surface-container-lowest": "#ffffff",
+        "primary-fixed": "#ffdbca",
+        "on-error": "#ffffff",
+        "surface-container-low": "#faf3e9",
+        "on-tertiary-fixed-variant": "#6e381c",
+        "surface-bright": "#fff8f0",
+        "secondary": "#8e4e14",
+        "on-secondary-fixed-variant": "#6f3800",
+        "tertiary-fixed-dim": "#ffb693",
+        "surface-container-highest": "#e8e2d8",
+        "secondary-fixed-dim": "#ffb780",
+        "secondary-fixed": "#ffdcc4",
+        "surface-variant": "#e8e2d8",
+        "tertiary": "#874c2e",
+        "secondary-container": "#ffab69",
+        "on-tertiary-fixed": "#351000",
+        "on-secondary-fixed": "#2f1400",
+        "on-background": "#1e1b16",
+        "on-tertiary": "#ffffff",
+        "error": "#ba1a1a",
+        "on-error-container": "#93000a",
+        "inverse-primary": "#ffb68f",
+        "on-surface-variant": "#54433a",
+        "on-primary-fixed": "#331100",
+        "primary": "#914617",
+        "outline-variant": "#dac1b6",
+        "surface-dim": "#e0d9d0",
+        "on-secondary-container": "#783d01",
+        "surface-tint": "#954919",
+        "on-primary": "#ffffff",
+        "surface-container": "#f4ede3",
+        "tertiary-fixed": "#ffdbcc",
+        "primary-container": "#b05e2d",
+        "background": "#fff8f0",
+        "on-secondary": "#ffffff",
+        "surface-container-high": "#eee7dd",
+        "on-primary-fixed-variant": "#773302",
+        "inverse-on-surface": "#f7f0e6"
+      },
+      fontFamily: {
+        "headline": ["Noto Serif", "serif"],
+        "body": ["Inter", "sans-serif"],
+        "label": ["Inter", "sans-serif"]
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+    },
+  },
+};
